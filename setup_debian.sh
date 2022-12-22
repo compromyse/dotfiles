@@ -39,6 +39,7 @@ sudo make install
 make clean
 
 # Install `ly`
+cd /opt
 git clone --recurse-submodules https://github.com/fairyglade/ly
 cd /opt/ly
 make
