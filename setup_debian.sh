@@ -62,6 +62,8 @@ make clean
 # Add Dotfiles
 cd $CURRENT_DIR/.config
 cp -r * $HOME/.config
+cd $CURRENT_DIR
+cp -r .dwm $HOME
 
 # Install `NeoVim`
 cd $TEMP_DIR
