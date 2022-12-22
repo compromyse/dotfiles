@@ -13,7 +13,7 @@ read -p "Press enter to continue..."
 cp .bash_aliases $HOME
 
 # Install Dependancies
-sudo apt-get -y install git curl wget build-essential
+sudo apt-get -y install git curl wget build-essential unzip
 sudo apt-get -y install libxft-dev libx11-dev libxinerama-dev libpam0g-dev libxcb1-dev xorg
 sudo apt-get -y install fonts-droid-fallback fonts-font-awesome j4-dmenu-desktop mate-polkit feh picom dunst
 sudo apt-get -y install lxappearance materia-gtk-theme papirus-icon-theme breeze-cursor-theme
