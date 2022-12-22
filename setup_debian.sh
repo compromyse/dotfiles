@@ -85,5 +85,8 @@ cd $CURRENT_DIR
 # Install Programs
 sudo apt-get install -y terminator nemo firefox
 
+# Make `bash` Case Insensitive
+echo 'set completion-ignore-case On' | sudo tee -a /etc/inputrc
+
 # Remove The Temporary Directory
 rm -rf $TEMP_DIR
