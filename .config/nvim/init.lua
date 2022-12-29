@@ -20,7 +20,6 @@ require('packer').startup(function(use)
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'jiangmiao/auto-pairs'
 	use 'kyazdani42/nvim-tree.lua'
-	use 'akinsho/toggleterm.nvim'
 	use 'editorconfig/editorconfig-vim'
 	use 'neovim/nvim-lspconfig'
 	use 'hrsh7th/nvim-cmp'
@@ -70,6 +69,8 @@ vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
 vim.keymap.set('n', 'C-k', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
 vim.keymap.set('n', 'C-n', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>')
 vim.keymap.set('n', 'C-n', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>')
+
+vim.keymap.set('n', 'tt', '<cmd>tab ter<cr>')
 
 require('onedark').setup {
 	style = 'warmer'
@@ -127,12 +128,6 @@ require('nvim-tree').setup {
     bufmap('H', api.node.navigate.parent_close, 'Close parent folder')
     bufmap('gh', api.tree.toggle_hidden_filter, 'Toggle hidden files')
   end
-}
-
--- ToggleTerminal Setup
-require('toggleterm').setup {
-  open_mapping = '<C-g>',
-  shade_terminals = true
 }
 
 -- CMP Setup
