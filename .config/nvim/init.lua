@@ -67,7 +67,7 @@ vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
 
 vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
 vim.keymap.set('n', 'C-k', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
-vim.keymap.set('n', 'C-n', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>')
+vim.keymap.set('n', 'C-p', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>')
 vim.keymap.set('n', 'C-n', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>')
 
 vim.keymap.set('n', 'tt', '<cmd>tab ter<cr>')
