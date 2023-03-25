@@ -5,4 +5,3 @@ dunst &
 picom &
 /home/compromyse/.dwm/bar.sh &
 wmname LG3D
-/usr/bin/vmware-user-suid-wrapper &
