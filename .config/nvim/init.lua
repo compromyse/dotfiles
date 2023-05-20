@@ -167,7 +167,7 @@ cmp.setup.cmdline(':', {
 -- Set Up Lspconfig
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-servers = { 'pyright', 'tailwindcss' }
+servers = { 'pyright', 'tailwindcss', 'quick_lint_js', 'ccls' }
 for _, lsp in pairs(servers) do
   lspconfig[lsp].setup {
     capabilities = capabilities
@@ -176,7 +176,6 @@ end
 
 -- Keyboard Shortcuts
 vim.keymap.set('n', 'P', '<cmd>pu<cr>', { noremap = true })
-vim.keymap.set('n', 'a', 'A', { noremap = true })
 
 vim.keymap.set('n', ',,', '<cmd>NvimTreeToggle<cr>', { noremap = true })
 vim.keymap.set('n', '<space><space>', '<cmd>Telescope find_files<cr>', { noremap = true })
