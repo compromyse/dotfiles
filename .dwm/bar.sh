@@ -1,39 +1,28 @@
-#!/bin/dash
-
-interval=0
-
-black=#1e1f26
-white=#d3d7f2
+#!/bin/bash
 
 battery() {
-  get_capacity="$(cat /sys/class/power_supply/BAT1/capacity)"
-  printf "^b$black^ "
-  printf "^c$black^^b$white^   $get_capacity "
-  printf "^b$black^ "
+  capacity="$(cat /sys/class/power_supply/BAT1/capacity)"
+  case "$(cat /sys/class/power_supply/BAT1/status)" in
+    Charging) printf "  $capacity +";;
+    Discharging) printf "  $capacity -";;
+  esac
 }
 
 wlan() {
 	case "$(cat /sys/class/net/wl*/operstate 2>/dev/null)" in
-	up) printf "^c$black^ ^b$white^ 󰤨 Connected ^d^";;
-	down) printf "^c$black^ ^b$white^ 󰤭 Disconnected ^d^";;
+	  up) printf "󰤨  Connected";;
+	  down) printf "󰤭  Disconnected";;
 	esac
 }
 
 clock() {
-  printf "^b$black^  "
-	printf "^c$black^^b$white^ 󱑆 $(date '+%H:%M') "
-  printf "^b$black^  "
+	printf "󱑆  $(date '+%H:%M')"
 }
 
 user() {
-  printf "^c$black^^b$white^ $(whoami) "
-  printf "^b$black^  "
+  printf "$(whoami)"
 }
 
-while true; do
-
-  [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ]
-  interval=$((interval + 1))
-
-  sleep 5 && xsetroot -name "$(battery)$(wlan)$(clock)$(user)"
+while(true) do
+  xsetroot -name "| $(battery) | $(wlan) | $(clock) | $(user) " && sleep 2
 done
