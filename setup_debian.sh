@@ -14,8 +14,8 @@ cp .bash_aliases $HOME
 
 # Install Dependancies
 sudo apt-get -y install git curl wget build-essential unzip
-sudo apt-get -y install libxft-dev libx11-dev libxinerama-dev libpam0g-dev libxcb1-dev xorg
-sudo apt-get -y install fonts-droid-fallback fonts-font-awesome j4-dmenu-desktop mate-polkit feh picom dunst
+sudo apt-get -y install libxft-dev libx11-dev libxinerama-dev libpam0g-dev libxcb1-dev xorg libpam0g-dev
+sudo apt-get -y install fonts-droid-fallback fonts-font-awesome j4-dmenu-desktop mate-polkit feh picom dunst network-manager-gnome volumeicon-alsa blueman xss-lock
 sudo apt-get -y install lxappearance materia-gtk-theme papirus-icon-theme breeze-cursor-theme
 
 # Change `/opt` Permissions
@@ -46,6 +46,18 @@ make
 sudo make install
 sudo make installsystemd
 sudo systemctl enable ly.service
+
+# Install `xsecurelock`
+cd /opt
+git clone https://github.com/google/xsecurelock
+cd xsecurelock
+sh autogen.sh
+echo "Enter a PAM service name (in /etc/pam.d): "
+read choice
+./configure --with-pam-service-name=$choice
+make
+sudo make install
+make clean
 
 # Add `DWM.desktop`
 sudo mkdir /usr/share/xsessions
@@ -83,7 +95,7 @@ mv *.ttf $HOME/.fonts
 cd $CURRENT_DIR
 
 # Install Programs
-sudo apt-get install -y terminator nemo firefox
+sudo apt-get install -y terminator nemo
 
 # Make `bash` Case Insensitive
 echo 'set completion-ignore-case On' | sudo tee -a /etc/inputrc
