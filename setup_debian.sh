@@ -24,16 +24,9 @@ sudo chown $USER:$USER -R /opt
 # Go To `/opt` And Clone Repositories
 cd /opt
 git clone https://github.com/compromyse/dwm
-git clone https://github.com/compromyse/dmenu
 
 # Install `DWM`
 cd /opt/dwm
-make
-sudo make install
-make clean
-
-# Install `DMenu`
-cd /opt/dmenu
 make
 sudo make install
 make clean
@@ -99,6 +92,9 @@ sudo apt-get install -y terminator nemo
 
 # Make `bash` Case Insensitive
 echo 'set completion-ignore-case On' | sudo tee -a /etc/inputrc
+
+# Make systemd ignore power key
+echo "HandlePowerKey=ignore" | sudo tee -a /etc/systemd/logind.conf
 
 # Remove The Temporary Directory
 rm -rf $TEMP_DIR
