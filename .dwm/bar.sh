@@ -5,6 +5,7 @@ battery() {
   case "$(cat /sys/class/power_supply/BAT1/status)" in
     Charging) printf "  $capacity +";;
     Discharging) printf "  $capacity -";;
+    Full) printf "  $capacity";;
   esac
 }
 
