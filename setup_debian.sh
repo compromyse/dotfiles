@@ -96,5 +96,8 @@ echo 'set completion-ignore-case On' | sudo tee -a /etc/inputrc
 # Make systemd ignore power key
 echo "HandlePowerKey=ignore" | sudo tee -a /etc/systemd/logind.conf
 
+# Copy touchpad configuration
+sudo cp 30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+
 # Remove The Temporary Directory
 rm -rf $TEMP_DIR
