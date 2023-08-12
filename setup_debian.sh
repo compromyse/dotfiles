@@ -71,11 +71,6 @@ cp -r * $HOME/.config
 cd $CURRENT_DIR
 cp -r .dwm $HOME
 
-# Install `NeoVim`
-cd $TEMP_DIR
-wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
-sudo apt-get -y install ./nvim-linux64.deb
-
 # Install `packer.nvim`
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
