@@ -1,6 +1,6 @@
 -- General Settings
 vim.opt.number = true
-vim.opt.mouse = 'a'
+vim.opt.mouse = ''
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = false
@@ -10,13 +10,15 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.termguicolors = true
-vim.opt.ww = "<,>,[,]"
-vim.api.nvim_set_option("clipboard","unnamedplus")
+vim.opt.splitbelow = true
+vim.opt.mouse = 'a'
+vim.api.nvim_set_option('clipboard','unnamedplus')
 vim.opt.ruler = false
+vim.cmd.colorscheme('rasmus')
 
 -- Reset Cursor On Exit
-local au_id = vim.api.nvim_create_augroup("RestoreCursorShapeOnExit", {clear = true})
-vim.api.nvim_create_autocmd("VimLeave",{
+local au_id = vim.api.nvim_create_augroup('RestoreCursorShapeOnExit', {clear = true})
+vim.api.nvim_create_autocmd('VimLeave',{
   command = 'set guicursor=a:ver20',
   group = au_id
 })
@@ -25,27 +27,10 @@ vim.api.nvim_create_autocmd("VimLeave",{
 require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	use 'lukas-reineke/indent-blankline.nvim'
-	use 'jiangmiao/auto-pairs'
-	use 'kyazdani42/nvim-tree.lua'
-  use {
-		'numToStr/Comment.nvim',
-		config = function()
-      require('Comment').setup {
-        padding = true,
-        toggler = {
-          line = '..'
-        }
-      }
-		end
-	}
+  use 'windwp/nvim-autopairs'
+  use 'numToStr/Comment.nvim'
 
-  use 'kvrohit/mellow.nvim'
-	use 'mhinz/vim-startify'
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons' }
-  }
-	use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+  use 'kvrohit/rasmus.nvim'
 
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/nvim-cmp'
@@ -53,8 +38,10 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp-signature-help'
   use {
 		'nvim-telescope/telescope.nvim',
-		requires = { {'nvim-lua/plenary.nvim'}}
+		requires = { {'nvim-lua/plenary.nvim'} }
 	}
+
+  use 'akinsho/toggleterm.nvim'
 
 	if install_plugins then
 		require('packer').sync()
@@ -64,49 +51,6 @@ end)
 if install_plugins then
   return
 end
-
--- Color Scheme
-vim.cmd [[colorscheme mellow]]
-
-require('lualine').setup {
-  options = {
-    section_separators = { left = '', right = '' },
-    component_separators = { left = '|', right = '|' }
-  },
-  sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'filetype'},
-  }
-}
-
-require('nvim-tree').setup {
-  hijack_cursor = true,
-  actions = {
-    open_file = {
-      quit_on_open = true,
-    }
-  }
-}
-
-require('bufferline').setup {
-  options = {
-    mode = 'buffers',
-    offsets = {
-      {filetype = 'NvimTree'}
-    },
-  },
-  highlights = {
-    buffer_selected = {
-      italic = false
-    },
-    indicator_selected = {
-      fg = {attribute = 'fg', highlight = 'Function'},
-      italic = false
-    }
-  }
-}
 
 require('indent_blankline').setup {
   char = '▏',
@@ -118,8 +62,11 @@ require('indent_blankline').setup {
 require('Comment').setup {
 	padding = true,
 		toggler = {
-			line = '..'
-		}
+			line = '\\\\'
+		},
+    opleader = {
+      block = '\\\\'
+    }
 }
 
 -- CMP Setup
@@ -167,39 +114,68 @@ cmp.setup.cmdline(':', {
 -- Set Up Lspconfig
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-servers = { 'pyright', 'tailwindcss', 'quick_lint_js', 'ccls' }
+servers = { 'pyright', 'ccls' }
 for _, lsp in pairs(servers) do
   lspconfig[lsp].setup {
     capabilities = capabilities
   }
 end
 
+-- Set Up Telescope
+local actions = require('telescope.actions')
+require('telescope').setup({
+  pickers = {
+    find_files = {
+      hidden = true
+    }
+  },
+  defaults = {
+    layout_strategy = 'bottom_pane',
+    layout_config = {
+      height = 0.4
+    },
+
+    mappings = {
+      i = {
+        ['<esc>'] = actions.close,
+      },
+    },
+  },
+})
+
+-- Set Up ToggleTerm
+require('toggleterm').setup {
+  direction = 'horizontal',
+  size = math.floor(0.8 * vim.api.nvim_win_get_height(0))
+}
+
+-- Set Up Autopairs
+require('nvim-autopairs').setup({ map_cr = true })
+
+-- Set Up Compile.lua
+require('compile')
+
 -- Keyboard Shortcuts
 vim.keymap.set('n', 'P', '<cmd>pu<cr>', { noremap = true })
 
-vim.keymap.set('n', ',,', '<cmd>NvimTreeToggle<cr>', { noremap = true })
 vim.keymap.set('n', '<space><space>', '<cmd>Telescope find_files<cr>', { noremap = true })
 vim.keymap.set('n', '<space>b', '<cmd>Telescope buffers<cr>', { noremap = true })
 vim.keymap.set('n', '<space>f', '<cmd>Telescope live_grep<cr>', { noremap = true })
 
-vim.keymap.set('n', 'nn', '<cmd>bnext<cr>', { noremap = true })
-vim.keymap.set('n', 'bb', '<cmd>bprev<cr>', { noremap = true })
+vim.keymap.set('n', '<space>n', '<cmd>Explore<cr>', { noremap = true })
+
 vim.keymap.set('n', 'cw', '<cmd>bdelete!<cr>', { noremap = true })
 
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
 
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { noremap = true })
-vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { noremap = true })
-vim.keymap.set('n', 'gr', vim.lsp.buf.references, { noremap = true })
+vim.keymap.set('n', 'D', vim.lsp.buf.definition, { noremap = true })
+vim.keymap.set('n', 'F', vim.lsp.buf.declaration, { noremap = true })
 
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true })
 
-vim.keymap.set('n', 'tt', '<cmd>tab ter<cr>', { noremap = true })
+vim.keymap.set('n', '<A-y>', '<cmd>ToggleTerm<cr>', { noremap = true })
+vim.keymap.set('t', '<A-y>', '<cmd>ToggleTerm<cr>', { noremap = true })
 
 -- Splitting The Window
 vim.api.nvim_set_keymap('n', '<C-x>|', ':vsplit<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-x>-', ':split<CR>', { noremap = true })
-
-vim.api.nvim_set_keymap('n', '<C-x><Left>', '<C-w>h', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-x><Down>', '<C-w>j', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-x><Up>', '<C-w>k', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-x><Right>', '<C-w>l', { noremap = true })
