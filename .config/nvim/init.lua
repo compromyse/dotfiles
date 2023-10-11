@@ -40,6 +40,10 @@ require('packer').startup(function(use)
 		'nvim-telescope/telescope.nvim',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
+  use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  }
 
   use 'akinsho/toggleterm.nvim'
 
@@ -103,7 +107,6 @@ cmp.setup.cmdline({ '/', '?' }, {
 		}
 })
 cmp.setup.cmdline(':', {
-		mapping = cmp.mapping.preset.cmdline(),
 		sources = cmp.config.sources({
 			{ name = 'path' }
 		}, {
@@ -123,10 +126,18 @@ end
 
 -- Set Up Telescope
 local actions = require('telescope.actions')
-require('telescope').setup({
+local fb_actions = require("telescope").extensions.file_browser.actions
+local telescope = require('telescope')
+telescope.setup({
   pickers = {
     find_files = {
       hidden = true
+    }
+  },
+  extensions = {
+    file_browser = {
+      theme = "ivy",
+      hijack_netrw = true,
     }
   },
   defaults = {
@@ -137,11 +148,12 @@ require('telescope').setup({
 
     mappings = {
       i = {
-        ['<esc>'] = actions.close,
+        ["<A-a>"] = fb_actions.create,
       },
     },
   },
 })
+telescope.load_extension "file_browser"
 
 -- Set Up ToggleTerm
 require('toggleterm').setup {
@@ -161,8 +173,7 @@ vim.keymap.set('n', 'P', '<cmd>pu<cr>', { noremap = true })
 vim.keymap.set('n', '<space><space>', '<cmd>Telescope find_files<cr>', { noremap = true })
 vim.keymap.set('n', '<space>b', '<cmd>Telescope buffers<cr>', { noremap = true })
 vim.keymap.set('n', '<space>f', '<cmd>Telescope live_grep<cr>', { noremap = true })
-
-vim.keymap.set('n', '<space>n', '<cmd>Explore<cr>', { noremap = true })
+vim.keymap.set('n', '<space>n', '<cmd>Telescope file_browser<cr>', { noremap = true })
 
 vim.keymap.set('n', 'cw', '<cmd>bdelete!<cr>', { noremap = true })
 
