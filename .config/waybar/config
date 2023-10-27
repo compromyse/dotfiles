@@ -32,7 +32,7 @@
   },
   "clock": {
     "timezone": "Asia/Kolkata",
-    "format": " {:%Y-%M-%d   %H:%M}",
+    "format": " {:%a, %Y-%m-%d   %H:%M}",
   },
   "cpu": {
     "format": " {usage}%",
