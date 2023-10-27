@@ -1,0 +1,108 @@
+* {
+    font-family: UbuntuMono Nerd Font Mono;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+window#waybar {
+    background-color: rgba(27, 27, 27, 1);
+    color: #f2f0fa;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0px;
+}
+
+button:hover {
+    background: inherit;
+}
+
+#custom-launcher {
+  margin: 0 10px;
+  padding: 0 10px;
+}
+
+#workspaces {
+    border-radius: 10px;
+    background-color: #f2f0fa;
+    color: #272727;
+    padding: 0 10px;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    color: #272727;
+    background-color: #f2f0fa;
+}
+
+#workspaces button.active {
+    color: #272727;
+    background-color: #f2f0fa;
+}
+
+#workspaces button.urgent {
+    color: #272727;
+    background-color: #f2f0fa;
+}
+
+#clock {
+    padding: 0 10px;
+    margin: 0 10px;
+    color: #f2f0fa;
+    border-radius: 0px;
+}
+
+#battery,
+#cpu,
+#backlight,
+#tray {
+    padding: 0 10px;
+    margin: 0 0px;
+    background-color: #f2f0fa;
+    color: #272727;
+}
+
+#battery {
+  border-radius: 0px 10px 10px 0px;
+}
+
+#cpu {
+  border-radius: 10px 0px 0px 10px;
+}
+
+#tray {
+  border-radius: 10px;
+  margin: 0 10px;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
