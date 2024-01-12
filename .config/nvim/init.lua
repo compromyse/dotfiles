@@ -11,6 +11,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.termguicolors = true
 vim.opt.splitbelow = true
+vim.opt.scrolloff = 5
 vim.opt.mouse = 'a'
 vim.api.nvim_set_option('clipboard','unnamedplus')
 vim.opt.ruler = false
@@ -40,12 +41,11 @@ require('packer').startup(function(use)
 		'nvim-telescope/telescope.nvim',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
-  use {
-    "nvim-telescope/telescope-file-browser.nvim",
-    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-  }
+
+  use 'stevearc/oil.nvim'
 
   use 'akinsho/toggleterm.nvim'
+  use 'christoomey/vim-tmux-navigator'
 
 	if install_plugins then
 		require('packer').sync()
@@ -56,12 +56,20 @@ if install_plugins then
   return
 end
 
-require('indent_blankline').setup {
-  char = '▏',
-  show_trailing_blankline_indent = false,
-  show_first_indent_level = false,
-  show_current_context = false
+
+local oil = require('oil')
+_G.oil = oil
+oil.setup {
+  default_file_explorer = true,
+  columns = {
+    'icon',
+  },
+  view_options = {
+    show_hidden = true
+  }
 }
+
+require('ibl').setup()
 
 require('Comment').setup {
 	padding = true,
@@ -117,7 +125,7 @@ cmp.setup.cmdline(':', {
 -- Set Up Lspconfig
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-servers = { 'pyright', 'ccls' }
+servers = { 'pyright', 'ccls', 'gopls' }
 for _, lsp in pairs(servers) do
   lspconfig[lsp].setup {
     capabilities = capabilities
@@ -126,7 +134,6 @@ end
 
 -- Set Up Telescope
 local actions = require('telescope.actions')
-local fb_actions = require("telescope").extensions.file_browser.actions
 local telescope = require('telescope')
 telescope.setup({
   pickers = {
@@ -134,26 +141,13 @@ telescope.setup({
       hidden = true
     }
   },
-  extensions = {
-    file_browser = {
-      theme = "ivy",
-      hijack_netrw = true,
-    }
-  },
   defaults = {
     layout_strategy = 'bottom_pane',
     layout_config = {
       height = 0.4
     },
-
-    mappings = {
-      i = {
-        ["<A-a>"] = fb_actions.create,
-      },
-    },
   },
 })
-telescope.load_extension "file_browser"
 
 -- Set Up ToggleTerm
 require('toggleterm').setup {
@@ -173,20 +167,26 @@ vim.keymap.set('n', 'P', '<cmd>pu<cr>', { noremap = true })
 vim.keymap.set('n', '<space><space>', '<cmd>Telescope find_files<cr>', { noremap = true })
 vim.keymap.set('n', '<space>b', '<cmd>Telescope buffers<cr>', { noremap = true })
 vim.keymap.set('n', '<space>f', '<cmd>Telescope live_grep<cr>', { noremap = true })
-vim.keymap.set('n', '<space>n', '<cmd>Telescope file_browser<cr>', { noremap = true })
 
-vim.keymap.set('n', 'cw', '<cmd>bdelete!<cr>', { noremap = true })
+vim.keymap.set('n', '<A-x>', '<cmd>close<cr>', { noremap = true })
+vim.keymap.set('n', '<A-q>', '<cmd>bdelete!<cr>', { noremap = true })
 
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
 
-vim.keymap.set('n', 'D', vim.lsp.buf.definition, { noremap = true })
-vim.keymap.set('n', 'F', vim.lsp.buf.declaration, { noremap = true })
+vim.keymap.set('n', '\\d', vim.lsp.buf.definition, { noremap = true })
+vim.keymap.set('n', '\\f', vim.lsp.buf.declaration, { noremap = true })
 
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true })
 
 vim.keymap.set('n', '<A-y>', '<cmd>ToggleTerm<cr>', { noremap = true })
 vim.keymap.set('t', '<A-y>', '<cmd>ToggleTerm<cr>', { noremap = true })
+vim.keymap.set('t', '<A-y>', '<cmd>ToggleTerm<cr>', { noremap = true })
+
+vim.keymap.set('n', '<A-n>', '<cmd>bnext<cr>', { noremap = true })
+vim.keymap.set('n', '<A-p>', '<cmd>bprev<cr>', { noremap = true })
+
+vim.keymap.set('n', '<A-a>', '<cmd>lua oil.toggle_float()<cr>', { noremap = true })
 
 -- Splitting The Window
-vim.api.nvim_set_keymap('n', '<C-x>|', ':vsplit<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-x>-', ':split<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<A-\\>', ':vsplit<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<A-->', ':split<CR>', { noremap = true })

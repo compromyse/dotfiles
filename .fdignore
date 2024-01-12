@@ -1,0 +1,9 @@
+.git
+cache
+.cache
+node_modules
+.npm
+site-packages
+go/pkg
+build
+virtualenv
