@@ -6,8 +6,6 @@
       ./hardware-configuration.nix
     ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -67,7 +65,7 @@
     TTYVTDisallocate = true;
   };
 
-  nixpkgs.overlays = [
+  /* nixpkgs.overlays = [
     (self: super: {
        waybar = super.waybar.overrideAttrs (oldAttrs: {
          src = super.fetchFromGitHub {
@@ -78,7 +76,7 @@
          };
        });
     })
-  ];
+  ]; */
 
   users.users.compromyse = {
     isNormalUser = true;
@@ -93,6 +91,8 @@
     wget
     git
 
+    polkit_gnome
+
     waybar
     fuzzel
     dunst
@@ -105,12 +105,8 @@
     spotify
     virt-manager
 
-    cinnamon.nemo-with-extensions
     pavucontrol
     blueman
-
-    gparted
-    polkit_gnome
 
     libnotify
     libappindicator
