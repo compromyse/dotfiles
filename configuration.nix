@@ -12,6 +12,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.extraModprobeConfig = "options kvm_intel nested=1";
+
   networking.hostName = "OwO";
   networking.networkmanager.enable = true;
 
@@ -104,6 +106,8 @@
 
       spotify
       firefox
+
+      obs-studio
 
       pavucontrol
       blueman
@@ -223,6 +227,7 @@
   ];
 
   virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
   programs.dconf.enable = true;
 
   programs.gnupg.agent = {

@@ -1,6 +1,5 @@
 {
   "layer": "top",
-  "output": "eDP-1",
   "height": 40,
   "modules-left": ["custom/launcher", "hyprland/workspaces", "hyprland/window"],
   "modules-right": ["tray", "cpu", "backlight", "battery", "clock"],
@@ -10,23 +9,11 @@
     "format": "<span font='24'></span>"
   },
   "hyprland/workspaces": {
-    "persistent-workspaces": {
-      "*": 10
-    },
     "disable-scroll": true,
-		"format": "{icon}",
-		"on-click": "activate",
-		"format-icons": {
-			"urgent": "󰀨",
-      "active": "",
-			"empty": "",
-			"default": "",
-    "sort-by-number": true
-    },
+		"on-click": "activate"
   },
   "hyprland/window": {
     "format": "> {title}",
-    "separate-outputs": false
   },
   "tray": {
     "spacing": 10
