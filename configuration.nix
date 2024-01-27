@@ -140,6 +140,10 @@
       initExtra= ''
         export PS1="\[\e[38;5;243m\]\h \[\e[38;5;254m\]\w \[\033[0m\]> "
 
+        if [[ -n "$IN_NIX_SHELL" ]]; then
+          export PS1="\[\e[38;5;242m\](dev) $PS1"
+        fi
+
         sessionizer() {
           DIR=$(fd . $HOME --type d -L -H | fzf)
           SESSION_NAME="$DIR_$(date +%M%S)"
@@ -227,17 +231,16 @@
 
   environment.systemPackages = with pkgs; [
     waybar
-    tofi
     fuzzel
     dunst
     hyprpaper
+    waylock
 
     networkmanagerapplet
 
     greetd.tuigreet
     greetd.greetd
     polkit_gnome
-    waylock
 
     libnotify
     libappindicator
