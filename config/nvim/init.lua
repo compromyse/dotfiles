@@ -185,6 +185,11 @@ vim.keymap.set('t', '<A-y>', '<cmd>ToggleTerm<cr>', { noremap = true })
 vim.keymap.set('n', '<A-n>', '<cmd>bnext<cr>', { noremap = true })
 vim.keymap.set('n', '<A-p>', '<cmd>bprev<cr>', { noremap = true })
 
+vim.keymap.set('n', '<C-h>', '<cmd>TmuxNavigateLeft<cr>', { noremap = true })
+vim.keymap.set('n', '<C-j>', '<cmd>TmuxNavigateDown<cr>', { noremap = true })
+vim.keymap.set('n', '<C-k>', '<cmd>TmuxNavigateUp<cr>', { noremap = true })
+vim.keymap.set('n', '<C-l>', '<cmd>TmuxNavigateRight<cr>', { noremap = true })
+
 vim.keymap.set('n', '<A-a>', '<cmd>lua oil.toggle_float()<cr>', { noremap = true })
 
 -- Splitting The Window

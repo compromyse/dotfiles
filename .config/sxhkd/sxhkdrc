@@ -1,5 +1,0 @@
-super + shift + v
-	/opt/ipman.py paste
-
-super + shift + s
-	/opt/ipman.py setip

@@ -1,11 +1,9 @@
 [global]
-    monitor = 0
+    monitor = 1
     follow = none
-    geometry = "300x5-30+20"
     indicate_hidden = yes
     shrink = no
     transparency = 0
-    notification_height = 0
     separator_height = 2
     padding = 8
     horizontal_padding = 8
@@ -38,8 +36,6 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    startup_notification = false
-    verbosity = mesg
     corner_radius = 0
     ignore_dbusclose = false
     force_xinerama = false
@@ -48,12 +44,6 @@
     mouse_right_click = close_all
 [experimental]
     per_monitor_dpi = false
-
-[shortcuts]
-    close = ctrl+space
-    close_all = ctrl+shift+space
-    history = ctrl+grave
-    context = ctrl+shift+period
 
 [urgency_low]
     background = "#131417"

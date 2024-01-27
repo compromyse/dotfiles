@@ -1,0 +1,11 @@
+[window]
+dynamic_title = true
+
+[font]
+normal = { family = "UbuntuMono Nerd Font Mono", style = "Regular" }
+bold = { family = "UbuntuMono Nerd Font Mono", style = "Bold" }
+italic = { family = "UbuntuMono Nerd Font Mono", style = "Italic" }
+bold_italic = { family = "UbuntuMono Nerd Font Mono", style = "Bold Italic" }
+
+[cursor]
+style = { shape = "Beam" }
