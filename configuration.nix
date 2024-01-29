@@ -19,7 +19,7 @@
     fuzzel
     dunst
     hyprpaper
-    waylock
+    swaylock
 
     networkmanagerapplet
 
@@ -29,6 +29,8 @@
 
     libnotify
     libappindicator
+
+    cudatoolkit
   ];
 
   system.stateVersion = "23.11";

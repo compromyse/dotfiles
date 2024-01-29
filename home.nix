@@ -41,13 +41,14 @@ in
       enable = true;
       initExtra= ''
         export PS1="\[\e[38;5;243m\]\h \[\e[38;5;254m\]\w \[\033[0m\]> "
+        set -o vi
 
         if [[ -n "$IN_NIX_SHELL" ]]; then
           export PS1="\[\e[38;5;242m\](dev) $PS1"
         fi
 
         sessionizer() {
-          DIR=$(fd . $HOME --type d -L -H | fzf)
+          DIR=$(fd . /data --type d -L -H | fzf)
           SESSION_NAME="$DIR_$(date +%M%S)"
 
           if [ -n "$DIR" ]
@@ -73,7 +74,7 @@ in
         fi
 
         bind '"\C-f": "sessionizer\n"'
-        bind '"\C-F": "sessionizer -cd\n"'
+        bind '"\C-a": "sessionizer -cd\n"'
       '';
     };
 

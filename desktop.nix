@@ -6,7 +6,7 @@
     xwayland.enable = true;
   };
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
@@ -56,7 +56,7 @@
   };
 
   security.polkit.enable = true;
-  security.pam.services.waylock.text = ''
+  security.pam.services.swaylock.text = ''
     auth include login
   '';
 
