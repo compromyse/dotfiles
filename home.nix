@@ -117,7 +117,7 @@ in
       enable = true;
 
       theme = { name = "adw-gtk3-dark"; package = pkgs.adw-gtk3; };
-      iconTheme = { name = "Papirus-Light"; package = pkgs.papirus-icon-theme; };
+      iconTheme = { name = "Papirus-Dark"; package = pkgs.papirus-icon-theme; };
 
       font = { name = "UbuntuMono Nerd Font"; };
     };
