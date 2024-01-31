@@ -31,6 +31,7 @@ button:hover {
   background-color: #f2f0fa;
   color: #272727;
   padding: 0 10px;
+  margin: 0px 4px;
 }
 
 #workspaces button {
@@ -70,8 +71,7 @@ button:hover {
   margin: 0 10px;
 }
 
-#window,
-#workspaces {
+#window {
   margin: 0 4px;
 }
 
