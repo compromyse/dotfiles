@@ -1,10 +1,6 @@
-{ config, pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
-  boot.extraModprobeConfig = "options kvm_intel nested=1";
-
-  networking.hostName = "OwO";
-
   hardware.opengl = {
     enable = true;
     driSupport = true;
@@ -26,11 +22,4 @@
       nvidiaBusId = "PCI:1:0:0";
     };
   };
-
-  fileSystems."/data" = {
-    device = "/dev/sda";
-    fsType = "ext4";
-  };
-
-  time.timeZone = "Asia/Kolkata";
 }
