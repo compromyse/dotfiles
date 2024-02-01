@@ -7,17 +7,17 @@
     homeDirectory = "/home/compromyse";
   };
 
+  home.packages = with pkgs; [
+    wget
+  ];
+
   imports = (map (path: ../../config/${path}) [
     "themes.nix"
     "dotfiles.nix"
     "git"
     "alacritty"
+    "dwl.nix"
   ]);
-
-
-  home.packages = with pkgs; [
-    wget
-  ];
 
   home.stateVersion = "23.11";
 }
