@@ -26,6 +26,4 @@
     TTYVHangup = true;
     TTYVTDisallocate = true;
   };
-
-  programs.dconf.enable = true;
 }
