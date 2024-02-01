@@ -18,6 +18,8 @@ in {
 
   boot.extraModprobeConfig = "options kvm_intel nested=1";
 
+  hardware.opengl.enable = true;
+
   fileSystems."/data" = {
     device = "/dev/sda";
     fsType = "ext4";
