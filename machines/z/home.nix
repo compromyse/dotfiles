@@ -1,13 +1,32 @@
 { pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
+
   home = {
     username = "compromyse";
     homeDirectory = "/home/compromyse";
   };
 
-  home.packages = [
-    pkgs.wget
+  home.packages = with pkgs; [
+    wget
+
+    tmux
+    fzf
+    fd
+    ripgrep
+
+    cinnamon.nemo
+    mate.eom
+
+    spotify
+    firefox
+
+    obs-studio
+
+    pavucontrol
+    blueman
+    brillo
   ];
 
   imports = (map (path: ../../config/${path}) [
