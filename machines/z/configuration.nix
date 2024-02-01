@@ -7,6 +7,7 @@
   ] ++ (map (path: ../../modules/${path}) [
     "global.nix"
     "compromyse.nix"
+    "greetd.nix"
   ]);
 
   boot.loader.systemd-boot.enable = true;
