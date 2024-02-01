@@ -7,10 +7,13 @@
     homeDirectory = "/home/compromyse";
   };
 
-  imports = [
-    ../../config/themes.nix
-    ../../config/alacritty
-  ];
+  imports = (map (path: ../../config/${path}) [
+    "themes.nix"
+    "dotfiles.nix"
+    "git"
+    "alacritty"
+  ]);
+
 
   home.packages = with pkgs; [
     wget
