@@ -18,7 +18,6 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/EFI";
 
   boot.extraModprobeConfig = "options kvm_intel nested=1";
 
