@@ -10,6 +10,7 @@ in {
     "global.nix"
     "compromyse.nix"
     "greetd.nix"
+    "fonts.nix"
   ]);
 
   boot.loader.systemd-boot.enable = true;
