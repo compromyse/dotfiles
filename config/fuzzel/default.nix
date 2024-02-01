@@ -1,6 +1,6 @@
 { pkgs, config, ... }:
 
 {
-  home.packages = [ fuzzel ];
+  home.packages = [ pkgs.fuzzel ];
   home.file.".config/fuzzel/fuzzel.ini".source = ./fuzzel.ini;
 }

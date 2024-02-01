@@ -36,7 +36,7 @@
     "nvim"
     "alacritty"
     "dwl.nix"
-    "fuzzel.nix"
+    "fuzzel"
   ]);
 
   home.stateVersion = "23.11";
