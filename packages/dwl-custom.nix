@@ -28,7 +28,7 @@ stdenv.mkDerivation (finalAttrs: {
     owner = "compromyse";
     repo = "dwl";
     rev = "master";
-    hash = "sha256-tbndFPc/bBI9M/f9GtihKYoNdgzo7lYkpygPrjskB04=";
+    hash = "sha256-QNRE/qCSSsMLbmO5VHsPlIO4f9IgnsV00ALDdzDIBrE=";
   };
 
   nativeBuildInputs = [

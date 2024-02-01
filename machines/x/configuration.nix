@@ -32,7 +32,7 @@
     fsType = "ext4";
   };
 
-  networking.hostName = "z";
+  networking.hostName = "x";
 
   home-manager.users.compromyse = import ./home.nix;
 }
