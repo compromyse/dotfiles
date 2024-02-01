@@ -36,6 +36,7 @@
     "nvim"
     "alacritty"
     "dwl.nix"
+    "bash.nix"
     "fuzzel"
   ]);
 
