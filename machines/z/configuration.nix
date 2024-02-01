@@ -13,6 +13,7 @@
     "bluetooth.nix"
     "audio.nix"
     # "virtualization.nix"
+    # "nvidia.nix"
   ]);
 
   boot.loader.systemd-boot.enable = true;
