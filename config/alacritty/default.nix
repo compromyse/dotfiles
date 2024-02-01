@@ -1,11 +1,6 @@
 { pkgs, config, ... }:
 
 {
-  programs.git = {
-    enable = true;
-    userName = "Raghuram Subramani";
-    userEmail = "raghus2247@gmail.com";
-  };
-
   programs.alacritty.enable = true;
+  home.file.".config/alacritty/alacritty.toml".source = ./alacritty.toml;
 }

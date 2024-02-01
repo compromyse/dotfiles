@@ -1,4 +1,4 @@
-{ lib, inputs, ... }:
+{ lib, inputs, pkgs, ... }:
 
 {
   imports = [
@@ -7,6 +7,13 @@
   ] ++ (map (path: ../../modules/${path}) [
     "global.nix"
     "compromyse.nix"
+    "desktop.nix"
+    "login.nix"
+    "fonts.nix"
+    "bluetooth.nix"
+    "audio.nix"
+    # "virtualization.nix"
+    # "nvidia.nix"
   ]);
 
   boot.loader.systemd-boot.enable = true;
@@ -15,12 +22,17 @@
 
   boot.extraModprobeConfig = "options kvm_intel nested=1";
 
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = _: true;
+
+  hardware.opengl.enable = true;
+
   fileSystems."/data" = {
     device = "/dev/sda";
     fsType = "ext4";
   };
 
-  networking.hostName = "z";
+  networking.hostName = "x";
 
   home-manager.users.compromyse = import ./home.nix;
 }
