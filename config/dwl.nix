@@ -1,5 +1,5 @@
 { pkgs, home, ... }:
 
 {
-  home.packages = home.packages ++ [ tmux ]
+  home.packages = [ pkgs.tmux ];
 }

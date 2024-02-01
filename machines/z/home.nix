@@ -1,14 +1,13 @@
 { pkgs, ... }:
 
 {
-
   home = {
     username = "compromyse";
     homeDirectory = "/home/compromyse";
   };
 
-  home.packages = with pkgs; [
-    wget
+  home.packages = [
+    pkgs.wget
   ];
 
   imports = (map (path: ../../config/${path}) [
