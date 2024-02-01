@@ -1,6 +1,8 @@
-{ lib, inputs, ... }:
+{ lib, inputs, pkgs, ... }:
 
-{
+let
+  dwl-custom = (pkgs.callPackage ../../packages/dwl-custom.nix {});
+in {
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
@@ -24,4 +26,6 @@
   networking.hostName = "z";
 
   home-manager.users.compromyse = import ./home.nix;
+
+  environment.systemPackages = [ dwl-custom ];
 }

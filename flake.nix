@@ -14,6 +14,7 @@
 
   outputs = { self, nixpkgs, ... }@inputs: {
     nixpkgs.overlays = [ import ./overlays/dwl.nix ];
+
     # nixos-rebuild --flake .#machine
     nixosConfigurations = {
       z = nixpkgs.lib.nixosSystem {
