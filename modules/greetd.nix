@@ -1,4 +1,11 @@
+{ pkgs, ... }:
+
 {
+  environment.systemPackages = with pkgs; [
+    greetd.tuigreet
+    greetd.greetd
+  ];
+
   services.greetd = {
     enable = true;
     settings = {
