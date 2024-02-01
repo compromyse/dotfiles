@@ -19,10 +19,10 @@
     cinnamon.nemo
     mate.eom
 
-    spotify
-    firefox
+    # spotify
+    # firefox
 
-    obs-studio
+    # obs-studio
 
     pavucontrol
     blueman
@@ -33,6 +33,7 @@
     "themes.nix"
     "dotfiles.nix"
     "git"
+    "nvim"
     "alacritty"
     "dwl.nix"
   ]);
