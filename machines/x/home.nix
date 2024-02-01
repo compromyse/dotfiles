@@ -19,10 +19,10 @@
     cinnamon.nemo
     mate.eom
 
-    # spotify
-    # firefox
+    spotify
+    firefox
 
-    # obs-studio
+    obs-studio
 
     pavucontrol
     blueman
