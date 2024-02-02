@@ -10,7 +10,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "tuigreet --time --remember --cmd \"dwl > ~/.cache/dwltags\"";
+        command = "tuigreet --time --remember --cmd \"dwl > ~/.cache/dwl-log\"";
         user = "greeter";
       };
     };
