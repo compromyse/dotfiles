@@ -8,7 +8,6 @@
 , libxkbcommon
 , pixman
 , pkg-config
-, substituteAll
 , wayland-scanner
 , wayland
 , wayland-protocols
@@ -75,7 +74,7 @@ stdenv.mkDerivation (finalAttrs: {
   '';
 
   meta = {
-    homepage = "https://github.com/djpohly/dwl/";
+    homepage = "https://github.com/compromyse/dwl/";
     description = "Dynamic window manager for Wayland";
     longDescription = ''
       dwl is a compact, hackable compositor for Wayland based on wlroots. It is
