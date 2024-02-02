@@ -3,6 +3,7 @@
   "height": 40,
   "modules-left": ["custom/launcher", "dwl/tags"],
   "modules-right": ["tray", "cpu", "backlight", "battery", "clock"],
+  "mode": "dock",
 
   // Modules configuration
   "custom/launcher": {
