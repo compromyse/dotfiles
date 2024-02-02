@@ -12,9 +12,9 @@
 
   security.rtkit.enable = true;
 
-  environment.etc."inputrc".text = pkgs.lib.mkForce ''
+  /* environment.etc."inputrc".text = pkgs.lib.mkForce ''
     set completion-ignore-case on
-  '';
+  ''; */
 
   system.stateVersion = "23.11";
 }
