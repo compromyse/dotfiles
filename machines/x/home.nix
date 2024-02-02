@@ -38,6 +38,7 @@
     "nvim"
     "alacritty"
     "dunst"
+    "swaylock"
     "dwl.nix"
     "way-displays"
     "bash.nix"
