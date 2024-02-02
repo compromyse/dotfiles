@@ -8,7 +8,9 @@
 
     polkit_gnome
 
-    pkgs.libnotify
-    pkgs.libappindicator
+    libnotify
+    libappindicator
+
+    inotify-tools
   ];
 }

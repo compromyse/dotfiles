@@ -27,6 +27,8 @@
     pavucontrol
     blueman
     brillo
+
+    wbg
   ];
 
   imports = (map (path: ../../config/${path}) [
@@ -35,9 +37,12 @@
     "git"
     "nvim"
     "alacritty"
+    "dunst"
     "dwl.nix"
+    "way-displays"
     "bash.nix"
     "fuzzel"
+    "waybar"
   ]);
 
   home.stateVersion = "23.11";
