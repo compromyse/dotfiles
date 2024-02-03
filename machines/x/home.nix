@@ -16,6 +16,9 @@
     fd
     ripgrep
 
+    unzip
+    zip
+
     cinnamon.nemo
     mate.eom
 
