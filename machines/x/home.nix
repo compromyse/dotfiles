@@ -24,6 +24,7 @@
 
     spotify
     firefox
+    google-chrome
 
     obs-studio
 
@@ -32,6 +33,9 @@
     brillo
 
     wbg
+
+    ccls
+    nodePackages.pyright
   ];
 
   imports = (map (path: ../../config/${path}) [
