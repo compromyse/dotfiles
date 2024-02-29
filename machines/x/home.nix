@@ -19,8 +19,8 @@
     unzip
     zip
 
-    cinnamon.nemo
-    mate.eom
+    # cinnamon.nemo
+    # mate.eom
 
     spotify
     firefox
@@ -28,29 +28,27 @@
 
     obs-studio
 
-    pavucontrol
-    blueman
-    brillo
+    # pavucontrol
+    # blueman
+    # brillo
 
-    wbg
+    # wbg
+
+    kcalc
 
     ccls
+    rubocop
     nodePackages.pyright
+    git-lfs
   ];
 
   imports = (map (path: ../../config/${path}) [
-    "themes.nix"
+    # "themes.nix"
     "dotfiles.nix"
     "git"
     "nvim"
     "alacritty"
-    "dunst"
-    "swaylock"
-    "dwl.nix"
-    "way-displays"
     "bash.nix"
-    "fuzzel"
-    "waybar"
   ]);
 
   home.stateVersion = "23.11";

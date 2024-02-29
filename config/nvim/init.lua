@@ -37,6 +37,7 @@ require('packer').startup(function(use)
 	use 'hrsh7th/nvim-cmp'
 	use 'neovim/nvim-lspconfig'
   use 'hrsh7th/cmp-nvim-lsp-signature-help'
+  use 'L3MON4D3/LuaSnip'
   use {
 		'nvim-telescope/telescope.nvim',
 		requires = { {'nvim-lua/plenary.nvim'} }
@@ -84,6 +85,11 @@ require('Comment').setup {
 -- CMP Setup
 local cmp = require'cmp'
 cmp.setup({
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end
+  },
 	window = {
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
@@ -125,7 +131,7 @@ cmp.setup.cmdline(':', {
 -- Set Up Lspconfig
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-servers = { 'pyright', 'ccls', 'gopls' }
+servers = { 'pyright', 'ccls', 'gopls', 'rubocop' }
 for _, lsp in pairs(servers) do
   lspconfig[lsp].setup {
     capabilities = capabilities
