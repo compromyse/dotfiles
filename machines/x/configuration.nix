@@ -1,8 +1,6 @@
 { lib, inputs, pkgs, ... }:
 
-let
-  tlauncher = (pkgs.callPackage ../../packages/tlauncher.nix {});
-in {
+{
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
@@ -34,10 +32,6 @@ in {
   };
 
   networking.hostName = "x";
-
-  environment.systemPackages = [tlauncher];
-
-  virtualisation.lxd.enable = true;
 
   home-manager.users.compromyse = import ./home.nix;
   programs.steam.enable = true;

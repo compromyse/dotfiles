@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
-{
+let
+  tlauncher = (pkgs.callPackage ../../packages/tlauncher.nix {});
+in {
   nixpkgs.config.allowUnfree = true;
 
   home = {
@@ -8,7 +10,7 @@
     homeDirectory = "/home/compromyse";
   };
 
-  home.packages = with pkgs; [
+  home.packages =with pkgs; [
     wget
 
     tmux
@@ -40,7 +42,7 @@
     rubocop
     nodePackages.pyright
     git-lfs
-  ];
+  ] ++ [ tlauncher ];
 
   imports = (map (path: ../../config/${path}) [
     # "themes.nix"
