@@ -6,12 +6,12 @@
     inputs.home-manager.nixosModules.default
   ] ++ (map (path: ../../modules/${path}) [
     "global.nix"
+    "core/audio.nix"
+    "core/bluetooth.nix"
+    "core/fonts.nix"
+    "polkit.nix"
     "compromyse.nix"
     "login.nix"
-    "wm.nix"
-    "fonts.nix"
-    "bluetooth.nix"
-    "audio.nix"
     "virtualization.nix"
     "nvidia.nix"
   ]);
@@ -34,7 +34,6 @@
   networking.hostName = "x";
 
   home-manager.users.compromyse = import ./home.nix;
-  programs.steam.enable = true;
 
   networking.extraHosts =
   ''

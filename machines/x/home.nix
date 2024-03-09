@@ -37,8 +37,6 @@ in {
 
     wbg
 
-    kcalc
-
     ccls
     nodePackages.pyright
     git-lfs
@@ -46,14 +44,14 @@ in {
 
   imports = (map (path: ../../config/${path}) [
     "themes.nix"
-    "fuzzel"
-    "dunst"
-    "dwl.nix"
+    "bash.nix"
     "dotfiles.nix"
     "git"
     "nvim"
     "alacritty"
-    "bash.nix"
+    "dwl.nix"
+    "fuzzel"
+    "dunst"
   ]);
 
   home.stateVersion = "23.11";
