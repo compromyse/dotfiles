@@ -7,8 +7,8 @@
   ] ++ (map (path: ../../modules/${path}) [
     "global.nix"
     "compromyse.nix"
-    "plasma.nix"
     "login.nix"
+    "wm.nix"
     "fonts.nix"
     "bluetooth.nix"
     "audio.nix"
@@ -35,4 +35,9 @@
 
   home-manager.users.compromyse = import ./home.nix;
   programs.steam.enable = true;
+
+  networking.extraHosts =
+  ''
+    127.0.0.1 download.labsmartlis.local
+  '';
 }

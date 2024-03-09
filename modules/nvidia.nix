@@ -23,5 +23,5 @@
     };
   };
 
-  environment.systemPackages = [ pkgs.cudatoolkit ];
+  # environment.systemPackages = [ pkgs.cudatoolkit ];
 }

@@ -21,8 +21,8 @@ in {
     unzip
     zip
 
-    # cinnamon.nemo
-    # mate.eom
+    cinnamon.nemo
+    mate.eom
 
     spotify
     firefox
@@ -30,22 +30,25 @@ in {
 
     obs-studio
 
-    # pavucontrol
-    # blueman
-    # brillo
+    pavucontrol
+    brillo
+    playerctl
+    pamixer
 
-    # wbg
+    wbg
 
     kcalc
 
     ccls
-    rubocop
     nodePackages.pyright
     git-lfs
   ] ++ [ tlauncher ];
 
   imports = (map (path: ../../config/${path}) [
-    # "themes.nix"
+    "themes.nix"
+    "fuzzel"
+    "dunst"
+    "dwl.nix"
     "dotfiles.nix"
     "git"
     "nvim"
