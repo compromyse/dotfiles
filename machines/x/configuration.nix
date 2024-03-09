@@ -5,7 +5,7 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
   ] ++ (map (path: ../../modules/${path}) [
-    "global.nix"
+    "core/global.nix"
     "core/audio.nix"
     "core/bluetooth.nix"
     "core/fonts.nix"
