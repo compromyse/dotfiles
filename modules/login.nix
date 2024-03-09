@@ -10,7 +10,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "tuigreet --time --remember --cmd \"startplasma-wayland\"";
+        command = "tuigreet --time --remember --cmd \"dwl\"";
         user = "greeter";
       };
     };
