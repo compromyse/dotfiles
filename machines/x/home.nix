@@ -37,7 +37,7 @@ in {
     wbg
     wl-clipboard
 
-    bemenu
+    sway-launcher-desktop
 
     ccls
     nodePackages.pyright
