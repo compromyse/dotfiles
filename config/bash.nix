@@ -3,7 +3,6 @@
     enable = true;
     initExtra= ''
       export PS1="\[\e[38;5;243m\]\h \[\e[38;5;254m\]\w \[\033[0m\]> "
-      set -o vi
       bind "set completion-ignore-case on"
 
       if [[ -n "$IN_NIX_SHELL" ]]; then
