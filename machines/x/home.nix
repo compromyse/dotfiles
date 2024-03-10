@@ -31,8 +31,7 @@ in {
     obs-studio
 
     pavucontrol
-    brillo
-    playerctl
+    brightnessctl
     pamixer
 
     wbg

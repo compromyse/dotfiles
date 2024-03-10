@@ -12,6 +12,7 @@
     "polkit.nix"
     "compromyse.nix"
     "login.nix"
+    "wm_utils.nix"
     "virtualization.nix"
     "nvidia.nix"
   ]);
