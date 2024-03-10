@@ -35,6 +35,9 @@ in {
     pamixer
 
     wbg
+    wl-clipboard
+
+    bemenu
 
     ccls
     nodePackages.pyright
@@ -51,7 +54,6 @@ in {
     "dwl.nix"
     "way-displays"
     "swaylock"
-    "fuzzel"
     "dunst"
   ]);
 
