@@ -6,6 +6,7 @@
 , fetchurl
 , copyDesktopItems
 }:
+
 let
   version = "2.895";
   src = stdenv.mkDerivation {

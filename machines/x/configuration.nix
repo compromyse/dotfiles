@@ -6,6 +6,7 @@
     inputs.home-manager.nixosModules.default
   ] ++ (map (path: ../../modules/${path}) [
     "core/global.nix"
+    "nvidia.nix"
     "core/audio.nix"
     "core/bluetooth.nix"
     "core/fonts.nix"
@@ -14,7 +15,6 @@
     "login.nix"
     "wm_utils.nix"
     "virtualization.nix"
-    "nvidia.nix"
   ]);
 
   boot.loader.systemd-boot.enable = true;
@@ -24,8 +24,6 @@
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = _: true;
-
-  hardware.opengl.enable = true;
 
   fileSystems."/data" = {
     device = "/dev/sda";
