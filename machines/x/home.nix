@@ -22,7 +22,7 @@ in {
     zip
 
     cinnamon.nemo
-    mate.eom
+    imv
 
     spotify
     firefox
