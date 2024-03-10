@@ -10,7 +10,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "tuigreet --time --remember --cmd \"dwl\"";
+        command = "tuigreet --time --remember --cmd \"dwl -s dwlb\"";
         user = "greeter";
       };
     };

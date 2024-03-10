@@ -24,7 +24,7 @@ in {
     cinnamon.nemo
     mate.eom
 
-    # spotify
+    spotify
     firefox
     google-chrome
 
