@@ -49,6 +49,8 @@ in {
     "nvim"
     "alacritty"
     "dwl.nix"
+    "way-displays"
+    "swaylock"
     "fuzzel"
     "dunst"
   ]);
