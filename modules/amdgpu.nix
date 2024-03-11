@@ -10,6 +10,8 @@
   hardware.opengl.extraPackages = with pkgs; [
     rocmPackages.clr.icd
     amdvlk
+    vaapiVdpau
+    libvdpau-va-gl
   ];
 
   hardware.opengl.extraPackages32 = with pkgs; [
@@ -18,11 +20,6 @@
 
   services.xserver.videoDrivers = [ "amdgpu" ];
   boot.initrd.kernelModules = [ "amdgpu" ];
-
-  opengl.extraPackages = with pkgs; [
-    vaapiVdpau
-    libvdpau-va-gl
-  ];
 
   systemd.tmpfiles.rules = [
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
