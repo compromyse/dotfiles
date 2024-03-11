@@ -6,6 +6,7 @@
     inputs.home-manager.nixosModules.default
   ] ++ (map (path: ../../modules/${path}) [
     "core/global.nix"
+    "amdgpu.nix"
     "nvidia.nix"
     "core/audio.nix"
     "core/bluetooth.nix"
