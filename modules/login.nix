@@ -10,7 +10,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "tuigreet --time --remember --cmd \"dwl -s dwlb\"";
+        command = "tuigreet --time --remember --cmd \"dwm\"";
         user = "greeter";
       };
     };
@@ -31,10 +31,6 @@
   };
 
   security.polkit.enable = true;
-
-  security.pam.services.swaylock.text = ''
-    auth include login
-  '';
 
   services.xserver.libinput.enable = true;
 

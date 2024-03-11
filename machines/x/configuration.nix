@@ -42,6 +42,25 @@
 
   home-manager.users.compromyse = import ./home.nix;
 
+  environment.systemPackages = with pkgs; [
+    xorg.xorgserver
+    xorg.xf86inputevdev
+    xorg.xf86inputsynaptics
+    xorg.xf86inputlibinput
+  ];
+
+  services.xserver.enable = true;
+  services.xserver.displayManager.startx.enable = true;
+  services.xserver.windowManager.dwm.enable = true;
+  services.xserver.windowManager.dwm.package = pkgs.dwm.overrideAttrs {
+    src = pkgs.fetchFromGitHub {
+      owner = "compromyse";
+      repo = "dwm";
+      rev = "master";
+      hash = "sha256-bYj9u0EBfpTcpJHzeaCp3mm6tSy9dz40y+X15R0WbUs=";
+    };
+  };
+
   networking.extraHosts =
   ''
     127.0.0.1 download.labsmartlis.local
