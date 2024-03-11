@@ -7,6 +7,7 @@
   ] ++ (map (path: ../../modules/${path}) [
     "core/global.nix"
     "amdgpu.nix"
+    "amd.nix"
     "nvidia.nix"
     "core/audio.nix"
     "core/bluetooth.nix"
