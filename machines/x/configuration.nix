@@ -9,6 +9,7 @@
     "amdgpu.nix"
     "amd.nix"
     "nvidia.nix"
+    "passthrough.nix"
     "core/audio.nix"
     "core/bluetooth.nix"
     "core/fonts.nix"
@@ -34,8 +35,8 @@
     settings = {
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-    }
-  }
+    };
+  };
 
   networking.hostName = "x";
 
