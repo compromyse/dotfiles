@@ -15,7 +15,6 @@ vim.opt.scrolloff = 5
 vim.opt.mouse = 'a'
 vim.api.nvim_set_option('clipboard','unnamedplus')
 vim.opt.ruler = false
-vim.cmd.colorscheme('rasmus')
 
 -- Reset Cursor On Exit
 local au_id = vim.api.nvim_create_augroup('RestoreCursorShapeOnExit', {clear = true})
@@ -201,3 +200,5 @@ vim.keymap.set('n', '<A-a>', '<cmd>lua oil.toggle_float()<cr>', { noremap = true
 -- Splitting The Window
 vim.api.nvim_set_keymap('n', '<A-\\>', ':vsplit<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<A-->', ':split<CR>', { noremap = true })
+
+vim.cmd.colorscheme('rasmus')
