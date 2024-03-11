@@ -18,10 +18,12 @@
     driversi686Linux.amdvlk
   ];
 
-  services.xserver.videoDrivers = [ "amdgpu" ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  services.xserver.videoDrivers = [ "modesetting" ];
 
   systemd.tmpfiles.rules = [
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
+
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelParams = [ "pcie_acs_override=downstream,multifunction"];
 }
