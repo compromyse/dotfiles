@@ -35,6 +35,7 @@ in {
     pamixer
 
     wbg
+    wl-clipboard
 
     sway-launcher-desktop
 
@@ -50,8 +51,9 @@ in {
     "git"
     "nvim"
     "alacritty"
-    "dwm.nix"
-    "rofi"
+    "dwl.nix"
+    "way-displays"
+    "swaylock"
     "dunst"
   ]);
 
