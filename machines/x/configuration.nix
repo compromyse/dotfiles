@@ -13,10 +13,8 @@
     "core/audio.nix"
     "core/bluetooth.nix"
     "core/fonts.nix"
-    "polkit.nix"
     "compromyse.nix"
     "login.nix"
-    "wm_utils.nix"
     "virtualization.nix"
   ]);
 
@@ -30,17 +28,15 @@
 
   services.fstrim.enable = true;
 
-  services.tlp = {
-    enable = true;
-    settings = {
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-    };
-  };
-
   networking.hostName = "x";
 
   home-manager.users.compromyse = import ./home.nix;
+  services.xserver.desktopManager.plasma6.enable = true;
+
+  environment.plasma5.excludePackages = with pkgs.kdePackages; [
+    konsole
+    oxygen
+  ];
 
   networking.extraHosts =
   ''

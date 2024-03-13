@@ -21,7 +21,6 @@ in {
     unzip
     zip
 
-    cinnamon.nemo
     imv
 
     spotify
@@ -30,14 +29,7 @@ in {
 
     obs-studio
 
-    pavucontrol
-    brightnessctl
-    pamixer
-
-    wbg
     wl-clipboard
-
-    sway-launcher-desktop
 
     ccls
     nodePackages.pyright
@@ -45,16 +37,11 @@ in {
   ] ++ [ tlauncher ];
 
   imports = (map (path: ../../config/${path}) [
-    "themes.nix"
     "bash.nix"
     "dotfiles.nix"
     "git"
     "nvim"
     "alacritty"
-    "dwl.nix"
-    "way-displays"
-    "swaylock"
-    "dunst"
   ]);
 
   home.stateVersion = "23.11";
