@@ -9,13 +9,13 @@
     "amdgpu.nix"
     "amd.nix"
     "nvidia.nix"
-    "passthrough.nix"
     "core/audio.nix"
     "core/bluetooth.nix"
     "core/fonts.nix"
     "compromyse.nix"
     "login.nix"
     "virtualization.nix"
+    "passthrough.nix"
   ]);
 
   boot.loader.systemd-boot.enable = true;
