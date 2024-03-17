@@ -31,12 +31,7 @@
   networking.hostName = "x";
 
   home-manager.users.compromyse = import ./home.nix;
-  services.xserver.desktopManager.plasma6.enable = true;
-
-  environment.plasma5.excludePackages = with pkgs.kdePackages; [
-    konsole
-    oxygen
-  ];
+  services.desktopManager.plasma6.enable = true;
 
   networking.extraHosts =
   ''

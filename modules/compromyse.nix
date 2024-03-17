@@ -5,6 +5,6 @@
     initialPassword = "changeme";
     isNormalUser = true;
     # openssh.authorizedKeys.keys = [];
-    extraGroups = [ "wheel" "video" "storage" "input" "plugdev" "libvirtd" "docker" ];
+    extraGroups = [ "wheel" "video" "storage" "input" "plugdev" "libvirtd" "docker" "kvm" ];
   };
 }

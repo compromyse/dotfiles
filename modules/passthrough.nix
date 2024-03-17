@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     supergfxctl
+    lsof
   ];
 
   services.supergfxd.enable = true;
