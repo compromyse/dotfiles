@@ -10,7 +10,7 @@
       fi
 
       sessionizer() {
-        DIR=$(fd . /data --type d -L -H | fzf)
+        DIR=$(fd . /home/compromyse --type d -L -d 3 | fzf)
         SESSION_NAME="$DIR_$(date +%M%S)"
 
         if [ -n "$DIR" ]
@@ -35,8 +35,8 @@
         sessionizer
       fi
 
-      bind '"\C-f": "sessionizer\n"'
-      bind '"\C-a": "sessionizer -cd\n"'
+      bind '"\C-g": "sessionizer\n"'
+      bind '"\C-f": "sessionizer -cd\n"'
     '';
   };
 }
