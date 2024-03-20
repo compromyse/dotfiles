@@ -15,7 +15,6 @@
     "compromyse.nix"
     "login.nix"
     "virtualization.nix"
-    "passthrough.nix"
   ]);
 
   boot.loader.systemd-boot.enable = true;
