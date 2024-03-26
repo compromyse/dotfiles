@@ -18,6 +18,7 @@ in {
   time.timeZone = "Asia/Kolkata";
 
   networking.networkmanager.enable = true;
+  networking.firewall.enable = false;
 
   security.rtkit.enable = true;
 
