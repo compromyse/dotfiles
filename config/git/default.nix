@@ -12,6 +12,7 @@
          process = "${pkgs.git-lfs}/bin/git-lfs filter-process --skip";
          required = true;
       };
+      push = { autoSetupRemote = true; };
     };
   };
 }

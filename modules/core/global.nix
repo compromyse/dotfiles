@@ -11,6 +11,8 @@ in {
     nixPath = [ "nixpkgs=${nix_path}" ];
   };
 
+  boot.kernelParams = [ "quiet" "splash" ];
+
   systemd.tmpfiles.rules = [
     "L+ ${nix_path} - - - - ${pkgs.path}"
   ];

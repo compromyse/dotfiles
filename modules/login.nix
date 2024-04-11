@@ -32,9 +32,9 @@
 
   security.polkit.enable = true;
 
-  security.pam.services.swaylock.text = ''
+  /* security.pam.services.swaylock.text = ''
     auth include login
-  '';
+  ''; */
 
   services.xserver.libinput.enable = true;
 
