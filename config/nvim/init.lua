@@ -130,7 +130,7 @@ cmp.setup.cmdline(':', {
 -- Set Up Lspconfig
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-servers = { 'pyright', 'ccls', 'gopls', 'rubocop' }
+servers = { 'pyright', 'ccls', 'gopls' }
 for _, lsp in pairs(servers) do
   lspconfig[lsp].setup {
     capabilities = capabilities

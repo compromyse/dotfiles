@@ -18,7 +18,7 @@
     driversi686Linux.amdvlk
   ];
 
-  services.xserver.videoDrivers = [ "modeset" ];
+  services.xserver.videoDrivers = [ "modesetting" ];
 
   systemd.tmpfiles.rules = [
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
