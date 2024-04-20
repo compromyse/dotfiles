@@ -37,6 +37,8 @@
 
       bind '"\C-g": "sessionizer\n"'
       bind '"\C-f": "sessionizer -cd\n"'
+
+      alias c="ssh root@cacer.local"
     '';
   };
 }

@@ -35,5 +35,6 @@
   networking.extraHosts =
   ''
     127.0.0.1 download.labsmartlis.local
+    192.168.1.186 cacer.local
   '';
 }
