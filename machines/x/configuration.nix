@@ -31,10 +31,20 @@
 
   home-manager.users.compromyse = import ./home.nix;
   services.desktopManager.plasma6.enable = true;
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    konsole
+    oxygen
+    ark
+    elisa
+    gwenview
+    kate
+  ];
 
   networking.extraHosts =
   ''
     127.0.0.1 download.labsmartlis.local
-    192.168.1.186 cacer.local
+    192.168.1.186 cacer.local c
+    192.168.1.16  ub1.local
+    192.168.1.17  ub2.local
   '';
 }

@@ -30,6 +30,9 @@ require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
   use 'numToStr/Comment.nvim'
 
+  use 'romgrk/barbar.nvim'
+  use 'nvim-tree/nvim-web-devicons'
+
   use 'kvrohit/rasmus.nvim'
 
 	use 'hrsh7th/cmp-nvim-lsp'
@@ -201,4 +204,18 @@ vim.keymap.set('n', '<A-a>', '<cmd>lua oil.toggle_float()<cr>', { noremap = true
 vim.api.nvim_set_keymap('n', '<A-\\>', ':vsplit<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<A-->', ':split<CR>', { noremap = true })
 
+require('barbar').setup {}
+
 vim.cmd.colorscheme('rasmus')
+
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+
+-- Move to previous/next
+map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
+map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
+-- Re-order to previous/next
+map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
+map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
+-- Close buffer
+map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)

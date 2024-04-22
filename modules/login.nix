@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
+  /* environment.systemPackages = with pkgs; [
     greetd.tuigreet
     greetd.greetd
   ];
@@ -14,13 +14,20 @@
         user = "greeter";
       };
     };
+  }; */
+  services.displayManager.sddm = {
+    enable = true;
+    wayland = {
+      enable = true;
+      compositor = "kwin";
+    };
   };
 
   services.logind.extraConfig = ''
     HandlePowerKey=ignore
   '';
 
-  systemd.services.greetd.serviceConfig = {
+  /* systemd.services.greetd.serviceConfig = {
     Type = "idle";
     StandardInput = "tty";
     StandardOutput = "tty";
@@ -28,7 +35,7 @@
     TTYReset = true;
     TTYVHangup = true;
     TTYVTDisallocate = true;
-  };
+  }; */
 
   security.polkit.enable = true;
 
