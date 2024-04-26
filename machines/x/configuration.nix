@@ -44,7 +44,5 @@
   ''
     127.0.0.1 download.labsmartlis.local
     192.168.1.186 cacer.local c
-    192.168.1.16  ub1.local
-    192.168.1.17  ub2.local
   '';
 }

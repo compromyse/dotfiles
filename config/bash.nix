@@ -39,8 +39,6 @@
       bind '"\C-f": "sessionizer -cd\n"'
 
       alias c="ssh root@cacer.local"
-      alias ub1="ssh ubuntu@ub1.local"
-      alias ub2="ssh ubuntu@ub2.local"
     '';
   };
 }
