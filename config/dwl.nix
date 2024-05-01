@@ -5,8 +5,8 @@ let
   dwlb = (pkgs.callPackage ../packages/dwlb.nix {});
 in {
   xdg.portal.enable = true;
-  xdg.portal.configPackages = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
+  xdg.portal.configPackages = [ pkgs.xdg-desktop-portal pkgs.xdg-desktop-portal-wlr ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal pkgs.xdg-desktop-portal-wlr ];
 
   home.packages = [ dwl dwlb ];
 }

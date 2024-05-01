@@ -7,6 +7,8 @@
 , wayland-protocols
 , pixman
 , fcft
+, gtk4
+, gtk4-layer-shell
 , pkg-config
 , writeText
 }:
@@ -18,8 +20,8 @@ stdenv.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "compromyse";
     repo = "dwlb";
-    rev = "master";
-    hash = "sha256-AI2tkPkr1BSErmDBwreFRaGMjOnmNBi2uEre6uAONPg=";
+    rev = "systray";
+    hash = "sha256-qnAWiU7O4+u0jOp659olCO7f6Pq2kgIK7BLTfnICP0o=";
   };
 
   nativeBuildInputs = [
@@ -33,6 +35,8 @@ stdenv.mkDerivation (finalAttrs: {
     wayland
     wayland-protocols
     fcft
+    gtk4
+    gtk4-layer-shell
   ];
 
   outputs = [ "out" "man" ];

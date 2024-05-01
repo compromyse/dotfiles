@@ -12,8 +12,10 @@
     "core/audio.nix"
     "core/bluetooth.nix"
     "core/fonts.nix"
+    "wm_utils.nix"
     "compromyse.nix"
     "login.nix"
+    "polkit.nix"
     "virtualization.nix"
   ]);
 
@@ -30,15 +32,6 @@
   networking.hostName = "x";
 
   home-manager.users.compromyse = import ./home.nix;
-  services.desktopManager.plasma6.enable = true;
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    konsole
-    oxygen
-    ark
-    elisa
-    gwenview
-    kate
-  ];
 
   networking.extraHosts =
   ''

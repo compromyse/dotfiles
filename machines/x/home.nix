@@ -41,6 +41,13 @@ in {
     "dotfiles.nix"
     "git"
     "nvim"
+
+    "dwl.nix"
+    "themes.nix"
+    "way-displays"
+    "swaylock"
+    "dunst"
+
     "alacritty"
   ]);
 

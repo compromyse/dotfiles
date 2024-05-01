@@ -10,5 +10,10 @@
     inotify-tools
 
     wirelesstools
+    pamixer
+    wbg
+    networkmanagerapplet
+
+    sway-launcher-desktop
   ];
 }
