@@ -9,6 +9,7 @@
     "amdgpu.nix"
     "amd.nix"
     "nvidia.nix"
+    "laptop.nix"
     "core/audio.nix"
     "core/bluetooth.nix"
     "core/fonts.nix"
@@ -32,6 +33,10 @@
   networking.hostName = "x";
 
   home-manager.users.compromyse = import ./home.nix;
+
+  xdg.portal.enable = true;
+  xdg.portal.wlr.enable = true;
+  xdg.portal.config.common.default = "*";
 
   networking.extraHosts =
   ''

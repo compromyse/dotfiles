@@ -16,4 +16,6 @@
 
     sway-launcher-desktop
   ];
+
+  services.dbus.enable = true;
 }
