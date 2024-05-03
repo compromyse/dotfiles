@@ -11,6 +11,7 @@
 
     wirelesstools
     pamixer
+    brightnessctl
     wbg
     networkmanagerapplet
 
