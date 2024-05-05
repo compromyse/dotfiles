@@ -38,6 +38,10 @@
   xdg.portal.wlr.enable = true;
   xdg.portal.config.common.default = "*";
 
+  environment.variables = {
+    XCURSOR_SIZE = "16";
+  };
+
   networking.extraHosts =
   ''
     127.0.0.1 download.labsmartlis.local

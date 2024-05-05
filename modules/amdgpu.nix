@@ -24,6 +24,6 @@
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.kernelParams = [ "pcie_acs_override=downstream,multifunction"];
+  boot.kernelPackages = pkgs.linuxPackages_xanmod;
+  boot.kernelParams = [ "pcie_acs_override=downstream,multifunction" ];
 }

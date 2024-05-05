@@ -77,10 +77,12 @@ require('ibl').setup()
 require('Comment').setup {
 	padding = true,
 		toggler = {
-			line = '\\\\'
+			line = '\\\\',
+      block = ']]'
 		},
     opleader = {
-      block = '\\\\'
+      line = '\\\\',
+      block = ']]'
     }
 }
 

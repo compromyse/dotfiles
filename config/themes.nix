@@ -5,7 +5,7 @@
     gtk.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
-    size = 24;
+    size = 16;
   };
 
   gtk = {
@@ -15,6 +15,10 @@
     iconTheme = { name = "Papirus-Dark"; package = pkgs.papirus-icon-theme; };
 
     font = { name = "UbuntuMono Nerd Font Mono"; };
+
+    gtk3.extraConfig = {
+      gtk-decoration-layout = "appmenu:none";
+    };
   };
 
   qt = {
