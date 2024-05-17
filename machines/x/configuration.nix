@@ -34,10 +34,6 @@
 
   home-manager.users.compromyse = import ./home.nix;
 
-  xdg.portal.enable = true;
-  xdg.portal.wlr.enable = true;
-  xdg.portal.config.common.default = "*";
-
   environment.variables = {
     XCURSOR_SIZE = "16";
   };

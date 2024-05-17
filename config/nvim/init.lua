@@ -1,6 +1,6 @@
 -- General Settings
 vim.opt.number = true
-vim.opt.mouse = ''
+vim.opt.mouse= ''
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = false
@@ -12,7 +12,7 @@ vim.opt.expandtab = true
 vim.opt.termguicolors = true
 vim.opt.splitbelow = true
 vim.opt.scrolloff = 5
-vim.opt.mouse = 'a'
+vim.opt.mouse= 'a'
 vim.api.nvim_set_option('clipboard','unnamedplus')
 vim.opt.ruler = false
 
@@ -24,41 +24,42 @@ vim.api.nvim_create_autocmd('VimLeave',{
 })
 
 -- Setup Packages
-require('packer').startup(function(use)
-	use 'wbthomason/packer.nvim'
-	use 'lukas-reineke/indent-blankline.nvim'
-  use 'windwp/nvim-autopairs'
-  use 'numToStr/Comment.nvim'
-
-  use 'romgrk/barbar.nvim'
-  use 'nvim-tree/nvim-web-devicons'
-
-  use 'kvrohit/rasmus.nvim'
-
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/nvim-cmp'
-	use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/cmp-nvim-lsp-signature-help'
-  use 'L3MON4D3/LuaSnip'
-  use {
-		'nvim-telescope/telescope.nvim',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
-
-  use 'stevearc/oil.nvim'
-
-  use 'akinsho/toggleterm.nvim'
-  use 'christoomey/vim-tmux-navigator'
-
-	if install_plugins then
-		require('packer').sync()
-	end
-end)
-
-if install_plugins then
-  return
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
+require("lazy").setup({
+	'lukas-reineke/indent-blankline.nvim',
+  'windwp/nvim-autopairs',
+  'numToStr/Comment.nvim',
+
+  'romgrk/barbar.nvim',
+  'nvim-tree/nvim-web-devicons',
+
+  'kvrohit/rasmus.nvim',
+
+	'hrsh7th/cmp-nvim-lsp',
+	'hrsh7th/nvim-cmp',
+	'neovim/nvim-lspconfig',
+  'hrsh7th/cmp-nvim-lsp-signature-help',
+  'L3MON4D3/LuaSnip',
+  'nvim-telescope/telescope.nvim',
+  'nvim-lua/plenary.nvim',
+
+  'stevearc/oil.nvim',
+
+  'akinsho/toggleterm.nvim',
+  'christoomey/vim-tmux-navigator'
+})
 
 local oil = require('oil')
 _G.oil = oil
