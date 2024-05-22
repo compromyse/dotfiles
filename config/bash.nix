@@ -16,15 +16,14 @@
         if [ -n "$DIR" ]
         then
           if [ -f "$DIR/flake.nix" ]; then
-            cd "$DIR" || exit
+            cd $DIR || exit
             nix develop
+          fi
+          tmux new-session -d -c "$DIR" -s "$SESSION_NAME"
+          if [ -n "$TMUX" ]; then
+            tmux switch -t "$SESSION_NAME"
           else
-            tmux new-session -d -c "$DIR" -s "$SESSION_NAME"
-            if [ -n "$TMUX" ]; then
-              tmux switch -t "$SESSION_NAME"
-            else
-              tmux attach -t "$SESSION_NAME"
-            fi
+            tmux attach -t "$SESSION_NAME"
           fi
         fi
       }
