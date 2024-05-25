@@ -24,6 +24,10 @@
     git-lfs
   ];
 
+  programs.bash.initExtra = ''
+    . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+  '';
+
   imports = (map (path: ../../config/${path}) [
     "bash.nix"
     "dotfiles.nix"
