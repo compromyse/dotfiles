@@ -4,8 +4,8 @@
   nixpkgs.config.allowUnfree = true;
 
   home = {
-    username = "docker";
-    homeDirectory = "/home/docker";
+    username = "compromyse";
+    homeDirectory = "/home/compromyse";
   };
 
   home.packages = with pkgs; [
