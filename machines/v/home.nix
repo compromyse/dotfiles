@@ -26,6 +26,7 @@
 
   programs.bash.initExtra = ''
     . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+    alias ls="ls --color=auto"
   '';
 
   imports = (map (path: ../../config/${path}) [
