@@ -15,6 +15,7 @@
   outputs = { self, nixpkgs, ... }@inputs: {
     # nixos-rebuild --flake .#machine
     nixosConfigurations = {
+
       x = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
@@ -23,6 +24,7 @@
           inputs.home-manager.nixosModules.default
         ];
       };
+
     };
   };
 }
