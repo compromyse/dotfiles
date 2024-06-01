@@ -19,6 +19,7 @@ in {
 
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;
+  networking.nameservers = [ "1.1.1.1" ];
 
   security.rtkit.enable = true;
 
