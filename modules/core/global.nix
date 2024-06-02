@@ -11,6 +11,8 @@ in {
     nixPath = [ "nixpkgs=${nix_path}" ];
   };
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   systemd.tmpfiles.rules = [
     "L+ ${nix_path} - - - - ${pkgs.path}"
   ];
