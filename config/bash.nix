@@ -3,7 +3,7 @@
     enable = true;
     initExtra= ''
       function timer_start {
-        timer=$\{timer:-$SECONDS}
+        timer=''${timer:-$SECONDS}
       }
 
       function timer_stop {
@@ -18,7 +18,7 @@
       else
         PROMPT_COMMAND="$PROMPT_COMMAND; timer_stop"
       fi
-      export PS1='\[\e[38;5;243m\]($\{timer_show}s) \h \[\e[38;5;254m\]\w \[\033[0m\]> '
+      export PS1='\[\e[38;5;243m\](''${timer_show}s) \h \[\e[38;5;254m\]\w \[\033[0m\]> '
 
       bind "set completion-ignore-case on"
 
@@ -32,16 +32,7 @@
 
         if [ -n "$DIR" ]
         then
-          if [ -f "$DIR/flake.nix" ]; then
-            cd $DIR || exit
-            nix develop
-          fi
-          tmux new-session -d -c "$DIR" -s "$SESSION_NAME"
-          if [ -n "$TMUX" ]; then
-            tmux switch -t "$SESSION_NAME"
-          else
-            tmux attach -t "$SESSION_NAME"
-          fi
+          cd $DIR
         fi
       }
 
@@ -50,10 +41,7 @@
         sessionizer
       fi
 
-      bind '"\C-g": "sessionizer\n"'
-      bind '"\C-f": "sessionizer -cd\n"'
-
-      alias c="ssh root@cacer.local"
+      bind '"\C-f": "sessionizer\n"'
     '';
   };
 }
