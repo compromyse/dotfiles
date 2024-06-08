@@ -34,8 +34,6 @@ in {
     ccls
     nodePackages.pyright
     git-lfs
-
-    vagrant
   ] ++ [ tlauncher ];
 
   imports = (map (path: ../../config/${path}) [
