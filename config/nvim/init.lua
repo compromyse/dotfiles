@@ -57,7 +57,6 @@ require("lazy").setup({
 
   'stevearc/oil.nvim',
 
-  'akinsho/toggleterm.nvim',
   'christoomey/vim-tmux-navigator'
 })
 
@@ -66,7 +65,7 @@ _G.oil = oil
 oil.setup {
   default_file_explorer = true,
   columns = {
-    'icon',
+    'icon'
   },
   view_options = {
     show_hidden = true
@@ -160,12 +159,6 @@ telescope.setup({
   },
 })
 
--- Set Up ToggleTerm
-require('toggleterm').setup {
-  direction = 'horizontal',
-  size = math.floor(0.8 * vim.api.nvim_win_get_height(0))
-}
-
 -- Set Up Autopairs
 require('nvim-autopairs').setup({ map_cr = true })
 
@@ -188,10 +181,6 @@ vim.keymap.set('n', '\\d', vim.lsp.buf.definition, { noremap = true })
 vim.keymap.set('n', '\\f', vim.lsp.buf.declaration, { noremap = true })
 
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true })
-
-vim.keymap.set('n', '<A-y>', '<cmd>ToggleTerm<cr>', { noremap = true })
-vim.keymap.set('t', '<A-y>', '<cmd>ToggleTerm<cr>', { noremap = true })
-vim.keymap.set('t', '<A-y>', '<cmd>ToggleTerm<cr>', { noremap = true })
 
 vim.keymap.set('n', '<A-n>', '<cmd>bnext<cr>', { noremap = true })
 vim.keymap.set('n', '<A-p>', '<cmd>bprev<cr>', { noremap = true })
