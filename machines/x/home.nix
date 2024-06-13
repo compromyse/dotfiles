@@ -32,7 +32,7 @@ in {
     wl-clipboard
 
     ccls
-    nodePackages.pyright
+    pyright
     git-lfs
   ] ++ [ tlauncher ];
 

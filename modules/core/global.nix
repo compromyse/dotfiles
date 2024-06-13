@@ -11,10 +11,15 @@ in {
     nixPath = [ "nixpkgs=${nix_path}" ];
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   systemd.tmpfiles.rules = [
     "L+ ${nix_path} - - - - ${pkgs.path}"
+  ];
+
+  environment.systemPackages = with pkgs; [
+    man-pages
+    man-pages-posix
   ];
 
   time.timeZone = "Asia/Kolkata";
