@@ -20,7 +20,7 @@
     zip
 
     ccls
-    nodePackages.pyright
+    pyright
     git-lfs
   ];
 

@@ -45,18 +45,21 @@
     '')
   ];
 
-  # boot.kernelPatches = [
-  #   {
-  #     # https://github.com/Kinsteen/win10-gpu-passthrough/blob/main/pat_patch.diff
-  #     name = "disable-pat-check";
-  #     patch = ../dist/disable-pat-check.patch;
-  #   }
-  #   {
-  #     # https://aur.archlinux.org/cgit/aur.git/tree/1001-6.8.0-add-acs-overrides.patch?h=linux-vfio
-  #     name = "acso";
-  #     patch = ../dist/acso.patch;
-  #   }
-  # ];
+  # Use the custom kernel package set
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.kernelParams = [ /* "skippatcheck" */ "pcie_acs_override=downstream,multifunction" ];
+  boot.kernelPatches = [
+    {
+      # https://github.com/Kinsteen/win10-gpu-passthrough/blob/main/pat_patch.diff
+      name = "disable-pat-check";
+      patch = ../dist/disable-pat-check.patch;
+    }
+    {
+      # https://aur.archlinux.org/cgit/aur.git/tree/1001-6.8.0-add-acs-overrides.patch?h=linux-vfio
+      name = "acso";
+      patch = ../dist/acso.patch;
+    }
+  ];
+
+  boot.kernelParams = [ "skippatcheck" "pcie_acs_override=downstream,multifunction" ];
 }

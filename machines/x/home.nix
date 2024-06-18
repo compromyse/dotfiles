@@ -34,6 +34,8 @@ in {
     ccls
     pyright
     git-lfs
+
+    slides
   ] ++ [ tlauncher ];
 
   imports = (map (path: ../../config/${path}) [

@@ -162,9 +162,6 @@ telescope.setup({
 -- Set Up Autopairs
 require('nvim-autopairs').setup({ map_cr = true })
 
--- Set Up Compile.lua
-require('compile')
-
 -- Keyboard Shortcuts
 vim.keymap.set('n', 'P', '<cmd>pu<cr>', { noremap = true })
 
