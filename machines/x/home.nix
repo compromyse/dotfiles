@@ -31,8 +31,9 @@ in {
 
     wl-clipboard
 
+    clang-tools
     ccls
-    pyright
+    ruff-lsp
     git-lfs
 
     slides
@@ -42,6 +43,7 @@ in {
     "bash.nix"
     "dotfiles.nix"
     "git"
+    "emacs"
     "nvim"
 
     "dwl.nix"
