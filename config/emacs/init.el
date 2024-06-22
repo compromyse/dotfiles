@@ -32,25 +32,48 @@
 (delete-selection-mode 1)
 (save-place-mode 1)
 
-(global-set-key (kbd "M-o") 'other-window)
-(global-set-key (kbd "M-z") 'ibuffer)
+(global-set-key (kbd "C-h") 'windmove-left)
+(global-set-key (kbd "C-j") 'windmove-down)
+(global-set-key (kbd "C-k") 'windmove-up)
+(global-set-key (kbd "C-l") 'windmove-right)
+
+(global-set-key (kbd "M--") 'split-window-below)
+(global-set-key (kbd "M-\\") 'split-window-right)
 (global-set-key (kbd "M-d") 'dired-jump)
+(global-set-key (kbd "M-n") 'next-buffer)
+(global-set-key (kbd "M-b") 'previous-buffer)
 (global-set-key (kbd "M-k") 'kill-buffer)
+(global-set-key (kbd "M-q") 'delete-window)
 (global-set-key (kbd "M-t") 'eshell)
 (global-set-key (kbd "M-c") 'comment-line)
 
 (global-set-key (kbd "M-RET") 'compile)
 
-(defun display-flycheck-errors-bottom (buffer _action)
+(defun show-flycheck-errors (buffer _action)
   (let ((window (display-buffer-in-side-window
-                 buffer '((side . bottom) (slot . 0) (window-height . 0.25)))))
+                 buffer '((side . bottom) (slot . 0) (window-height . 0.25) (window-width . 0.75)))))
+    (select-window window)
+    window))
+
+(defun show-buffers (buffer _action)
+  (let ((window (display-buffer-in-side-window
+                 buffer '((side . bottom) (slot . 1) (window-height . 0.25) (window-width . 0.25)))))
     (select-window window)
     window))
 
 (add-to-list 'display-buffer-alist
-             '("^\\*Flycheck errors\\*$" . (display-flycheck-errors-bottom)))
+		'("^\\*Flycheck errors\\*$" . (show-flycheck-errors)))
+
+(add-to-list 'display-buffer-alist
+             '("^\\*Ibuffer\\*$" . (show-buffers)))
 
 (global-set-key (kbd "M-e") 'flycheck-list-errors)
+(global-set-key (kbd "M-z") 'ibuffer-list-buffers)
+
+(setq ibuffer-mode-hook '(ibuffer-auto-mode))
+(setq ibuffer-formats
+      '((mark modified read-only locked " "
+              (name 35 35 :left :elide))))
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
