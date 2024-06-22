@@ -2,17 +2,40 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 (custom-set-variables
- '(package-selected-packages '(fzf kaolin-themes evil flycheck lsp-mode cmake-mode)))
+ '(package-selected-packages '(fzf kaolin-themes evil popper flycheck lsp-mode cmake-mode nix-mode)))
 
 (global-flycheck-mode 1)
 (add-hook 'python-mode-hook #'lsp-deferred)
 (add-hook 'c-mode-hook #'lsp-deferred)
 (add-hook 'c++-mode-hook #'lsp-deferred)
 
+(require 'popper)
+(setq popper-reference-buffers
+      '("\\*Messages\\*"
+        "Output\\*$"
+        "\\*Async Shell Command\\*"
+        help-mode
+        compilation-mode))
+(popper-mode 1)
+(global-set-key (kbd "M-`") 'popper-toggle)
+(global-set-key (kbd "C-`") 'popper-cycle)
+(global-set-key (kbd "s-`") 'popper-toggle-type)
+
 (setq evil-want-C-u-scroll t)
 (setq evil-undo-system 'undo-redo)
+(setq evil-emacs-state-modes nil)
+(setq evil-insert-state-modes nil)
+(setq evil-motion-state-modes nil)
 (require 'evil)
 (evil-mode 1)
+
+(global-set-key (kbd "M-<") 'tab-bar-switch-to-prev-tab)
+(global-set-key (kbd "M->") 'tab-bar-switch-to-next-tab)
+(global-set-key (kbd "M-t") 'tab-bar-new-tab)
+(global-set-key (kbd "M-w") 'tab-bar-close-tab)
+(setq tab-bar-close-button-show nil)
+(setq tab-bar-tab-hints t)
+(setq tab-bar-format '(tab-bar-format-tabs tab-bar-separator))
 
 (set-fontset-font t nil "UbuntuMono Nerd Font Mono" nil 'append)
 
@@ -40,11 +63,11 @@
 (global-set-key (kbd "M--") 'split-window-below)
 (global-set-key (kbd "M-\\") 'split-window-right)
 (global-set-key (kbd "M-d") 'dired-jump)
-(global-set-key (kbd "M-n") 'next-buffer)
-(global-set-key (kbd "M-b") 'previous-buffer)
+(global-set-key (kbd "M-]") 'next-buffer)
+(global-set-key (kbd "M-[") 'previous-buffer)
 (global-set-key (kbd "M-k") 'kill-buffer)
 (global-set-key (kbd "M-q") 'delete-window)
-(global-set-key (kbd "M-t") 'eshell)
+(global-set-key (kbd "M-a") 'eshell)
 (global-set-key (kbd "M-c") 'comment-line)
 
 (global-set-key (kbd "M-RET") 'compile)
@@ -76,20 +99,6 @@
               (name 35 35 :left :elide))))
 
 (fset 'yes-or-no-p 'y-or-n-p)
-
-(setq initial-scratch-message "")
-(defun remove-scratch-buffer ()
-  (if (get-buffer "*scratch*")
-      (kill-buffer "*scratch*")))
-(add-hook 'after-change-major-mode-hook 'remove-scratch-buffer)
-
-(defun remove-native-compile-buffer ()
-  (if (get-buffer "*Async-native-compile-log*")
-      (kill-buffer "*Async-native-compile-log*")))
-(add-hook 'after-change-major-mode-hook 'remove-native-compile-buffer)
-
-(setq-default message-log-max nil)
-(kill-buffer "*Messages*")
 
 (add-hook 'minibuffer-exit-hook
       #'(lambda ()
@@ -129,4 +138,5 @@
     fzf/position-bottom t
     fzf/window-height 15)
 
-(global-set-key (kbd "C-SPC") 'fzf-directory)
+(global-set-key (kbd "M-SPC") 'fzf-directory)
+(global-set-key (kbd "M-f") 'fzf-grep)
