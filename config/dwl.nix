@@ -1,4 +1,4 @@
-{ pkgs, home, fetchFromGitHub, ... }:
+{ pkgs, home, ... }:
 
 let
   dwl = (pkgs.callPackage ../packages/dwl.nix {});
