@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
-let
-  tlauncher = (pkgs.callPackage ../../packages/tlauncher.nix {});
-in {
+{
   nixpkgs.config.allowUnfree = true;
 
   home = {
@@ -37,7 +35,7 @@ in {
     git-lfs
 
     slides
-  ] ++ [ tlauncher ];
+  ];
 
   imports = (map (path: ../../config/${path}) [
     "bash.nix"

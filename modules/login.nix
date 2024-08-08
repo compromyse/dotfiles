@@ -16,14 +16,6 @@
     };
   };
 
-  /* services.displayManager.sddm = {
-    enable = true;
-    wayland = {
-      enable = true;
-      compositor = "kwin";
-    };
-  }; */
-
   services.logind.extraConfig = ''
     HandlePowerKey=ignore
   '';
@@ -53,7 +45,7 @@
   programs.dconf.enable = true;
 
   environment.sessionVariables = {
-    __EGL_VENDOR_LIBRARY_FILENAMES = "${pkgs.mesa_drivers.outPath}/share/glvnd/egl_vendor.d/50_mesa.json";
+    __EGL_VENDOR_LIBRARY_FILENAMES = "${pkgs.mesa.drivers.outPath}/share/glvnd/egl_vendor.d/50_mesa.json";
     __GLX_VENDOR_LIBRARY_NAME = "mesa";
   };
 }

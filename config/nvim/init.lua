@@ -1,5 +1,6 @@
 -- General Settings
 vim.opt.number = true
+vim.opt.rnu = true
 vim.opt.mouse= ''
 vim.opt.ignorecase = true
 vim.opt.smartcase = true

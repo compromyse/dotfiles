@@ -18,6 +18,7 @@
     "login.nix"
     "polkit.nix"
     "virtualization.nix"
+    "remapcapslock.nix"
   ]);
 
   boot.loader.systemd-boot.enable = true;

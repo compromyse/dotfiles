@@ -54,6 +54,8 @@
 (global-visual-line-mode 1)
 (delete-selection-mode 1)
 (save-place-mode 1)
+(setq scroll-margin 5)
+(setq display-line-numbers-type 'relative)
 
 (global-set-key (kbd "C-h") 'windmove-left)
 (global-set-key (kbd "C-j") 'windmove-down)
