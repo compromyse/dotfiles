@@ -29,11 +29,7 @@
 
     wl-clipboard
 
-    clang-tools
-    ccls
-    ruff-lsp
     git-lfs
-
     slides
   ];
 

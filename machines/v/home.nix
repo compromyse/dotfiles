@@ -19,7 +19,6 @@
     unzip
     zip
 
-    ccls
     pyright
     git-lfs
   ];

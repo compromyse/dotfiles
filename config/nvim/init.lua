@@ -25,20 +25,20 @@ vim.api.nvim_create_autocmd('VimLeave',{
 })
 
 -- Setup Packages
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
     lazypath,
   })
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
+require('lazy').setup({
 	'lukas-reineke/indent-blankline.nvim',
   'windwp/nvim-autopairs',
   'numToStr/Comment.nvim',
@@ -55,11 +55,17 @@ require("lazy").setup({
   'L3MON4D3/LuaSnip',
   'nvim-telescope/telescope.nvim',
   'nvim-lua/plenary.nvim',
+  'klen/nvim-config-local',
 
   'stevearc/oil.nvim',
 
   'christoomey/vim-tmux-navigator'
 })
+
+require('config-local').setup {
+  config_files = { ".nvim.lua", ".nvimrc", ".exrc" },
+  hashfile = vim.fn.stdpath("data") .. "/config-local",
+}
 
 local oil = require('oil')
 _G.oil = oil
@@ -76,15 +82,15 @@ oil.setup {
 require('ibl').setup()
 
 require('Comment').setup {
-	padding = true,
-		toggler = {
-			line = '\\\\',
-      block = ']]'
-		},
-    opleader = {
-      line = '\\\\',
-      block = ']]'
-    }
+  padding = true,
+  toggler = {
+    line = '\\\\',
+    block = ']]'
+  },
+  opleader = {
+    line = '\\\\',
+    block = ']]'
+  }
 }
 
 -- CMP Setup
@@ -95,53 +101,43 @@ cmp.setup({
       require('luasnip').lsp_expand(args.body)
     end
   },
-	window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
-	},
-	mapping = cmp.mapping.preset.insert({
-		['<C-b>'] = cmp.mapping.scroll_docs(-4),
-		['<C-f>'] = cmp.mapping.scroll_docs(4),
-		['<C-Space>'] = cmp.mapping.complete(),
-		['<TAB>'] = cmp.mapping.confirm({ select = true }),
-	}),
-	sources = cmp.config.sources({
-      { name = 'nvim_lsp' }
-    }, {
-      { name = 'buffer' },
-    }
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<TAB>'] = cmp.mapping.confirm({ select = true }),
+  }),
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' }
+  }, {
+    { name = 'buffer' },
+  }
   )
 })
 cmp.setup.filetype('gitcommit', {
-	sources = cmp.config.sources({
-		{ name = 'cmp_git' },
-	}, {
-		{ name = 'buffer' },
-	})
+  sources = cmp.config.sources({
+    { name = 'cmp_git' },
+  }, {
+    { name = 'buffer' },
+  })
 })
 cmp.setup.cmdline({ '/', '?' }, {
-		mapping = cmp.mapping.preset.cmdline(),
-		sources = {
-			{ name = 'buffer' }
-		}
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
 })
 cmp.setup.cmdline(':', {
-		sources = cmp.config.sources({
-			{ name = 'path' }
-		}, {
-			{ name = 'cmdline' }
-		})
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
 })
-
--- Set Up Lspconfig
-local lspconfig = require('lspconfig')
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-servers = { 'pyright', 'ccls', 'gopls' }
-for _, lsp in pairs(servers) do
-  lspconfig[lsp].setup {
-    capabilities = capabilities
-  }
-end
 
 -- Set Up Telescope
 local actions = require('telescope.actions')
@@ -209,3 +205,11 @@ map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
 map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
 -- Close buffer
 map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+
+vim.api.nvim_create_augroup('AutoFormatting', {})
+vim.api.nvim_create_autocmd('BufWritePre', {
+  group = 'AutoFormatting',
+  callback = function()
+    vim.lsp.buf.format()
+  end,
+})
