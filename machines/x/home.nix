@@ -25,6 +25,9 @@
     firefox
     google-chrome
 
+    filezilla
+    pcmanfm
+
     obs-studio
 
     wl-clipboard
@@ -40,7 +43,7 @@
     "emacs"
     "nvim"
 
-    "dwl.nix"
+    "qtile"
     "themes.nix"
     "way-displays"
     "swaylock"

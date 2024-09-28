@@ -6,19 +6,25 @@
     inputs.home-manager.nixosModules.default
   ] ++ (map (path: ../../modules/${path}) [
     "core/global.nix"
+
     "amdgpu.nix"
     "amd.nix"
     "nvidia.nix"
     "laptop.nix"
+
     "core/audio.nix"
     "core/bluetooth.nix"
     "core/fonts.nix"
-    "wm_utils.nix"
+
     "compromyse.nix"
     "login.nix"
     "polkit.nix"
+
     "virtualization.nix"
     "remapcapslock.nix"
+
+    "wm_utils.nix"
+    "qtile"
   ]);
 
   boot.loader.systemd-boot.enable = true;

@@ -18,5 +18,9 @@
     sway-launcher-desktop
   ];
 
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal ];
+  xdg.portal.config.common.default = "wlr";
+
   services.dbus.enable = true;
 }
