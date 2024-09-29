@@ -24,7 +24,7 @@
     "remapcapslock.nix"
 
     "wm_utils.nix"
-    "qtile"
+    # "qtile"
   ]);
 
   boot.loader.systemd-boot.enable = true;

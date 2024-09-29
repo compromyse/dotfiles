@@ -43,7 +43,8 @@ keys = [
     Key([], "XF86AudioMute", lazy.spawn("pamixer -t"), desc='Volume Mute'),
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s 5%+"), desc='brightness UP'),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 5%-"), desc='brightness Down'),
-    Key([mod],"e", lazy.spawn("pcmanfm"), desc='File manager'),
+    Key([mod], "e", lazy.spawn("pcmanfm"), desc='File manager'),
+    Key([mod], "x", lazy.spawn("swaylock"), desc='Lock'),
     # Key([mod], "s", lazy.spawn("flameshot gui"), desc='Screenshot'),
 
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
@@ -231,7 +232,7 @@ screens = [
                 ),
 
                 widget.Clock(
-                    format='  %d/%M/%y',
+                    format='  %d %b, %Y',
                     background='#0F1212',
                     foreground='#607767',
                 ),

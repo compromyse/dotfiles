@@ -11,7 +11,7 @@
 , wayland-scanner
 , wayland
 , wayland-protocols
-, wlroots_0_17
+, wlroots
 , writeText
 , xcbutilwm
 , xwayland
@@ -26,8 +26,8 @@ stdenv.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "compromyse";
     repo = "dwl";
-    rev = "master";
-    hash = "sha256-KvbDzaTB3/3W0N14oCSCUbtuv8Z3GoCO3cIq8GwPgkk=";
+    rev = "compromyse";
+    hash = "sha256-IlzzpSYKfmut4oFxtffneox44HDETmainP/Ulcl3NiE=";
   };
 
   nativeBuildInputs = [
@@ -43,7 +43,7 @@ stdenv.mkDerivation (finalAttrs: {
     pixman
     wayland
     wayland-protocols
-    wlroots_0_17
+    wlroots
   ] ++ lib.optionals enableXWayland [
     libX11
     xcbutilwm

@@ -43,7 +43,8 @@
     "emacs"
     "nvim"
 
-    "qtile"
+    # "qtile"
+    "dwl.nix"
     "themes.nix"
     "way-displays"
     "swaylock"

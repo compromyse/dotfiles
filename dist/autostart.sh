@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
+systemctl --user import-environment DISPLAY WAYLAND_DISPLAY &
 way-displays &
 dunst &
 blueman-applet &
-systemctl --user import-environment DISPLAY WAYLAND_DISPLAY &
+swayidle before-sleep swaylock lock swaylock &
