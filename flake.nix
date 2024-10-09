@@ -10,6 +10,17 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Disko
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Impermanence
+    impermanence = {
+      url = "github:nix-community/impermanence";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -20,8 +31,13 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
+          inputs.disko.nixosModules.default
+          (import ./disko.nix { device = "/dev/vda"; })
+
           ./machines/x/configuration.nix
+
           inputs.home-manager.nixosModules.default
+          inputs.impermanence.nixosModules.impermanence
         ];
       };
 
