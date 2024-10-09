@@ -34,6 +34,6 @@ volume() {
 }
 
 while [[ true ]]; do
-  dwlb -status all "| ^lm(alacritty -e nmtui-connect)  $(wifi)^lm() |   $(volume)% | $(battery)%$(charging) |   $(calendar) | λ"
+  dwlb -status all "| ^lm(alacritty -e nmtui-connect)  $(wifi)^lm() |   $(volume)% | $(battery)%$(charging) |   $(calendar) | λ |"
   sleep 1
 done
