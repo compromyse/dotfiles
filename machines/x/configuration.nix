@@ -41,6 +41,12 @@ in {
       efiSupport = true;
       device = drive;
     };
+    grub2-theme = {
+      enable = true;
+      theme = "vimix";
+      footer = true;
+      customResolution = "1920x1080";
+    };
   };
 
   boot.extraModprobeConfig = "options kvm_amd nested=1";

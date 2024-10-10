@@ -18,9 +18,10 @@
     };
 
     # Impermanence
-    impermanence = {
-      url = "github:nix-community/impermanence";
-    };
+    impermanence.url = "github:nix-community/impermanence";
+
+    # GRUB2 themes
+    grub2-themes.url = "github:vinceliuice/grub2-themes";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -37,6 +38,7 @@
 
           inputs.home-manager.nixosModules.default
           inputs.impermanence.nixosModules.impermanence
+          inputs.grub2-themes.nixosModules.default
         ];
       };
 
