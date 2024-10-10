@@ -15,6 +15,9 @@ in {
     "L+ ${nix_path} - - - - ${pkgs.path}"
   ];
 
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = _: true;
+
   environment.systemPackages = with pkgs; [
     man-pages
     man-pages-posix
