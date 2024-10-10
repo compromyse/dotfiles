@@ -67,6 +67,11 @@
                   mountpoint = "/nix";
                 };
 
+                "/config" = {
+                  mountOptions = ["subvol=config" "noatime"];
+                  mountpoint = "/config";
+                };
+
                 "/home" = {
                   mountOptions = ["subvol=home" "noatime"];
                   mountpoint = "/home";
