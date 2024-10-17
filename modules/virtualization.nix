@@ -26,6 +26,7 @@
     pkgs.looking-glass-client
     pkgs.libvirt
     pkgs.vagrant
+    pkgs.virt-viewer
 
     (pkgs.writeShellScriptBin "pin-cpu" ''
       if [[ $1 == "" ]]; then

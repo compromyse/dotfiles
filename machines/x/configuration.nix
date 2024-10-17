@@ -13,9 +13,9 @@ in {
     "core/global.nix"
     "core/impermanence.nix"
 
+    "nvidia.nix"
     "amdgpu.nix"
     "amd.nix"
-    "nvidia.nix"
     "laptop.nix"
 
     "core/audio.nix"
@@ -23,13 +23,14 @@ in {
     "core/fonts.nix"
 
     "compromyse.nix"
-    "login.nix"
-    "polkit.nix"
 
     "virtualization.nix"
     "remapcapslock.nix"
 
-    "wm_utils.nix"
+    # "wm_utils.nix"
+    # "polkit.nix"
+    "login.nix"
+    "plasma.nix"
   ]);
 
   boot.loader = {
