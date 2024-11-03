@@ -36,6 +36,16 @@
     slides
   ];
 
+  programs = {
+    direnv = {
+      enable = true;
+      enableBashIntegration = true;
+      nix-direnv.enable = true;
+    };
+
+    bash.enable = true;
+  };
+
   imports = (map (path: ../../config/${path}) [
     "bash.nix"
     "dotfiles.nix"

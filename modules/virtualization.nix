@@ -25,7 +25,7 @@
   environment.systemPackages = [
     pkgs.looking-glass-client
     pkgs.libvirt
-    pkgs.vagrant
+    #pkgs.vagrant
     pkgs.virt-viewer
 
     (pkgs.writeShellScriptBin "pin-cpu" ''
