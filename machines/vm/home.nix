@@ -4,8 +4,8 @@
   nixpkgs.config.allowUnfree = true;
 
   home = {
-    username = "vagrant";
-    homeDirectory = "/home/vagrant";
+    username = "compromyse";
+    homeDirectory = "/home/compromyse";
   };
 
   home.packages = with pkgs; [
@@ -19,9 +19,18 @@
     unzip
     zip
 
-    pyright
     git-lfs
   ];
+
+  programs = {
+    direnv = {
+      enable = true;
+      enableBashIntegration = true;
+      nix-direnv.enable = true;
+    };
+
+    bash.enable = true;
+  };
 
   programs.bash.initExtra = ''
     . "$HOME/.nix-profile/etc/profile.d/nix.sh"

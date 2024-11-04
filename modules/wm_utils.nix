@@ -22,5 +22,9 @@
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal ];
   xdg.portal.config.common.default = "wlr";
 
+  environment.variables = {
+    XCURSOR_SIZE = "16";
+  };
+
   services.dbus.enable = true;
 }

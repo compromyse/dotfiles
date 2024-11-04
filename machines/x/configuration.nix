@@ -27,10 +27,10 @@ in {
     "virtualization.nix"
     "remapcapslock.nix"
 
-    # "wm_utils.nix"
-    # "polkit.nix"
+    "wm_utils.nix"
+    "polkit.nix"
     "login.nix"
-    "plasma.nix"
+    # "plasma.nix"
   ]);
 
   boot.loader = {
@@ -56,10 +56,6 @@ in {
 
   networking.hostName = "x";
 
-  environment.variables = {
-    XCURSOR_SIZE = "16";
-  };
-
   programs.fuse.userAllowOther = true;
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
@@ -70,7 +66,6 @@ in {
 
   networking.extraHosts =
   ''
-    127.0.0.1 download.labsmartlis.local
-    192.168.1.186 cacer.local c
+    192.168.122.100 android
   '';
 }

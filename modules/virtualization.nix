@@ -27,6 +27,7 @@
     pkgs.libvirt
     #pkgs.vagrant
     pkgs.virt-viewer
+    pkgs.guestfs-tools
 
     (pkgs.writeShellScriptBin "pin-cpu" ''
       if [[ $1 == "" ]]; then

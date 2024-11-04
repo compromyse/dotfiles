@@ -1,4 +1,4 @@
-image=/etc/nixos/dist/wallpaper.jpg
+image=/config/dist/wallpaper.jpg
 font=UbuntuMono Nerd Font Mono
 
 bs-hl-color=f5e0dc

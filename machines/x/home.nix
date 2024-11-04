@@ -54,11 +54,11 @@
     "nvim"
 
     # "qtile"
-    # "dwl.nix"
-    # "themes.nix"
-    # "way-displays"
-    # "swaylock"
-    # "dunst"
+    "dwl.nix"
+    "themes.nix"
+    "way-displays"
+    "swaylock"
+    "dunst"
 
     "alacritty"
   ]);
