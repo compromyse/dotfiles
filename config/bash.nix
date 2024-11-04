@@ -42,6 +42,8 @@
       fi
 
       bind '"\C-f": "sessionizer\n"'
+
+      alias poof="rm $HOME/.ssh/known_hosts*"
     '';
   };
 }
