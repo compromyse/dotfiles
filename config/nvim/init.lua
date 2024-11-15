@@ -59,7 +59,9 @@ require('lazy').setup({
 
   'stevearc/oil.nvim',
 
-  'christoomey/vim-tmux-navigator'
+  'christoomey/vim-tmux-navigator',
+
+  'vala-lang/vala.vim'
 })
 
 require('config-local').setup {

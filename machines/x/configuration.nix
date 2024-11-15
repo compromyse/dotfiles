@@ -64,8 +64,14 @@ in {
     };
   };
 
-  networking.extraHosts =
-  ''
+  networking.extraHosts = ''
     192.168.122.100 android
+    192.168.122.101 deb
+    141.148.221.227 o
+  '';
+
+  programs.ssh.extraConfig = ''
+    Host o
+      User ubuntu
   '';
 }
