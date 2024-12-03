@@ -2,7 +2,7 @@
 
 {
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
+    nerd-fonts.ubuntu-mono
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji

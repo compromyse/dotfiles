@@ -22,6 +22,7 @@
     imv
 
     spotify
+    discord
     firefox
     google-chrome
 
