@@ -29,6 +29,7 @@
       "/var/lib/libvirt"
       "/var/lib/systemd/coredump"
       "/etc/NetworkManager/system-connections"
+      "/var/lib/docker"
     ];
     files = [
       "/etc/machine-id"

@@ -64,6 +64,13 @@ in {
     };
   };
 
+  programs.adb.enable = true;
+
+  services.printing.enable = true;
+  services.printing.drivers = [
+    pkgs.brlaser
+  ];
+
   networking.extraHosts = ''
     192.168.122.100 android
     192.168.122.101 deb

@@ -48,7 +48,7 @@
   ];
 
   # Use the custom kernel package set
-  boot.kernelPackages = pkgs.linuxPackages_6_11;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # boot.kernelPatches = [
   #   {
