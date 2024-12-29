@@ -1,5 +1,11 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
 
+let
+  gpuIDs = [
+    "10de:28e0"
+    "10de:22be"
+  ];
+in
 {
   virtualisation = {
     libvirtd = {
@@ -47,8 +53,27 @@
     '')
   ];
 
+  boot = {
+    /* initrd.kernelModules = [
+      "vfio_pci"
+      "vfio"
+      "vfio_iommu_type1"
+
+      "nvidia"
+      "nvidia_modeset"
+      "nvidia_uvm"
+      "nvidia_drm"
+    ]; */
+
+    kernelParams = [
+      "skippatcheck"
+      "pci_acs_override=downstream,multifunction"
+      /* ("vfio-pci.ids=" + lib.concatStringsSep "," gpuIDs) */
+    ];
+  };
+
   # Use the custom kernel package set
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
   # boot.kernelPatches = [
   #   {
@@ -63,5 +88,5 @@
   #   }
   # ];
 
-  boot.kernelParams = [ "skippatcheck" "pcie_acs_override=downstream,multifunction" ];
+  # boot.kernelParams = [ "skippatcheck" "pcie_acs_override=downstream,multifunction" ];
 }

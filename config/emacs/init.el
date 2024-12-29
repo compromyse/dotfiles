@@ -14,6 +14,8 @@
       '("\\*Messages\\*"
         "Output\\*$"
         "\\*Async Shell Command\\*"
+        "\\*Async-native-compile-log\\*"
+        "\\*lsp-log\\*"
         help-mode
         compilation-mode))
 (popper-mode 1)
