@@ -42,6 +42,7 @@
     "dotfiles.nix"
     "git"
     "nvim"
+    "emacs"
   ]);
 
   home.stateVersion = "23.11";
