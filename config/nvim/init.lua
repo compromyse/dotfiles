@@ -113,12 +113,11 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<TAB>'] = cmp.mapping.confirm({ select = true }),
   }),
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' }
-  }, {
+  sources = {
+    { name = 'nvim_lsp' },
     { name = 'buffer' },
+    { name = 'nvim_lsp_signature_help' },
   }
-  )
 })
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
