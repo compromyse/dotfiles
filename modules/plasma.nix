@@ -16,4 +16,6 @@
     baloo-widgets
     krdp
   ];
+
+  services.power-profiles-daemon.enable = false;
 }
