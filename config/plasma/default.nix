@@ -80,6 +80,15 @@
       }
     ];
 
+    powerdevil = {
+      AC = {
+        powerProfile = "performance";
+      };
+      battery = {
+        powerProfile = "powerSaving";
+      };
+    };
+
     panels = [
       {
         location = "bottom";
