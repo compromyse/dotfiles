@@ -55,13 +55,14 @@
     "nvim"
 
     # "qtile"
-    "dwl.nix"
-    "themes.nix"
-    "way-displays"
-    "swaylock"
-    "dunst"
+    # "dwl.nix"
+    # "themes.nix"
+    # "way-displays"
+    # "swaylock"
+    # "dunst"
 
     "alacritty"
+    "plasma"
   ]);
 
   home.stateVersion = "23.11";

@@ -27,10 +27,10 @@ in {
     "virtualization.nix"
     "remapcapslock.nix"
 
-    "wm_utils.nix"
-    "polkit.nix"
+    # "wm_utils.nix"
+    # "polkit.nix"
     "login.nix"
-    # "plasma.nix"
+    "plasma.nix"
   ]);
 
   boot.loader = {
@@ -59,6 +59,9 @@ in {
   programs.fuse.userAllowOther = true;
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
     users = {
       "compromyse" = import ./home.nix;
     };
