@@ -64,6 +64,8 @@
       effects.wobblyWindows.enable = true;
     };
 
+    configFile.kwinrc.MouseBindings.CommandAllKey = "Alt";
+
     shortcuts = {
       kwin = {
         "Window Operations Menu" = "Alt+Space";
@@ -72,6 +74,7 @@
 
     input.mice = [
       {
+        /* cat /proc/bus/input/devices */
         vendorId = "06cb";
         productId = "ce81";
         name = "DLL0C55:00 06CB:CE81 Touchpad";
@@ -79,15 +82,6 @@
         naturalScroll = true;
       }
     ];
-
-    powerdevil = {
-      AC = {
-        powerProfile = "performance";
-      };
-      battery = {
-        powerProfile = "powerSaving";
-      };
-    };
 
     panels = [
       {
