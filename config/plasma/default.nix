@@ -25,8 +25,10 @@
         size = 18;
       };
       iconTheme = "Papirus-Dark";
-      wallpaper = "/config/dist/wallpaper.jpg";
+      wallpaper = "/config/dist/wallpaper.png";
     };
+
+    kscreenlocker.appearance.wallpaper = "/config/dist/wallpaper.png";
 
     fonts = {
       general = {

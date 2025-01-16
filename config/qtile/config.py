@@ -108,7 +108,7 @@ extension_defaults = widget_defaults.copy()
 screens = [
 
     Screen(
-        wallpaper="/etc/nixos/dist/wallpaper.jpg",
+        wallpaper="/etc/nixos/dist/wallpaper.png",
         wallpaper_mode='fill',
         top=bar.Bar(
             [

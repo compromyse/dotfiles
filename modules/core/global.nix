@@ -9,6 +9,7 @@ in {
       auto-optimise-store = true;
     };
     nixPath = [ "nixpkgs=${nix_path}" ];
+    channel.enable = false;
   };
 
   systemd.tmpfiles.rules = [
