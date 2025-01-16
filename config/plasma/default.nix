@@ -46,6 +46,12 @@
       command = "alacritty";
     };
 
+    hotkeys.commands."launch-lg" = {
+      name = "Launch Looking Glass";
+      key = "Meta+G";
+      command = "looking-glass-client -m 97";
+    };
+
     kwin = {
       edgeBarrier = 0;
       cornerBarrier = false;
