@@ -44,7 +44,6 @@
       bind '"\C-f": "sessionizer\n"'
 
       alias poof="rm $HOME/.ssh/known_hosts*"
-      alias db="distrobox enter"
 
       if [ -f $HOME/.custom_bashrc ]; then
         source $HOME/.custom_bashrc
