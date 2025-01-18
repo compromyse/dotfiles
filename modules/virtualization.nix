@@ -18,8 +18,10 @@ in
     };
     spiceUSBRedirection.enable = true;
 
-    docker = {
+    # docker.enable = true;
+    podman = {
       enable = true;
+      dockerCompat = true;
     };
   };
   services.spice-vdagentd.enable = true;
@@ -34,6 +36,12 @@ in
     #pkgs.vagrant
     pkgs.virt-viewer
     pkgs.guestfs-tools
+    pkgs.distrobox
+
+    (pkgs.writeShellScriptBin "db-create" ''
+      mkdir -p "$HOME/db"
+      distrobox create --name my-distrobox --home "$HOME/db" --init --image ubuntu:24.04
+    '')
 
     (pkgs.writeShellScriptBin "pin-cpu" ''
       if [[ $1 == "" ]]; then
