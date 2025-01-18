@@ -3,7 +3,7 @@
 {
   hardware.graphics.enable = true;
   hardware.graphics.extraPackages = with pkgs; [
-    # rocmPackages.clr.icd
+    rocmPackages.clr.icd
     amdvlk
     vaapiVdpau
     libvdpau-va-gl
@@ -16,6 +16,6 @@
   services.xserver.videoDrivers = [ "modesetting" ];
 
   systemd.tmpfiles.rules = [
-    # "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
 }
