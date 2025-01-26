@@ -74,7 +74,7 @@
 (global-set-key (kbd "M-a") 'eshell)
 (global-set-key (kbd "M-c") 'comment-line)
 
-(global-set-key (kbd "M-RET") 'compile)
+(global-set-key (kbd "M-RET") 'project-compile)
 
 (defun show-flycheck-errors (buffer _action)
   (let ((window (display-buffer-in-side-window
@@ -142,5 +142,5 @@
     fzf/position-bottom t
     fzf/window-height 15)
 
-(global-set-key (kbd "M-SPC") 'fzf-directory)
-(global-set-key (kbd "M-f") 'fzf-grep)
+(global-set-key (kbd "C-SPC") 'fzf-git)
+(global-set-key (kbd "M-f") 'fzf-git-grep)

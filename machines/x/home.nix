@@ -21,7 +21,6 @@
 
     imv
 
-    spotify
     discord
     firefox
     google-chrome
@@ -61,8 +60,10 @@
     # "swaylock"
     # "dunst"
 
-    "alacritty"
     "plasma"
+
+    "alacritty"
+    "spotify-player"
   ]);
 
   home.stateVersion = "23.11";

@@ -18,11 +18,7 @@ in
     };
     spiceUSBRedirection.enable = true;
 
-    # docker.enable = true;
-    podman = {
-      enable = true;
-      dockerCompat = true;
-    };
+    docker.enable = true;
   };
   services.spice-vdagentd.enable = true;
   programs.virt-manager.enable = true;
