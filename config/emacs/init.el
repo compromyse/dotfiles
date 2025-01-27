@@ -16,8 +16,7 @@
         "\\*Async Shell Command\\*"
         "\\*Async-native-compile-log\\*"
         "\\*lsp-log\\*"
-        help-mode
-        compilation-mode))
+        help-mode))
 (popper-mode 1)
 (global-set-key (kbd "M-`") 'popper-toggle)
 (global-set-key (kbd "C-`") 'popper-cycle)
