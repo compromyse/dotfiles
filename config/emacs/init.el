@@ -2,7 +2,7 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 (custom-set-variables
- '(package-selected-packages '(fzf kaolin-themes evil popper flycheck lsp-mode cmake-mode nix-mode)))
+ '(package-selected-packages '(fzf kaolin-themes evil popper flycheck lsp-mode cmake-mode nix-mode clang-format)))
 
 (global-flycheck-mode 1)
 (add-hook 'python-mode-hook #'lsp-deferred)
@@ -42,6 +42,7 @@
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+(setq compilation-scroll-output t)
 
 (setq-default cursor-type 'bar)
 
@@ -143,3 +144,6 @@
 
 (global-set-key (kbd "C-SPC") 'fzf-git)
 (global-set-key (kbd "M-f") 'fzf-git-grep)
+
+(add-hook 'c-mode-hook 'clang-format-on-save-mode)
+(add-hook 'c++-mode-hook 'clang-format-on-save-mode)
