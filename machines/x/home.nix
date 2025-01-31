@@ -34,8 +34,6 @@
 
     git-lfs
     slides
-
-    ollama
   ];
 
   programs = {
