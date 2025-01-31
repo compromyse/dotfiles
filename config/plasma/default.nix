@@ -1,6 +1,8 @@
 { home, pkgs, ... }:
 
 {
+  home.file.".local/share/color-schemes/aura-theme-soft.colors".source = ./aura-theme-soft.colors;
+
   home.packages = [
     pkgs.bibata-cursors
     pkgs.papirus-icon-theme
@@ -20,6 +22,7 @@
 
     workspace = {
       lookAndFeel = "org.kde.breezedark.desktop";
+      colorScheme = "aura-theme-soft";
       cursor = {
         theme = "Bibata-Modern-Classic";
         size = 18;
