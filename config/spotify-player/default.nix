@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    kdePackages.yakuake
     spotify-player
   ];
 
