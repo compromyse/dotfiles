@@ -5,4 +5,6 @@
     sway
     autotiling-rs
   ];
+
+  home.file.".config/sway/config".source = ./config;
 }
