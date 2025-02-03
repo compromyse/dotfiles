@@ -2,7 +2,10 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 (custom-set-variables
- '(package-selected-packages '(fzf kaolin-themes evil popper flycheck lsp-mode cmake-mode nix-mode clang-format)))
+ '(package-selected-packages '(fzf kaolin-themes evil popper flycheck lsp-mode cmake-mode nix-mode clang-format direnv)))
+
+(require 'direnv)
+(direnv-mode 1)
 
 (global-flycheck-mode 1)
 (add-hook 'python-mode-hook #'lsp-deferred)
