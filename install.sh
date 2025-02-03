@@ -11,4 +11,4 @@ cd /mnt/config
 sudo mv -v /mnt/etc/nixos/hardware-configuration.nix machines/$MACHINE/hardware-configuration.nix
 sudo rm -rfv /mnt/etc
 
-sudo nixos-install --root /mnt --no-root-password --flake .#$MACHINE
+sudo nixos-install --root /mnt --no-root-password --no-channel-copy --flake .#$MACHINE
