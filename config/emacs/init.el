@@ -8,6 +8,7 @@
 (direnv-mode 1)
 
 (setq lsp-completion-enable t)
+(setq company-idle-delay 0)
 (company-mode)
 (global-flycheck-mode 1)
 (add-hook 'python-mode-hook #'lsp-deferred)
