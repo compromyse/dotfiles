@@ -6,7 +6,7 @@
   home.packages = [
     pkgs.bibata-cursors
     pkgs.papirus-icon-theme
-    kdePackages.yakuake
+    pkgs.kdePackages.yakuake
   ];
 
   gtk = {

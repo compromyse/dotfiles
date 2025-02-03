@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
-let
-  wbg = (pkgs.callPackage ../packages/wbg.nix {});
-in {
+{
   environment.systemPackages = with pkgs; [
     polkit_gnome
 
@@ -11,13 +9,17 @@ in {
 
     inotify-tools
 
+    wbg
+
     wirelesstools
     pamixer
     brightnessctl
     networkmanagerapplet
+    grim
+    slurp
 
     sway-launcher-desktop
-  ] ++ [ wbg ];
+  ];
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal ];

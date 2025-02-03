@@ -10,8 +10,8 @@
     enable = true;
     settings = {
       default_session = {
-        # command = "tuigreet --time --remember --cmd \"startplasma-wayland\"";
-        command = "tuigreet --time --remember --cmd \"dwl -s dwlb\"";
+        command = "tuigreet --time --remember --cmd \"startplasma-wayland\"";
+        # command = "tuigreet --time --remember --cmd \"dwl -s dwlb\"";
         user = "greeter";
       };
     };
@@ -36,6 +36,9 @@
   security.pam.services.swaylock.text = ''
     auth include login
   '';
+  security.pam.loginLimits = [
+    { domain = "@users"; item = "rtprio"; type = "-"; value = 1; }
+  ];
 
   services.libinput.enable = true;
 

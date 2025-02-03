@@ -15,8 +15,8 @@ let
     repo = "wlroots";
     repo_git = "https://${domain}/${owner}/${repo}";
     branch = "master";
-    rev = "38923826c3bd2c8d5752b63570063282e658e2b0";
-    sha256 = "sha256-G4P26O08N7zDj3ehhPwqYQm82ij4oI4SI4eehvSagc8=";
+    rev = "d305934ebe6852785a1f425ee96861f0b7280d76";
+    sha256 = "sha256-NnPSC5p/phTFe+nWp9vl8LUbmBO/RXSSUuDZ2boucXY=";
   };
   ignore = [
     "wlroots"

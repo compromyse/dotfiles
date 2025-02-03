@@ -54,13 +54,13 @@
     "nvim"
 
     # "qtile"
-    "dwl.nix"
-    "themes.nix"
-    "way-displays"
-    "swaylock"
-    "dunst"
-
-    # "plasma"
+    # "dwl.nix"
+    "plasma"
+    # "sway"
+    # "themes.nix"
+    # "way-displays"
+    # "swaylock"
+    # "dunst"
 
     "alacritty"
     "spotify-player"
