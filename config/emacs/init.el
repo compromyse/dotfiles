@@ -33,10 +33,10 @@
 (setq evil-emacs-state-modes nil)
 (setq evil-insert-state-modes nil)
 (setq evil-motion-state-modes nil)
+(setq evil-want-keybinding nil)
 (require 'evil)
 (evil-mode 1)
 
-(setq evil-want-keybinding nil)
 (evil-collection-init 'magit)
 
 (global-set-key (kbd "M-<") 'tab-bar-switch-to-prev-tab)
