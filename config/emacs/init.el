@@ -2,11 +2,13 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 (custom-set-variables
- '(package-selected-packages '(fzf kaolin-themes evil popper flycheck lsp-mode cmake-mode nix-mode clang-format direnv)))
+ '(package-selected-packages '(fzf kaolin-themes evil popper flycheck company lsp-mode cmake-mode nix-mode clang-format direnv magit evil-collection)))
 
 (require 'direnv)
 (direnv-mode 1)
 
+(setq lsp-completion-enable t)
+(company-mode)
 (global-flycheck-mode 1)
 (add-hook 'python-mode-hook #'lsp-deferred)
 (add-hook 'c-mode-hook #'lsp-deferred)
@@ -32,6 +34,9 @@
 (setq evil-motion-state-modes nil)
 (require 'evil)
 (evil-mode 1)
+
+(setq evil-want-keybinding nil)
+(evil-collection-init 'magit)
 
 (global-set-key (kbd "M-<") 'tab-bar-switch-to-prev-tab)
 (global-set-key (kbd "M->") 'tab-bar-switch-to-next-tab)
