@@ -1,8 +1,6 @@
 { inputs, pkgs, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;
-
   home = {
     username = "compromyse";
     homeDirectory = "/home/compromyse";
@@ -10,6 +8,7 @@
 
   home.packages = with pkgs; [
     wget
+    aria2
 
     tmux
     fzf
@@ -20,8 +19,8 @@
     zip
 
     imv
+    mpv
 
-    discord
     firefox
     google-chrome
 

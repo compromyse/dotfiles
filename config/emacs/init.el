@@ -37,7 +37,7 @@
 (require 'evil)
 (evil-mode 1)
 
-(evil-collection-init 'magit)
+(evil-collection-init)
 
 (global-set-key (kbd "M-<") 'tab-bar-switch-to-prev-tab)
 (global-set-key (kbd "M->") 'tab-bar-switch-to-next-tab)

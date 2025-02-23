@@ -82,7 +82,7 @@ in
   ];
 
   boot = {
-    /* initrd.kernelModules = [
+    initrd.kernelModules = [
       "vfio_pci"
       "vfio"
       "vfio_iommu_type1"
@@ -91,12 +91,12 @@ in
       "nvidia_modeset"
       "nvidia_uvm"
       "nvidia_drm"
-    ]; */
+    ];
 
     kernelParams = [
       "skippatcheck"
       "pci_acs_override=downstream,multifunction"
-      /* ("vfio-pci.ids=" + lib.concatStringsSep "," gpuIDs) */
+      ("vfio-pci.ids=" + lib.concatStringsSep "," gpuIDs)
     ];
   };
 
@@ -115,6 +115,4 @@ in
   #     patch = ../dist/acso.patch;
   #   }
   # ];
-
-  # boot.kernelParams = [ "skippatcheck" "pcie_acs_override=downstream,multifunction" ];
 }
