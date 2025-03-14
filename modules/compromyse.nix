@@ -7,4 +7,5 @@
     # openssh.authorizedKeys.keys = [];
     extraGroups = [ "wheel" "video" "storage" "input" "plugdev" "libvirtd" "docker" "kvm" "lp" ];
   };
+  security.sudo.wheelNeedsPassword = false;
 }

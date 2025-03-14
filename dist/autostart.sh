@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 systemctl --user import-environment DISPLAY WAYLAND_DISPLAY &
+sudo vfio-bind &
 way-displays &
 dunst &
 blueman-applet &

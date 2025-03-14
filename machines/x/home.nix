@@ -21,8 +21,9 @@
     imv
     mpv
 
-    firefox
-    google-chrome
+    librewolf
+    chromium
+    spotify
 
     filezilla
     pcmanfm
@@ -62,7 +63,7 @@
     "dunst"
 
     "alacritty"
-    "spotify-player"
+    # "spotify-player"
   ]);
 
   home.stateVersion = "23.11";
