@@ -2,7 +2,7 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 (custom-set-variables
- '(package-selected-packages '(fzf kaolin-themes evil popper flycheck company lsp-mode cmake-mode nix-mode clang-format direnv magit evil-collection)))
+ '(package-selected-packages '(fzf kaolin-themes evil popper flycheck company lsp-mode cmake-mode nix-mode clang-format direnv magit evil-collection vue-mode typescript-mode)))
 
 (require 'direnv)
 (direnv-mode 1)
