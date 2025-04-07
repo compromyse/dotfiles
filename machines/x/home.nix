@@ -25,6 +25,8 @@
     chromium
     spotify
 
+    postman
+
     filezilla
     pcmanfm
 

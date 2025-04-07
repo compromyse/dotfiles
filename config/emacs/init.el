@@ -2,7 +2,7 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 (custom-set-variables
- '(package-selected-packages '(fzf kaolin-themes evil popper flycheck company lsp-mode cmake-mode nix-mode clang-format direnv magit evil-collection vue-mode typescript-mode)))
+ '(package-selected-packages '(fzf kaolin-themes evil popper flycheck company lsp-mode cmake-mode nix-mode clang-format direnv magit evil-collection vue-mode typescript-mode haml-mode yaml-mode)))
 
 (require 'direnv)
 (direnv-mode 1)
@@ -27,6 +27,10 @@
 (global-set-key (kbd "M-`") 'popper-toggle)
 (global-set-key (kbd "C-`") 'popper-cycle)
 (global-set-key (kbd "s-`") 'popper-toggle-type)
+
+(setq-default tab-width 2)
+(setq-default indent-tabs-mode nil)
+(setq-default c-basic-offset 2)
 
 (setq evil-want-C-u-scroll t)
 (setq evil-undo-system 'undo-redo)

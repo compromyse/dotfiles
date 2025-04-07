@@ -19,6 +19,7 @@ in
     spiceUSBRedirection.enable = true;
 
     docker.enable = true;
+    docker.enableNvidia = true;
   };
   services.spice-vdagentd.enable = true;
   programs.virt-manager.enable = true;
@@ -29,9 +30,9 @@ in
   environment.systemPackages = [
     pkgs.looking-glass-client
     pkgs.libvirt
-    #pkgs.vagrant
     pkgs.virt-viewer
     pkgs.guestfs-tools
+    #pkgs.vagrant
 
     (pkgs.writeShellScriptBin "pin-cpu" ''
       if [[ $1 == "" ]]; then

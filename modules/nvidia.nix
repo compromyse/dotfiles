@@ -3,6 +3,8 @@
 {
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  hardware.graphics.enable32Bit = true;
+
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = true;
@@ -21,5 +23,8 @@
     };
   };
 
-  # environment.systemPackages = [ pkgs.cudatoolkit ];
+  environment.systemPackages = [
+    pkgs.cudatoolkit
+    pkgs.nvidia-container-toolkit
+  ];
 }
