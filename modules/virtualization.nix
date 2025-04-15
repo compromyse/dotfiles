@@ -19,7 +19,6 @@ in
     spiceUSBRedirection.enable = true;
 
     docker.enable = true;
-    docker.enableNvidia = true;
   };
   services.spice-vdagentd.enable = true;
   programs.virt-manager.enable = true;
