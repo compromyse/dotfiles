@@ -36,6 +36,8 @@
 
     git-lfs
     slides
+
+    vscode
   ];
 
   programs = {

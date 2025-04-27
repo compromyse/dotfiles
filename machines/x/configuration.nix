@@ -31,6 +31,8 @@ in {
     "polkit.nix"
     "login.nix"
     # "plasma.nix"
+    # "mate.nix"
+    # "xfce.nix"
   ]);
 
   boot.loader = {
