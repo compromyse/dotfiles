@@ -214,3 +214,5 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     vim.lsp.buf.format()
   end,
 })
+
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
