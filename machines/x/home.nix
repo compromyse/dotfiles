@@ -21,11 +21,12 @@
     imv
     mpv
 
-    librewolf
+    firefox
     chromium
     spotify
 
     postman
+    obsidian
 
     filezilla
     pcmanfm
