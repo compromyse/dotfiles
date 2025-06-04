@@ -27,12 +27,12 @@ in {
     "virtualization.nix"
     "remapcapslock.nix"
 
-    "wm_utils.nix"
-    "polkit.nix"
     "login.nix"
     # "plasma.nix"
     # "mate.nix"
     # "xfce.nix"
+    "wm_utils.nix"
+    "polkit.nix"
   ]);
 
   boot.loader = {

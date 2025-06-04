@@ -58,10 +58,11 @@
     "emacs"
     "nvim"
 
+    "labwc"
     # "qtile"
     # "plasma"
     # "sway"
-    "dwl.nix"
+    # "dwl.nix"
     "themes.nix"
     "way-displays"
     "swaylock"
