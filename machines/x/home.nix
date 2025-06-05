@@ -25,10 +25,8 @@
     chromium
     spotify
 
-    postman
     obsidian
 
-    filezilla
     pcmanfm
 
     obs-studio
@@ -37,8 +35,6 @@
 
     git-lfs
     slides
-
-    vscode
   ];
 
   programs = {
@@ -58,15 +54,14 @@
     "emacs"
     "nvim"
 
-    "labwc"
     # "qtile"
-    # "plasma"
+    "plasma"
     # "sway"
     # "dwl.nix"
-    "themes.nix"
-    "way-displays"
-    "swaylock"
-    "dunst"
+    # "themes.nix"
+    # "way-displays"
+    # "swaylock"
+    # "dunst"
 
     "alacritty"
     # "spotify-player"

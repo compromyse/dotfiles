@@ -28,11 +28,11 @@ in {
     "remapcapslock.nix"
 
     "login.nix"
-    # "plasma.nix"
+    "plasma.nix"
     # "mate.nix"
     # "xfce.nix"
-    "wm_utils.nix"
-    "polkit.nix"
+    # "wm_utils.nix"
+    # "polkit.nix"
   ]);
 
   boot.loader = {

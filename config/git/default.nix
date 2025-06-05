@@ -13,6 +13,7 @@
         signoff = true;
       };
       url = {
+
         "git@github.com:" = {
           insteadOf = [
             "gh:"
@@ -26,6 +27,7 @@
             "compromyse:"
           ];
         };
+
       };
 
       "filter \"lfs\"" = {
