@@ -22,6 +22,7 @@
     mpv
 
     firefox
+    floorp
     chromium
     spotify
 

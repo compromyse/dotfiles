@@ -58,6 +58,12 @@
       command = "looking-glass-client -m 97";
     };
 
+    hotkeys.commands."launch-krunner" = {
+      name = "Launch KRunner";
+      key = "Meta+Space";
+      command = "krunner";
+    };
+
     kwin = {
       edgeBarrier = 0;
       cornerBarrier = false;
@@ -67,7 +73,7 @@
 
       effects.shakeCursor.enable = true;
       effects.translucency.enable = true;
-      effects.wobblyWindows.enable = true;
+      # effects.wobblyWindows.enable = true;
     };
 
     configFile.kwinrc.MouseBindings.CommandAllKey = "Alt";
