@@ -1,0 +1,5 @@
+wbg /config/dist/wallpaper.png &
+waybar &
+way-displays &
+swayidle before-sleep swaylock lock swaylock &
+dunst &

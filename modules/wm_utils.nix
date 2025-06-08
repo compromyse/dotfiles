@@ -19,6 +19,7 @@
     slurp
 
     sway-launcher-desktop
+    bemenu
   ];
 
   xdg.portal.enable = true;

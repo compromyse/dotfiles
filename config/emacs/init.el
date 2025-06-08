@@ -92,8 +92,11 @@
 
 (add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
 
-(add-hook 'c-mode-hook 'clang-format-on-save-mode)
-(add-hook 'c++-mode-hook 'clang-format-on-save-mode)
+(add-hook 'c-mode-hook 'eglot-ensure)
+(add-hook 'c++-mode-hook 'eglot-ensure)
+(add-hook 'python-mode-hook 'eglot-ensure)
+
+(add-hook 'after-save-hook 'eglot-format)
 
 (global-set-key (kbd "s-`") 'popper-toggle)
 (global-set-key (kbd "C-`") 'popper-cycle)

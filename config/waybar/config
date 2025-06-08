@@ -1,0 +1,58 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 40,
+    "margin-top": 0,
+    "margin-right": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "modules-left": ["wlr/taskbar"],
+    "modules-center": [],
+    "modules-right": ["backlight", "pulseaudio", "battery", "clock"],
+
+    "clock": {
+        "format": " {:%a, %b %d %Y | 󰥔 %I:%M %p}"
+    },
+
+    "wlr/taskbar": {
+        "format": "{title:.24}",
+        "tooltip-format": "{title}",
+        "on-click": "minimize-raise",
+        "on-click-right": "close"
+    },
+
+    "tray": {
+        "icon-size": 24
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol"
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["", ""]
+    },
+
+    "battery": {
+        "bat": "BAT1",
+        "interval": 60,
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
+    }
+}
