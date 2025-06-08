@@ -11,7 +11,8 @@
   gtk = {
     enable = true;
 
-    theme = { name = "Everforest-Dark-BL-LB"; package = pkgs.everforest-gtk-theme; };
+    # theme = { name = "Everforest-Dark-BL-LB"; package = pkgs.everforest-gtk-theme; };
+    theme = { name = "adw-gtk3-dark"; package = pkgs.adw-gtk3; };
     iconTheme = { name = "Papirus-Dark"; package = pkgs.papirus-icon-theme; };
 
     font = { name = "UbuntuMono Nerd Font Mono"; };

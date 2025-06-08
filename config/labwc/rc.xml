@@ -172,12 +172,20 @@
     </keybind>
     <keybind key="W-Space">
       <action name="Execute">
-        <command>sh -c 'bemenu-run -b --fn "UbuntuMono Nerd Font Mono"'</command>
+        <command>bemenu-run -b --fn "UbuntuMono Nerd Font Mono"</command>
       </action>
     </keybind>
     <keybind key="W-S-s">
       <action name="Execute">
         <command>sh -c 'grim -g "$(slurp)" - | wl-copy'</command>
+      </action>
+    </keybind>
+    <keybind key="W-v">
+      <action name="Execute" command="/config/dist/vm.sh" />
+    </keybind>
+    <keybind key="W-g">
+      <action name="Execute">
+        <command>looking-glass-client -m 97</command>
       </action>
     </keybind>
     <keybind key="W-x">
@@ -192,6 +200,12 @@
     <keybind key="W-h">
       <action name="Iconify" />
     </keybind>
+    <keybind key="C-A-Left">
+        <action name="GoToDesktop" to="left" wrap="no" />
+    </keybind>
+    <keybind key="C-A-Right">
+        <action name="GoToDesktop" to="right" wrap="no" />
+    </keybind>
     <keybind key="W-Left">
       <action name="SnapToEdge" direction="left" />
     </keybind>
@@ -204,23 +218,20 @@
     <keybind key="W-Down">
       <action name="SnapToEdge" direction="down" />
     </keybind>
-    <keybind key="A-Space">
-      <action name="ShowMenu" menu="client-menu" atCursor="no" />
-    </keybind>
     <keybind key="XF86_AudioLowerVolume">
-      <action name="Execute" command="amixer sset Master 5%-" />
+      <action name="Execute" command="pamixer -d 5" />
     </keybind>
     <keybind key="XF86_AudioRaiseVolume">
-      <action name="Execute" command="amixer sset Master 5%+" />
+      <action name="Execute" command="pamixer -i 5" />
     </keybind>
     <keybind key="XF86_AudioMute">
-      <action name="Execute" command="amixer sset Master toggle" />
+      <action name="Execute" command="pamixer -t" />
     </keybind>
     <keybind key="XF86_MonBrightnessUp">
-      <action name="Execute" command="brightnessctl set +10%" />
+      <action name="Execute" command="brightnessctl set +5%" />
     </keybind>
     <keybind key="XF86_MonBrightnessDown">
-      <action name="Execute" command="brightnessctl set 10%-" />
+      <action name="Execute" command="brightnessctl set 5%-" />
     </keybind>
   </keyboard>
 
