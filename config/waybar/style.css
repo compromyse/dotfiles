@@ -32,6 +32,7 @@ window#waybar {
 #workspaces,
 #tray,
 #battery,
+#network,
 #pulseaudio,
 #backlight {
     margin: 6px 6px 6px 0px;

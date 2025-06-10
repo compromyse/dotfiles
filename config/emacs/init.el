@@ -64,6 +64,7 @@
 (setq popper-reference-buffers
       '("\\*Messages\\*"
         "Output\\*$"
+        "\\*compilation\\*"
         "\\*Async Shell Command\\*"
         "\\*Async-native-compile-log\\*"
         help-mode))
