@@ -97,7 +97,7 @@
 (add-hook 'c++-mode-hook 'eglot-ensure)
 (add-hook 'python-mode-hook 'eglot-ensure)
 
-(add-hook 'after-save-hook 'eglot-format)
+(add-hook 'before-save-hook 'eglot-format)
 
 (global-set-key (kbd "s-`") 'popper-toggle)
 (global-set-key (kbd "C-`") 'popper-cycle)

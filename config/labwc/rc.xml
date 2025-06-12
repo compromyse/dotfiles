@@ -206,6 +206,12 @@
     <keybind key="C-A-Right">
         <action name="GoToDesktop" to="right" wrap="no" />
     </keybind>
+    <keybind key="C-A-S-Left">
+        <action name="SendToDesktop" to="left" wrap="no" />
+    </keybind>
+    <keybind key="C-A-S-Right">
+        <action name="SendToDesktop" to="right" wrap="no" />
+    </keybind>
     <keybind key="W-Left">
       <action name="SnapToEdge" direction="left" />
     </keybind>
