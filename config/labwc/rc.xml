@@ -244,6 +244,9 @@
     <keybind key="XF86_MonBrightnessDown">
       <action name="Execute" command="brightnessctl set 5%-" />
     </keybind>
+    <keybind key="Scroll_Lock">
+      <action name="ToggleKeybinds" />
+    </keybind>
   </keyboard>
 
   <!--

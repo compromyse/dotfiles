@@ -23,10 +23,10 @@
     };
   };
 
-  hardware.nvidia-container-toolkit.enable = true;
+  # hardware.nvidia-container-toolkit.enable = true;
 
   environment.systemPackages = [
     pkgs.cudatoolkit
-    pkgs.nvidia-container-toolkit
+    # pkgs.nvidia-container-toolkit
   ];
 }
