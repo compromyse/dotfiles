@@ -86,19 +86,19 @@ in
       "vfio_pci"
       "vfio"
       "vfio_iommu_type1"
-
-      "nvidia"
-      "nvidia_modeset"
-      "nvidia_uvm"
-      "nvidia_drm"
     ];
 
     kernelParams = [
+      "modprobe.blacklist=nvidia,nvidia_modeset,nvidia_uvm,nvidia_drm"
       "skippatcheck"
       "pci_acs_override=downstream,multifunction"
       ("vfio-pci.ids=" + lib.concatStringsSep "," gpuIDs)
     ];
   };
+
+  boot.extraModprobeConfig = ''
+    options vfio-pci ids=${lib.concatStringsSep "," gpuIDs}
+  '';
 
   # Use the custom kernel package set
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
