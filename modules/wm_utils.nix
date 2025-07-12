@@ -17,6 +17,7 @@
     networkmanagerapplet
     grim
     slurp
+    swappy
 
     sway-launcher-desktop
     bemenu

@@ -77,9 +77,10 @@ in {
   ];
 
   networking.extraHosts = ''
+    127.0.0.1 diagnofy.labsmartlis.local
     192.168.122.100 android
     192.168.122.101 deb
-    192.168.122.102 testdb app.labsmartlis.local
+    192.168.122.102 testdb
     192.168.122.104 dev
   '';
 }
