@@ -38,6 +38,10 @@ window#waybar {
   color: #9b9b9b
 }
 
+#tags button.occupied {
+  background: #2f2f2f;
+}
+
 #tags button.focused {
   padding: 2px 12px;
   background: #9b9b9b;
