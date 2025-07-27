@@ -33,9 +33,9 @@ volume() {
   pamixer --get-volume
 }
 
-# while [[ true ]]; do
-#   dwlb -status all "| ^lm(alacritty -e nmtui-connect)  $(wifi)^lm() |   $(volume)% | $(battery)%$(charging) |   $(calendar) | λ |"
-#   sleep 1
-# done
+while [[ true ]]; do
+  dwlb -status all "| ^lm(alacritty -e nmtui-connect)  $(wifi)^lm() |   $(volume)% | $(battery)%$(charging) |   $(calendar) | λ |"
+  sleep 1
+done
 
-echo "|   $(wifi) |   $(volume)% | $(battery)%$(charging) |   $(calendar) | λ |"
+# echo "|   $(wifi) |   $(volume)% | $(battery)%$(charging) |   $(calendar) | λ |"

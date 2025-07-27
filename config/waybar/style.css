@@ -1,10 +1,4 @@
-/* -----------------------------------------------------------------------------
- * Styles
- * -------------------------------------------------------------------------- */
-
 /* COLORS */
-
-/* Nord */
 @define-color bg #191919;
 @define-color light #212121;
 
@@ -26,6 +20,30 @@ window#waybar {
     border: 2px solid #191919;
 }
 
+#window {
+    margin: 6px 6px 6px 0px;
+    padding: 2px 8px;
+    color: #9b9b9b
+}
+
+#tags {
+    margin: 6px;
+    background: #212121;
+    color: #9b9b9b
+}
+
+#tags button, #tags button:hover {
+  padding: 2px 12px;
+  background: #212121;
+  color: #9b9b9b
+}
+
+#tags button.focused {
+  padding: 2px 12px;
+  background: #9b9b9b;
+  color: #212121;
+}
+
 /* Each module */
 #clock,
 #taskbar button,
@@ -45,8 +63,8 @@ window#waybar {
     padding: 0 6px;
 }
 
-#window {
-    margin-right: 40px;
-    margin-left: 40px;
-    font-weight: normal;
-}
+/* #window { */
+/*     margin-right: 40px; */
+/*     margin-left: 40px; */
+/*     font-weight: normal; */
+/* } */
