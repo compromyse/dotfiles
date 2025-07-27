@@ -10,9 +10,9 @@
     enable = true;
     settings = {
       default_session = {
-        # command = "tuigreet --time --remember --cmd \"sway\"";
-        command = "tuigreet --time --remember --cmd labwc";
-        # command = "tuigreet --time --remember --cmd \"dwl -s dwlb\"";
+        # command = "tuigreet --time --remember --cmd sway";
+        # command = "tuigreet --time --remember --cmd labwc";
+        command = "tuigreet --time --remember --cmd \"dwl -s dwlb\"";
         user = "greeter";
       };
     };
