@@ -151,6 +151,14 @@ telescope.setup({
     layout_config = {
       height = 0.4
     },
+    mappings = {
+      i = {
+        ["<CR>"] = actions.select_tab
+      },
+      n = {
+        ["<CR>"] = actions.select_tab
+      },
+    },
   },
 })
 
