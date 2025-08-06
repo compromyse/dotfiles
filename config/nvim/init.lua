@@ -196,21 +196,10 @@ vim.cmd.colorscheme('meh')
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
---- Move to previous/next
-map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
-map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
--- Re-order to previous/next
-map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
-map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
---- Close buffer
+map('n', '<A-,>', '<Cmd>tabprev<CR>', opts)
+map('n', '<A-.>', '<Cmd>tabnext<CR>', opts)
+map('n', '<A-t>', '<Cmd>tabnew<CR>', opts)
 map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
-
-
---[[ -- Re-order to previous/next
-map('n', '<A-<>', '<Cmd>tabprev<CR>', opts)
-map('n', '<A->>', '<Cmd>tabnext<CR>', opts)
--- Close tab
-map('n', '<A-c>', '<Cmd>tabclose<CR>', opts) ]]
 
 vim.api.nvim_create_augroup('AutoFormatting', {})
 vim.api.nvim_create_autocmd('BufWritePre', {
