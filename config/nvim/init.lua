@@ -39,6 +39,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  'stevearc/oil.nvim',
+
 	'lukas-reineke/indent-blankline.nvim',
   'windwp/nvim-autopairs',
   'numToStr/Comment.nvim',
@@ -46,22 +48,20 @@ require('lazy').setup({
   'romgrk/barbar.nvim',
   'nvim-tree/nvim-web-devicons',
 
-  'kvrohit/rasmus.nvim',
-
 	'hrsh7th/cmp-nvim-lsp',
-	'hrsh7th/nvim-cmp',
 	'neovim/nvim-lspconfig',
   'hrsh7th/cmp-nvim-lsp-signature-help',
+	'hrsh7th/nvim-cmp',
   'L3MON4D3/LuaSnip',
+
   'nvim-telescope/telescope.nvim',
   'nvim-lua/plenary.nvim',
-  'klen/nvim-config-local',
 
-  'stevearc/oil.nvim',
+  'klen/nvim-config-local',
 
   'christoomey/vim-tmux-navigator',
 
-  'vala-lang/vala.vim'
+  'davidosomething/vim-colors-meh',
 })
 
 require('config-local').setup {
@@ -73,9 +73,6 @@ local oil = require('oil')
 _G.oil = oil
 oil.setup {
   default_file_explorer = true,
-  columns = {
-    'icon'
-  },
   view_options = {
     show_hidden = true
   }
@@ -157,6 +154,9 @@ telescope.setup({
   },
 })
 
+--- Barbar
+require('barbar').setup {}
+
 -- Set Up Autopairs
 require('nvim-autopairs').setup({ map_cr = true })
 
@@ -191,21 +191,26 @@ vim.keymap.set('n', '<A-a>', '<cmd>lua oil.toggle_float()<cr>', { noremap = true
 vim.api.nvim_set_keymap('n', '<A-\\>', ':vsplit<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<A-->', ':split<CR>', { noremap = true })
 
-require('barbar').setup {}
-
-vim.cmd.colorscheme('rasmus')
+vim.cmd.colorscheme('meh')
 
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
--- Move to previous/next
+--- Move to previous/next
 map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
 map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
 -- Re-order to previous/next
 map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
 map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
--- Close buffer
+--- Close buffer
 map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+
+
+--[[ -- Re-order to previous/next
+map('n', '<A-<>', '<Cmd>tabprev<CR>', opts)
+map('n', '<A->>', '<Cmd>tabnext<CR>', opts)
+-- Close tab
+map('n', '<A-c>', '<Cmd>tabclose<CR>', opts) ]]
 
 vim.api.nvim_create_augroup('AutoFormatting', {})
 vim.api.nvim_create_autocmd('BufWritePre', {

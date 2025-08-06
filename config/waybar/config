@@ -20,7 +20,7 @@
     },
 
     "dwl/window": {
-        "format": "|> {title}",
+        "format": "{layout} {title}",
         "max-length": 50,
         "swap-icon-label": false
     },

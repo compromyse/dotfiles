@@ -42,7 +42,8 @@ window#waybar {
   background: #2f2f2f;
 }
 
-#tags button.focused {
+#tags button.focused,
+#tags button.urgent {
   padding: 2px 12px;
   background: #9b9b9b;
   color: #212121;
