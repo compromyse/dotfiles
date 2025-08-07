@@ -6,8 +6,8 @@ vim.opt.smartcase = true
 vim.opt.hlsearch = false
 vim.opt.wrap = true
 vim.opt.breakindent = true
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.termguicolors = true
 vim.opt.splitbelow = true
@@ -20,137 +20,137 @@ vim.opt.showtabline = 2
 -- Reset Cursor On Exit
 local au_id = vim.api.nvim_create_augroup('RestoreCursorShapeOnExit', {clear = true})
 vim.api.nvim_create_autocmd('VimLeave',{
-  command = 'set guicursor=a:ver20',
-  group = au_id
+    command = 'set guicursor=a:ver20',
+    group = au_id
 })
 
 -- Setup Packages
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system({
-    'git',
-    'clone',
-    '--filter=blob:none',
-    'https://github.com/folke/lazy.nvim.git',
-    '--branch=stable', -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        'git',
+        'clone',
+        '--filter=blob:none',
+        'https://github.com/folke/lazy.nvim.git',
+        '--branch=stable', -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  'stevearc/oil.nvim',
+    'stevearc/oil.nvim',
 
-	'lukas-reineke/indent-blankline.nvim',
-  'windwp/nvim-autopairs',
-  'numToStr/Comment.nvim',
+    'lukas-reineke/indent-blankline.nvim',
+    'windwp/nvim-autopairs',
+    'numToStr/Comment.nvim',
 
-  'nvim-tree/nvim-web-devicons',
+    'nvim-tree/nvim-web-devicons',
 
-	'hrsh7th/cmp-nvim-lsp',
-	'neovim/nvim-lspconfig',
-  'hrsh7th/cmp-nvim-lsp-signature-help',
-	'hrsh7th/nvim-cmp',
-  'L3MON4D3/LuaSnip',
+    'hrsh7th/cmp-nvim-lsp',
+    'neovim/nvim-lspconfig',
+    'hrsh7th/cmp-nvim-lsp-signature-help',
+    'hrsh7th/nvim-cmp',
+    'L3MON4D3/LuaSnip',
 
-  'nvim-telescope/telescope.nvim',
-  'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim',
+    'nvim-lua/plenary.nvim',
 
-  'klen/nvim-config-local',
+    'klen/nvim-config-local',
 
-  'christoomey/vim-tmux-navigator',
+    'christoomey/vim-tmux-navigator',
 
-  'metalelf0/black-metal-theme-neovim',
+    'metalelf0/black-metal-theme-neovim',
 })
 
 require('config-local').setup {
-  config_files = { ".nvim.lua", ".nvimrc", ".exrc" },
-  hashfile = vim.fn.stdpath("data") .. "/config-local",
+    config_files = { ".nvim.lua", ".nvimrc", ".exrc" },
+    hashfile = vim.fn.stdpath("data") .. "/config-local",
 }
 
 local oil = require('oil')
 _G.oil = oil
 oil.setup {
-  default_file_explorer = true,
-  view_options = {
-    show_hidden = true
-  }
+    default_file_explorer = true,
+    view_options = {
+        show_hidden = true
+    }
 }
 
 require('ibl').setup()
 
 require('Comment').setup {
-  padding = true,
-  toggler = {
-    line = '\\\\',
-    block = ']]'
-  },
-  opleader = {
-    line = '\\\\',
-    block = ']]'
-  }
+    padding = true,
+    toggler = {
+        line = '\\\\',
+        block = ']]'
+    },
+    opleader = {
+        line = '\\\\',
+        block = ']]'
+    }
 }
 
 -- CMP Setup
 local cmp = require'cmp'
 cmp.setup({
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end
-  },
-  window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<TAB>'] = cmp.mapping.confirm({ select = true }),
-  }),
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'buffer' },
-    { name = 'nvim_lsp_signature_help' },
-  }
+    snippet = {
+        expand = function(args)
+            require('luasnip').lsp_expand(args.body)
+        end
+    },
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<TAB>'] = cmp.mapping.confirm({ select = true }),
+    }),
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'buffer' },
+        { name = 'nvim_lsp_signature_help' },
+    }
 })
 cmp.setup.filetype('gitcommit', {
-  sources = cmp.config.sources({
-    { name = 'cmp_git' },
-  }, {
-    { name = 'buffer' },
-  })
+    sources = cmp.config.sources({
+        { name = 'cmp_git' },
+    }, {
+        { name = 'buffer' },
+    })
 })
 cmp.setup.cmdline({ '/', '?' }, {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = 'buffer' }
-  }
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = 'buffer' }
+    }
 })
 cmp.setup.cmdline(':', {
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  })
+    sources = cmp.config.sources({
+        { name = 'path' }
+    }, {
+        { name = 'cmdline' }
+    })
 })
 
 -- Set Up Telescope
 local actions = require('telescope.actions')
 local telescope = require('telescope')
 telescope.setup({
-  pickers = {
-    find_files = {
-      hidden = true
-    }
-  },
-  defaults = {
-    layout_strategy = 'bottom_pane',
-    layout_config = {
-      height = 0.4
+    pickers = {
+        find_files = {
+            hidden = true
+        }
     },
-  },
+    defaults = {
+        layout_strategy = 'bottom_pane',
+        layout_config = {
+            height = 0.4
+        },
+    },
 })
 
 -- Set Up Autopairs
@@ -202,10 +202,10 @@ map('n', '<A-[>', '<Cmd>bprev<CR>', opts)
 
 vim.api.nvim_create_augroup('AutoFormatting', {})
 vim.api.nvim_create_autocmd('BufWritePre', {
-  group = 'AutoFormatting',
-  callback = function()
-    vim.lsp.buf.format()
-  end,
+    group = 'AutoFormatting',
+    callback = function()
+        vim.lsp.buf.format()
+    end,
 })
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
