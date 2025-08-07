@@ -15,6 +15,7 @@ vim.opt.scrolloff = 5
 vim.opt.mouse= 'a'
 vim.api.nvim_set_option('clipboard','unnamedplus')
 vim.opt.ruler = false
+vim.opt.showtabline = 2
 
 -- Reset Cursor On Exit
 local au_id = vim.api.nvim_create_augroup('RestoreCursorShapeOnExit', {clear = true})
@@ -44,7 +45,6 @@ require('lazy').setup({
   'windwp/nvim-autopairs',
   'numToStr/Comment.nvim',
 
-  'romgrk/barbar.nvim',
   'nvim-tree/nvim-web-devicons',
 
 	'hrsh7th/cmp-nvim-lsp',
@@ -153,9 +153,6 @@ telescope.setup({
   },
 })
 
---- Barbar
-require('barbar').setup {}
-
 -- Set Up Autopairs
 require('nvim-autopairs').setup({ map_cr = true })
 
@@ -195,12 +192,13 @@ vim.cmd.colorscheme('bathory')
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
--- map('n', '<A-,>', '<Cmd>tabprev<CR>', opts)
--- map('n', '<A-.>', '<Cmd>tabnext<CR>', opts)
--- map('n', '<A-t>', '<Cmd>tabnew<CR>', opts)
-map('n', '<A-,>', '<Cmd>bnext<CR>', opts)
-map('n', '<A-.>', '<Cmd>bprev<CR>', opts)
-map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+map('n', '<A-.>', '<Cmd>tabnext<CR>', opts)
+map('n', '<A-,>', '<Cmd>tabprev<CR>', opts)
+map('n', '<A-t>', '<Cmd>tabnew<CR>', opts)
+map('n', '<A-w>', '<Cmd>tabclose<CR>', opts)
+
+map('n', '<A-]>', '<Cmd>bnext<CR>', opts)
+map('n', '<A-[>', '<Cmd>bprev<CR>', opts)
 
 vim.api.nvim_create_augroup('AutoFormatting', {})
 vim.api.nvim_create_autocmd('BufWritePre', {
