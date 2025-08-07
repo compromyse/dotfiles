@@ -1,7 +1,6 @@
 -- General Settings
 vim.opt.number = true
 vim.opt.rnu = true
-vim.opt.mouse= ''
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = false
@@ -61,7 +60,7 @@ require('lazy').setup({
 
   'christoomey/vim-tmux-navigator',
 
-  'davidosomething/vim-colors-meh',
+  'metalelf0/black-metal-theme-neovim',
 })
 
 require('config-local').setup {
@@ -151,14 +150,6 @@ telescope.setup({
     layout_config = {
       height = 0.4
     },
-    mappings = {
-      i = {
-        ["<CR>"] = actions.select_tab
-      },
-      n = {
-        ["<CR>"] = actions.select_tab
-      },
-    },
   },
 })
 
@@ -199,14 +190,16 @@ vim.keymap.set('n', '<A-a>', '<cmd>lua oil.toggle_float()<cr>', { noremap = true
 vim.api.nvim_set_keymap('n', '<A-\\>', ':vsplit<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<A-->', ':split<CR>', { noremap = true })
 
-vim.cmd.colorscheme('meh')
+vim.cmd.colorscheme('bathory')
 
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
-map('n', '<A-,>', '<Cmd>tabprev<CR>', opts)
-map('n', '<A-.>', '<Cmd>tabnext<CR>', opts)
-map('n', '<A-t>', '<Cmd>tabnew<CR>', opts)
+-- map('n', '<A-,>', '<Cmd>tabprev<CR>', opts)
+-- map('n', '<A-.>', '<Cmd>tabnext<CR>', opts)
+-- map('n', '<A-t>', '<Cmd>tabnew<CR>', opts)
+map('n', '<A-,>', '<Cmd>bnext<CR>', opts)
+map('n', '<A-.>', '<Cmd>bprev<CR>', opts)
 map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 
 vim.api.nvim_create_augroup('AutoFormatting', {})
