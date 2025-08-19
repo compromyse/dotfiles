@@ -35,6 +35,8 @@
 
     git-lfs
     slides
+
+    calibre
   ];
 
   programs = {
