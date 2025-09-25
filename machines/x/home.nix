@@ -37,6 +37,7 @@
     slides
 
     calibre
+    kdePackages.okular
   ];
 
   programs = {

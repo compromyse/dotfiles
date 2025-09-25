@@ -24,7 +24,8 @@ in {
     man-pages-posix
   ];
 
-  time.timeZone = "Asia/Kolkata";
+  time.timeZone = "America/New_York";
+  # time.timeZone = "Asia/Kolkata";
 
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;

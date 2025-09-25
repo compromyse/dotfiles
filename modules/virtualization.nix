@@ -51,6 +51,8 @@ in
     '')
 
     (pkgs.writeShellScriptBin "vfio-bind" ''
+      set -xe
+
       sudo modprobe -r nvidia_drm nvidia_modeset nvidia_uvm i2c_nvidia_gpu nvidia
 
       sudo modprobe vfio
@@ -63,9 +65,13 @@ in
       sudo virsh nodedev-detach pci_0000_01_00_1
 
       systemctl --user -M compromyse@ restart pipewire.service pipewire.socket
+
+      set +xe
     '')
 
     (pkgs.writeShellScriptBin "vfio-unbind" ''
+      set -xe
+
       systemctl --user -M compromyse@ stop pipewire.service pipewire.socket
 
       sudo virsh nodedev-reattach pci_0000_01_00_0
@@ -78,6 +84,8 @@ in
       sudo modprobe -r vfio
 
       sudo modprobe nvidia_drm nvidia_modeset nvidia_uvm i2c_nvidia_gpu nvidia
+
+      set +xe
     '')
   ];
 
@@ -101,7 +109,8 @@ in
   '';
 
   # Use the custom kernel package set
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod;
+  # boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # boot.kernelPatches = [
   #   {

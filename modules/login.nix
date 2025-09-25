@@ -19,9 +19,9 @@
     };
   };
 
-  services.logind.extraConfig = ''
-    HandlePowerKey=ignore
-  '';
+  services.logind.settings.Login = {
+    HandlePowerKey = "ignore";
+  };
 
   systemd.services.greetd.serviceConfig = {
     Type = "idle";
