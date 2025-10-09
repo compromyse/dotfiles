@@ -18,35 +18,42 @@ in {
 
   services.h2o = {
     enable = true;
-    extraConfig = ''
-      listen:
-        port: 80
-        host: 0.0.0.0
-      listen:
-        port: 443
-        host: 0.0.0.0
-        ssl:
-          certificate-file: /var/lib/acme/git.compromyse.xyz/fullchain.pem
-          key-file: /var/lib/acme/git.compromyse.xyz/key.pem
+    user = "cgit";
+    group = "cgit";
 
-      # Default host configuration
-      hosts:
-        "*":
-          paths:
-            "/static/":
-              file.dir: ${pkgs.cgit}/cgit
+    hosts = {
+      "" = {
+        listen = [
+          { port = 80; host = "0.0.0.0"; }
+          {
+            port = 443;
+            host = "0.0.0.0";
+            ssl = {
+              certificate-file = "/var/lib/acme/git.compromyse.xyz/fullchain.pem";
+              key-file = "/var/lib/acme/git.compromyse.xyz/key.pem";
+            };
+          }
+        ];
 
-            "/":
-              fastcgi.connect:
-                unix: /run/cgit.sock
-              fastcgi.spawn: "no"
-              fastcgi.params:
-                SCRIPT_FILENAME: ${pkgs.cgit}/cgit/cgit.cgi
-                PATH_INFO: "index.html"
+        paths = {
+          "/static/" = {
+            file.dir = "${pkgs.cgit}/cgit";
+          };
 
-          access-log: /var/log/h2o/git-access.log
-          error-log: /var/log/h2o/git-error.log
-    '';
+          "/" = {
+            fastcgi.connect.unix = "/run/cgit.sock";
+            fastcgi.spawn = "no";
+            fastcgi.params = {
+              SCRIPT_FILENAME = "${pkgs.cgit}/cgit/cgit.cgi";
+              PATH_INFO = "index.html";
+            };
+          };
+        };
+
+        accessLog = "/var/log/h2o/git-access.log";
+        errorLog = "/var/log/h2o/git-error.log";
+      };
+    };
   };
 
   security.acme = {
