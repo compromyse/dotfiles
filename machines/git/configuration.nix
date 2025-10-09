@@ -1,7 +1,7 @@
 { lib, inputs, pkgs, ... }:
 
 let
-  drive = "/dev/nvme0n1";
+  drive = "/dev/vda";
 in {
   imports = [
     ./hardware-configuration.nix
