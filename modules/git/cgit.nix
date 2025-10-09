@@ -3,8 +3,10 @@
 let
   repositoryPath = "/home/compromyse";
 in {
-  services.cgit."localhost" = {
+  services.cgit."git.compromyse.xyz" = {
     enable = true;
+    user = "root";
+    group = "root";
     scanPath = repositoryPath;
     settings = {
       root-title = "compromyse: CGIT";
@@ -14,51 +16,6 @@ in {
       enable-log-filecount = 1;
       enable-log-linecount = 1;
     };
-  };
-
-  services.h2o = {
-    enable = true;
-    user = "cgit";
-    group = "cgit";
-
-    hosts = {
-      "" = {
-        listen = [
-          { port = 80; host = "0.0.0.0"; }
-          {
-            port = 443;
-            host = "0.0.0.0";
-            ssl = {
-              certificate-file = "/var/lib/acme/git.compromyse.xyz/fullchain.pem";
-              key-file = "/var/lib/acme/git.compromyse.xyz/key.pem";
-            };
-          }
-        ];
-
-        paths = {
-          "/static/" = {
-            file.dir = "${pkgs.cgit}/cgit";
-          };
-
-          "/" = {
-            fastcgi.connect.unix = "/run/cgit.sock";
-            fastcgi.spawn = "no";
-            fastcgi.params = {
-              SCRIPT_FILENAME = "${pkgs.cgit}/cgit/cgit.cgi";
-              PATH_INFO = "index.html";
-            };
-          };
-        };
-
-        accessLog = "/var/log/h2o/git-access.log";
-        errorLog = "/var/log/h2o/git-error.log";
-      };
-    };
-  };
-
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "raghus2247@gmail.com";
-    certs."git.compromyse.xyz".webroot = "/var/lib/acme/acme-challenge";
+    virtualHost = "git.compromyse.xyz"
   };
 }
