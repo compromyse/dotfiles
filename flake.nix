@@ -49,6 +49,19 @@
         ];
       };
 
+      git = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          inputs.disko.nixosModules.default
+
+          ./machines/git/configuration.nix
+
+          inputs.home-manager.nixosModules.default
+          inputs.impermanence.nixosModules.impermanence
+        ];
+      };
+
     };
   };
 }
