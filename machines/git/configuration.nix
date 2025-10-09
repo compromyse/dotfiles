@@ -13,6 +13,7 @@ in {
     "core/global.nix"
     "core/impermanence.nix"
     "git/compromyse.nix"
+    "git/cgit.nix"
   ]);
 
   networking.hostName = "git";

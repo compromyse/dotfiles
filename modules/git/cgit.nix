@@ -1,9 +1,9 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 let
   repositoryPath = "/home/compromyse";
 in {
-  services.cgit = {
+  services.cgit."localhost" = {
     enable = true;
     scanPath = repositoryPath;
     settings = {
