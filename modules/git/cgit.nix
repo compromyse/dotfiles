@@ -16,26 +16,42 @@ in {
     };
   };
 
-  services.fcgiwrap.enable = true;
-
-  services.nginx = {
+  services.h2o = {
     enable = true;
-    virtualHosts."git.compromyse.xyz" = {
-      # forceSSL = true;
-      # enableACME = true;
-      root = "${pkgs.cgit}/cgit";
-      locations."/" = {
-        extraConfig = ''
-          include ${pkgs.cgit}/cgit/cgit.conf;
-          fastcgi_pass unix:${config.services.fcgiwrap.socketAddress};
-          fastcgi_param SCRIPT_FILENAME ${pkgs.cgit}/cgit/cgit.cgi;
-          fastcgi_param PATH_INFO $uri;
-          include ${pkgs.nginx}/conf/fastcgi_params;
-        '';
-      };
-    };
+    extraConfig = ''
+      listen:
+        port: 80
+        host: 0.0.0.0
+      listen:
+        port: 443
+        host: 0.0.0.0
+        ssl:
+          certificate-file: /var/lib/acme/git.compromyse.xyz/fullchain.pem
+          key-file: /var/lib/acme/git.compromyse.xyz/key.pem
+
+      # Default host configuration
+      hosts:
+        "*":
+          paths:
+            "/static/":
+              file.dir: ${pkgs.cgit}/cgit
+
+            "/":
+              fastcgi.connect:
+                unix: /run/cgit.sock
+              fastcgi.spawn: "no"
+              fastcgi.params:
+                SCRIPT_FILENAME: ${pkgs.cgit}/cgit/cgit.cgi
+                PATH_INFO: "index.html"
+
+          access-log: /var/log/h2o/git-access.log
+          error-log: /var/log/h2o/git-error.log
+    '';
   };
 
-  # security.acme.acceptTerms = true;
-  # security.acme.defaults.email = "raghus2247@gmail.com";
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "raghus2247@gmail.com";
+    certs."git.compromyse.xyz".webroot = "/var/lib/acme/acme-challenge";
+  };
 }
