@@ -1,7 +1,7 @@
 { lib, inputs, pkgs, ... }:
 
 let
-  drive = "/dev/vda";
+  drive = "/dev/sda";
 in {
   imports = [
     ./hardware-configuration.nix
@@ -12,6 +12,7 @@ in {
   ] ++ (map (path: ../../modules/${path}) [
     "core/global.nix"
     "core/impermanence.nix"
+    "ssh.nix"
     "git/compromyse.nix"
     "git/cgit.nix"
   ]);
