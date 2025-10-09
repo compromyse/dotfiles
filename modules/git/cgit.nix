@@ -20,7 +20,7 @@ in {
 
   services.nginx = {
     enable = true;
-    virtualHosts."git.compromyse.com" = {
+    virtualHosts."git.compromyse.xyz" = {
       # forceSSL = true;
       # enableACME = true;
       root = "${pkgs.cgit}/cgit";
