@@ -21,8 +21,8 @@ in {
   services.nginx = {
     enable = true;
     virtualHosts."git.compromyse.com" = {
-      forceSSL = true;
-      enableACME = true;
+      # forceSSL = true;
+      # enableACME = true;
       root = "${pkgs.cgit}/cgit";
       locations."/" = {
         extraConfig = ''
@@ -36,6 +36,6 @@ in {
     };
   };
 
-  security.acme.acceptTerms = true;
-  security.acme.defaults.email = "raghus2247@gmail.com";
+  # security.acme.acceptTerms = true;
+  # security.acme.defaults.email = "raghus2247@gmail.com";
 }
