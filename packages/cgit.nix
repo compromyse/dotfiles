@@ -1,4 +1,5 @@
 {
+  fetchurl,
   lib,
   stdenv,
   openssl,
@@ -20,7 +21,7 @@
   python3Packages,
 }:
 
-stdenv.mkDerivation {
+stdenv.mkDerivation rec {
   pname = "cgit";
   version = "1.2.3";
 
@@ -36,7 +37,6 @@ stdenv.mkDerivation {
     url = "mirror://kernel/software/scm/git/git-2.25.1.tar.xz";
     sha256 = "09lzwa183nblr6l8ib35g2xrjf9wm9yhk3szfvyzkwivdv69c9r2";
   };
-
   separateDebugInfo = true;
 
   nativeBuildInputs = [
@@ -47,7 +47,7 @@ stdenv.mkDerivation {
     python
     wrapPython
   ]);
-  buildInputs = buildInputs ++ [
+  buildInputs = [
     openssl
     zlib
     libxml2
@@ -119,6 +119,6 @@ stdenv.mkDerivation {
     description = "Web frontend for git repositories";
     license = lib.licenses.gpl2;
     platforms = lib.platforms.linux;
-    maintainers = maintainers ++ (with lib.maintainers; [ qyliss ]);
+    maintainers = (with lib.maintainers; [ qyliss ]);
   };
 }
