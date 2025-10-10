@@ -1,17 +1,11 @@
 { lib, inputs, pkgs, ... }:
 
-let
-  drive = "/dev/sda";
-in {
+{
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-
-    (import ../../disko.nix { device = drive; })
-
   ] ++ (map (path: ../../modules/${path}) [
     "core/global.nix"
-    "core/impermanence.nix"
     "ssh.nix"
     "git/compromyse.nix"
     "git/cgit.nix"
