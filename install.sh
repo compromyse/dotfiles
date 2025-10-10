@@ -7,6 +7,7 @@ fi
 
 MACHINE="$1"
 
+sudo mkdir -p /mnt/config
 sudo cp -rv * /mnt/config
 
 CONFIG_ARGS="--root /mnt"
@@ -14,7 +15,7 @@ if [ $MACHINE = "x" ]; then
     CONFIG_ARGS="$CONFIG_ARGS --no-filesystems"
 fi
 
-sudo nixos-generate-config --root /mnt --no-filesystems
+sudo nixos-generate-config $CONFIG_ARGS
 
 cd /mnt/config
 sudo mv -v /mnt/etc/nixos/hardware-configuration.nix machines/$MACHINE/hardware-configuration.nix
