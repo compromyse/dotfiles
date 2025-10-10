@@ -110,7 +110,7 @@ stdenv.mkDerivation rec {
       }'
     done
 
-    cp -r ${dist} "$out/cgit"
+    cp -r ${dist}/* "$out/cgit"
   '';
 
   stripDebugList = [ "cgit" ];
