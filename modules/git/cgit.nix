@@ -22,7 +22,7 @@ in {
       enable-commit-graph = true;
       enable-follow-links = true;
 
-      source-filter = "${cgit}/lib/cgit/filters/syntax-highlighting.sh";
+      source-filter = "${cgit}/lib/cgit/filters/syntax-highlighting.py";
       about-filter = "${cgit}/lib/cgit/filters/about-formatting.sh";
 
       head-include = "/config/modules/git/cgit-dist/cgit_theme.css";
