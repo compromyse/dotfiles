@@ -11,10 +11,8 @@ in {
     settings = {
       root-title = "compromyse: CGIT";
       root-desc = "Compromyse's Git Repositories";
-      clone-url = "https://git.compromyse.xyz/$CGIT_REPO_URL";
-      enable-commit-graph = 1;
-      enable-log-filecount = 1;
-      enable-log-linecount = 1;
+      enable-follow-links = true;
+      source-filter = "${pkgs.cgit}/lib/cgit/filters/syntax-highlighting.py";
     };
     nginx.virtualHost = "git.compromyse.xyz";
   };
