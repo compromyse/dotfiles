@@ -7,7 +7,6 @@ fi
 
 MACHINE="$1"
 
-sudo mkdir -p /mnt/config
 sudo cp -rv * /mnt/config
 
 CONFIG_ARGS="--root /mnt"

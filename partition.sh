@@ -7,30 +7,27 @@ fi
 
 DISK="$1"
 
-sudo fdisk $DISK <<EEOF
-o
-n
-p
-1
-2048
-+500M
-n
-p
-2
+sudo parted -s $DISK mklabel gpt
+sudo parted -s $DISK mkpart primary ext4 10MB 100%
+sudo parted -s $DISK name 1 linux
+sudo parted -s $DISK mkpart primary 1 10MB
+sudo parted -s $DISK name 2 grub
+sudo parted -s $DISK set 2 bios_grub on
 
+sudo mkfs.btrfs -L linux "$DISK"1
+sudo mount /dev/sda1 /mnt
 
-w
-EEOF
+sudo btrfs subvolume create /mnt/root
+sudo btrfs subvolume create /mnt/boot
+sudo btrfs subvolume create /mnt/home
+sudo btrfs subvolume create /mnt/nix
+sudo btrfs subvolume create /mnt/config
 
-sudo mkfs.fat -F 32 "$DISK"1
-sudo fatlabel "$DISK"1 NIXBOOT
-sudo mkfs.ext4 "$DISK"2 -L NIXROOT
+sudo umount /mnt
+sudo mount -o subvol=root /mnt
+sudo mkdir -p /mnt/{boot,home,nix,config}
 
-sudo mount /dev/disk/by-label/NIXROOT /mnt
-sudo mkdir -p /mnt/boot
-sudo mount /dev/disk/by-label/NIXBOOT /mnt/boot
-
-sudo fallocate -l 2G /mnt/.swapfile
-sudo chmod 600 /mnt/.swapfile
-sudo mkswap /mnt/.swapfile
-sudo swapon /mnt/.swapfile
+sudo mount -o subvol=boot /mnt/boot
+sudo mount -o subvol=home /mnt/home
+sudo mount -o subvol=nix /mnt/nix
+sudo mount -o subvol=config /mnt/config
