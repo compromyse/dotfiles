@@ -21,9 +21,11 @@ in {
 
       enable-commit-graph = true;
       enable-follow-links = true;
-      source-filter = "${cgit}/lib/cgit/filters/syntax-highlighting.py";
 
-      head-include = "/config/modules/git/cgit_theme.css";
+      source-filter = "${cgit}/lib/cgit/filters/syntax-highlighting.sh";
+      about-filter = "${cgit}/lib/cgit/filters/about-formatting.sh";
+
+      head-include = "/config/modules/git/cgit-dist/cgit_theme.css";
       virtual-root = "/";
       clone-prefix = "https://git.compromyse.xyz";
 
