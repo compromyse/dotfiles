@@ -16,6 +16,8 @@ in {
       enable-commit-graph = true;
       enable-follow-links = true;
       source-filter = "${pkgs.cgit}/lib/cgit/filters/syntax-highlighting.py";
+
+      head-include=/config/modules/git/cgit_theme.css
     };
     nginx.virtualHost = "git.compromyse.xyz";
   };
