@@ -11,6 +11,9 @@ in {
     settings = {
       root-title = "compromyse: CGIT";
       root-desc = "Compromyse's Git Repositories";
+      enable-http-clone = true;
+
+      enable-commit-graph = true;
       enable-follow-links = true;
       source-filter = "${pkgs.cgit}/lib/cgit/filters/syntax-highlighting.py";
     };
