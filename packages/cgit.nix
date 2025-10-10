@@ -19,7 +19,7 @@
   xz,
   zstd,
   python3Packages,
-  favicon,
+  dist,
 }:
 
 stdenv.mkDerivation rec {
@@ -110,7 +110,7 @@ stdenv.mkDerivation rec {
       }'
     done
 
-    cp ${favicon} "$out/cgit/favicon.ico"
+    cp -r ${dist} "$out/cgit"
   '';
 
   stripDebugList = [ "cgit" ];

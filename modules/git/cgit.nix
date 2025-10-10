@@ -3,7 +3,7 @@
 let
   repositoryPath = "/home/compromyse";
   cgit = (pkgs.callPackage ../../packages/cgit.nix {
-    favicon = ./favicon.ico;
+    dist = ./cgit-dist;
   });
 in {
   services.cgit."git.compromyse.xyz" = {
@@ -34,6 +34,8 @@ in {
       "mimetype.pdf" = "application/pdf";
       "mimetype.png" = "image/png";
       "mimetype.svg" = "image/svg+xml";
+
+      favicon = "/dist/favicon.ico"
     };
     nginx.virtualHost = "git.compromyse.xyz";
   };
