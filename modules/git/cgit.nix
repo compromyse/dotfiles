@@ -16,6 +16,6 @@ in {
       enable-log-filecount = 1;
       enable-log-linecount = 1;
     };
-    virtualHost = "git.compromyse.xyz";
+    nginx.virtualHost = "git.compromyse.xyz";
   };
 }
