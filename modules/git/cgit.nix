@@ -2,13 +2,17 @@
 
 let
   repositoryPath = "/home/compromyse";
-  cgit = (pkgs.callPackage ../../packages/cgit.nix {});
+  cgit = (pkgs.callPackage ../../packages/cgit.nix {
+    favicon = ./favicon.ico;
+  });
 in {
   services.cgit."git.compromyse.xyz" = {
     enable = true;
     user = "root";
     group = "root";
+
     package = cgit;
+
     scanPath = repositoryPath;
     settings = {
       root-title = "compromyse: CGIT";
