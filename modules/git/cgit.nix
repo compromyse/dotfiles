@@ -35,7 +35,7 @@ in {
       "mimetype.png" = "image/png";
       "mimetype.svg" = "image/svg+xml";
 
-      favicon = "/dist/favicon.ico"
+      favicon = "/dist/favicon.ico";
     };
     nginx.virtualHost = "git.compromyse.xyz";
   };
