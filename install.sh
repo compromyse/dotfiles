@@ -9,6 +9,11 @@ MACHINE="$1"
 
 sudo cp -rv * /mnt/config
 
+CONFIG_ARGS="--root /mnt"
+if [ $MACHINE = "x" ]; then
+    CONFIG_ARGS="$CONFIG_ARGS --no-filesystems"
+fi
+
 sudo nixos-generate-config --root /mnt --no-filesystems
 
 cd /mnt/config
