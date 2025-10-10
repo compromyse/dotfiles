@@ -8,14 +8,14 @@ fi
 DISK="$1"
 
 sudo fdisk $DISK <<EEOF
-g
+o
 n
+p
 1
 2048
 +500M
-t
-1
 n
+p
 2
 
 
