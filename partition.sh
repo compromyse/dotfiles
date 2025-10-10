@@ -14,7 +14,7 @@ sudo parted -s $DISK mkpart primary 1 10MB
 sudo parted -s $DISK name 2 grub
 sudo parted -s $DISK set 2 bios_grub on
 
-sudo mkfs.btrfs -L linux "$DISK"1
+sudo mkfs.btrfs -f -L linux "$DISK"1
 sudo mount "$DISK"1 /mnt
 
 sudo btrfs subvolume create /mnt/root
@@ -24,10 +24,10 @@ sudo btrfs subvolume create /mnt/nix
 sudo btrfs subvolume create /mnt/config
 
 sudo umount /mnt
-sudo mount -o subvol=root /mnt
+sudo mount "$DISK"1 -o subvol=root /mnt
 sudo mkdir -p /mnt/{boot,home,nix,config}
 
-sudo mount -o subvol=boot /mnt/boot
-sudo mount -o subvol=home /mnt/home
-sudo mount -o subvol=nix /mnt/nix
-sudo mount -o subvol=config /mnt/config
+sudo mount "$DISK"1 -o subvol=boot /mnt/boot
+sudo mount "$DISK"1 -o subvol=home /mnt/home
+sudo mount "$DISK"1 -o subvol=nix /mnt/nix
+sudo mount "$DISK"1 -o subvol=config /mnt/config
