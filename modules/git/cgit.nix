@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   repositoryPath = "/home/compromyse";
@@ -18,7 +18,6 @@ in {
     settings = {
       root-title = "compromyse: CGIT";
       root-desc = "Compromyse's Git Repositories";
-      enable-http-clone = true;
 
       enable-commit-graph = true;
       enable-follow-links = true;
@@ -38,6 +37,15 @@ in {
       "mimetype.png" = "image/png";
       "mimetype.svg" = "image/svg+xml";
     };
-    nginx.virtualHost = "git.compromyse.xyz";
+  };
+
+  services.nginx.virtualHosts."git.compromyse.xyz" = {
+    forceSSL = true;
+    enableACME = true;
+  };
+
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "raghus2247@gmail.com";
   };
 }
