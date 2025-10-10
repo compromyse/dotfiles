@@ -15,7 +15,7 @@ sudo parted -s $DISK name 2 grub
 sudo parted -s $DISK set 2 bios_grub on
 
 sudo mkfs.btrfs -L linux "$DISK"1
-sudo mount /dev/sda1 /mnt
+sudo mount /dev/"$DISK"1 /mnt
 
 sudo btrfs subvolume create /mnt/root
 sudo btrfs subvolume create /mnt/boot
