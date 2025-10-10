@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-MACHINE=x
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 [machine]"
+    exit
+fi
 
-sudo mkdir -v /mnt/persist/system
+MACHINE="$1"
+
 sudo cp -rv * /mnt/config
 
 sudo nixos-generate-config --root /mnt --no-filesystems
