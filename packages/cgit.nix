@@ -20,6 +20,7 @@
   zstd,
   python3Packages,
   dist,
+  theme,
 }:
 
 stdenv.mkDerivation rec {
@@ -99,7 +100,7 @@ stdenv.mkDerivation rec {
     mkdir -p "$out/share/man/man5"
     cp cgitrc.5 "$out/share/man/man5"
 
-    sed -i "s/style='.*'/style='monokai'/" $out/lib/cgit/filters/syntax-highlighting.py
+    sed -i "s/style='.*'/style='${theme}'/" $out/lib/cgit/filters/syntax-highlighting.py
     wrapPythonProgramsIn "$out/lib/cgit/filters" "$out $pythonPath"
 
     for script in $out/lib/cgit/filters/*.sh $out/lib/cgit/filters/html-converters/txt2html; do

@@ -4,6 +4,7 @@ let
   repositoryPath = "/home/compromyse";
   cgit = (pkgs.callPackage ../../packages/cgit.nix {
     dist = ./cgit-dist;
+    theme = "monokai";
   });
 in {
   services.cgit."git.compromyse.xyz" = {
