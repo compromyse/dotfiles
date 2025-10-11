@@ -13,6 +13,7 @@
   imports = (map (path: ../../config/${path}) [
     "bash.nix"
     "git"
+    "nvim"
   ]);
 
   home.stateVersion = "23.11";
