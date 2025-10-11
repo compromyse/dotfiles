@@ -28,6 +28,7 @@ in {
       head-include = "/config/modules/git/cgit-dist/cgit_theme.css";
       virtual-root = "/";
       clone-prefix = "https://git.compromyse.xyz";
+      clone-url = "https://git.compromyse.xyz/$CGIT_REPO_URL";
 
       "mimetype.gif" = "image/gif";
       "mimetype.html" = "text/html";
@@ -38,6 +39,10 @@ in {
       "mimetype.svg" = "image/svg+xml";
     };
   };
+
+  services.fcgiwrap.instances."cgit-git.compromyse.xyz".process.user = "root";
+  services.fcgiwrap.instances."cgit-git.compromyse.xyz".socket.user = lib.mkForce "root";
+  services.fcgiwrap.instances."cgit-git.compromyse.xyz".socket.group = lib.mkForce "root";
 
   services.nginx.virtualHosts."git.compromyse.xyz" = {
     forceSSL = true;

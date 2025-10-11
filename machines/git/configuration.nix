@@ -9,6 +9,7 @@
     "ssh.nix"
     "git/compromyse.nix"
     "git/cgit.nix"
+    "git/git.nix"
   ]);
 
   networking.hostName = "git";
