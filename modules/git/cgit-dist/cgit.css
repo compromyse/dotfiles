@@ -232,6 +232,7 @@ div#cgit table.list td a:hover {
 
 div#cgit img {
 	border: none;
+    width: 96px;
 }
 
 div#cgit input#switch-btn {
