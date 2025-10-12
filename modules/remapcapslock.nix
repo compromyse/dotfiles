@@ -4,7 +4,14 @@
   services.interception-tools =
     let
       itools = pkgs.interception-tools;
-      itools-caps = pkgs.interception-tools-plugins.caps2esc;
+      itools-caps = (pkgs.interception-tools-plugins.caps2esc.overrideAttrs (old: {
+          patches = [
+            (pkgs.fetchpatch {
+              url = "https://gitlab.com/interception/linux/plugins/caps2esc/-/commit/47ea8022df47b23d5d9603f9fe71b3715e954e4c.patch";
+              sha256 = "sha256-lB+pDwmFWW1fpjOPC6GLpxvrs87crDCNk1s9KnfrDD4=";
+            })
+          ];
+      }));
     in
     {
       enable = true;
