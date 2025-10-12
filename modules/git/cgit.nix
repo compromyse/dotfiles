@@ -18,6 +18,7 @@ in {
     settings = {
       root-title = "compromyse: CGIT";
       root-desc = "Compromyse's Git Repositories";
+      root-readme = "README.md";
 
       enable-commit-graph = true;
       enable-follow-links = true;
