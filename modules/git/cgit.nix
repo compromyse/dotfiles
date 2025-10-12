@@ -18,10 +18,12 @@ in {
     settings = {
       root-title = "compromyse: CGIT";
       root-desc = "Compromyse's Git Repositories";
-      root-readme = "README.md";
+
+      repository-sort = "age";
 
       enable-commit-graph = true;
       enable-follow-links = true;
+      section-from-path = true;
 
       source-filter = "${cgit}/lib/cgit/filters/syntax-highlighting.py";
       about-filter = "${cgit}/lib/cgit/filters/about-formatting.sh";

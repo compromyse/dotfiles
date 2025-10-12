@@ -7,12 +7,12 @@
   ] ++ (map (path: ../../modules/${path}) [
     "core/global.nix"
     "ssh.nix"
-    "git/compromyse.nix"
+    "compromyse.nix"
+    "git/user.nix"
     "git/cgit.nix"
-    "git/git.nix"
   ]);
 
-  networking.hostName = "git";
+  networking.hostName = "oxo";
 
   boot.loader.grub = {
     enable = true;
@@ -26,7 +26,8 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users = {
-      "compromyse" = import ./home.nix;
+      git = import ./git-home.nix;
+      compromyse = import ./home.nix
     };
   };
 }

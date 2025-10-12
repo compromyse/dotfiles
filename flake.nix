@@ -49,11 +49,11 @@
         ];
       };
 
-      git = nixpkgs.lib.nixosSystem {
+      oxo = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./machines/git/configuration.nix
+          ./machines/oxo/configuration.nix
 
           inputs.home-manager.nixosModules.default
         ];

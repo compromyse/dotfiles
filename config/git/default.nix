@@ -6,25 +6,32 @@
     userName = "Raghuram Subramani";
     userEmail = "raghus2247@gmail.com";
     extraConfig = {
+
       init = {
         defaultBranch = "main";
       };
+
       format = {
         signoff = true;
       };
+
       url = {
 
         "git@github.com:" = {
           insteadOf = [
-            "gh:"
             "github:"
           ];
         };
 
         "git@github.com:compromyse/" = {
           insteadOf = [
-            "cm:"
             "compromyse:"
+          ];
+        };
+
+        "git@git.compromyse.xyz:" = {
+          insteadOf = [
+            "oxo:"
           ];
         };
 
@@ -36,7 +43,11 @@
          process = "${pkgs.git-lfs}/bin/git-lfs filter-process --skip";
          required = true;
       };
+
       push = { autoSetupRemote = true; };
+
+      safe.directory = "*";
+
     };
   };
 }

@@ -7,11 +7,28 @@
   };
 
   home.packages = with pkgs; [
-    git-lfs
+    tmux
+    fzf
+    fd
+    ripgrep
+
+    unzip
+    zip
   ];
+
+  programs = {
+    direnv = {
+      enable = true;
+      enableBashIntegration = true;
+      nix-direnv.enable = true;
+    };
+
+    bash.enable = true;
+  };
 
   imports = (map (path: ../../config/${path}) [
     "bash.nix"
+    "dotfiles.nix"
     "git"
     "nvim"
   ]);
