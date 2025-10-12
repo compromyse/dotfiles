@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  repositoryPath = "/home/compromyse";
+  repositoryPath = "/home/git";
   cgit = (pkgs.callPackage ../../packages/cgit.nix {
     dist = ./cgit-dist;
     theme = "monokai";
@@ -42,10 +42,6 @@ in {
       "mimetype.svg" = "image/svg+xml";
     };
   };
-
-  services.fcgiwrap.instances."cgit-git.compromyse.xyz".process.user = "root";
-  services.fcgiwrap.instances."cgit-git.compromyse.xyz".socket.user = lib.mkForce "root";
-  services.fcgiwrap.instances."cgit-git.compromyse.xyz".socket.group = lib.mkForce "root";
 
   services.nginx.virtualHosts."git.compromyse.xyz" = {
     forceSSL = true;

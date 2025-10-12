@@ -2,7 +2,7 @@
   programs.bash = {
     enable = true;
     initExtra= ''
-      export PS1='\[\[\e[38;5;254m\]\w \[\033[0m\]> '
+      export PS1='\h \[\[\e[38;5;254m\]\w \[\033[0m\]> '
 
       bind "set completion-ignore-case on"
 

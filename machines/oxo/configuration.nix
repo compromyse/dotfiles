@@ -27,7 +27,7 @@
     useUserPackages = true;
     users = {
       git = import ./git-home.nix;
-      compromyse = import ./home.nix
+      compromyse = import ./home.nix;
     };
   };
 }

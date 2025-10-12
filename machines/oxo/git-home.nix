@@ -1,9 +1,9 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, lib, ... }:
 
 {
   home = {
     username = "git";
-    homeDirectory = "/home/git";
+    homeDirectory = lib.mkForce "/home/git";
   };
 
   home.packages = with pkgs; [
