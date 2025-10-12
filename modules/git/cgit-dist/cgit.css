@@ -5,7 +5,7 @@ div#cgit {
 	font-size: 10pt;
 	color: #333;
 	background: white;
-	padding: 4px;
+	padding: 2em;
 }
 
 div#cgit a {
@@ -128,6 +128,7 @@ div#cgit table.list {
 
 div#cgit table.list tr {
 	background: white;
+    height: 32px;
 }
 
 div#cgit table.list tr.logheader {
@@ -169,7 +170,7 @@ div#cgit table.list th {
 	border-bottom: dashed 1px #888;
 	*/
 	padding: 0.1em 0.5em 0.05em 0.5em;
-	vertical-align: baseline;
+	vertical-align: middle;
 }
 
 div#cgit table.list td {
