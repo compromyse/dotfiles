@@ -31,7 +31,7 @@ in {
       head-include = "/config/modules/git/cgit-dist/cgit_theme.css";
       virtual-root = "/";
       clone-prefix = "https://git.compromyse.xyz";
-      clone-url = "https://git.compromyse.xyz/$CGIT_REPO_URL";
+      clone-url = "https://git.compromyse.xyz/$CGIT_REPO_URL\ngit@git.compromyse.xyz:$CGIT_REPO_URL";
 
       "mimetype.gif" = "image/gif";
       "mimetype.html" = "text/html";
