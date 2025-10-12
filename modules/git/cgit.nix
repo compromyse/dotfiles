@@ -19,6 +19,8 @@ in {
       root-title = "compromyse: CGIT";
       root-desc = "Compromyse's Git Repositories";
 
+      readme = ":README.md";
+
       repository-sort = "age";
 
       enable-commit-graph = true;
