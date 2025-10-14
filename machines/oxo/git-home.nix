@@ -7,6 +7,7 @@
   };
 
   home.packages = with pkgs; [
+    jq
     git-lfs
   ];
 

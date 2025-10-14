@@ -11,6 +11,7 @@
     fzf
     fd
     ripgrep
+    jq
 
     unzip
     zip
