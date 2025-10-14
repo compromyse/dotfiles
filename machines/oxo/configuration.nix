@@ -22,7 +22,7 @@
   };
 
   networking.firewall = {
-    enable = true;
+    enable = lib.mkForce true;
     allowedTCPPorts = [ 80 443 22 ];
   };
 
