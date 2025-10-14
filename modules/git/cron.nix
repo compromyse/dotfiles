@@ -4,7 +4,7 @@
   services.cron = {
     enable = true;
     systemCronJobs = [
-      "* * * * *      git    git-shell -c update-timestamps"
+      "* * * * *      git    /home/git/git-shell-commands/update-timestamps"
     ];
   };
 }
