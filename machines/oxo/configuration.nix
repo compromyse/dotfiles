@@ -20,6 +20,11 @@
     device = "/dev/sda";
   };
 
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 80 443 22 ];
+  };
+
   programs.fuse.userAllowOther = true;
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
