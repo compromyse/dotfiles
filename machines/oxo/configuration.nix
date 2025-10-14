@@ -10,6 +10,7 @@
     "compromyse.nix"
     "git/user.nix"
     "git/cgit.nix"
+    "git/cron.nix"
   ]);
 
   networking.hostName = "oxo";
