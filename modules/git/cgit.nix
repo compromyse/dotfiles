@@ -27,6 +27,8 @@ in {
       enable-follow-links = true;
       section-from-path = true;
 
+      enable-git-config = true;
+
       source-filter = "${cgit}/lib/cgit/filters/syntax-highlighting.py";
       about-filter = "${cgit}/lib/cgit/filters/about-formatting.sh";
 
