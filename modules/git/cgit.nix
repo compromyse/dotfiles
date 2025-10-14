@@ -22,7 +22,6 @@ in {
       readme = ":README.md";
 
       repository-sort = "age";
-      section-sort = "age";
 
       enable-commit-graph = true;
       enable-follow-links = true;
