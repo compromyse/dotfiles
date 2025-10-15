@@ -79,6 +79,8 @@ in {
   ];
 
   networking.extraHosts = ''
+    owo.compromyse.xyz owo
+    oxo.compromyse.xyz oxo
     192.168.122.100 android
     192.168.122.101 dev
   '';
