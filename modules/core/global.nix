@@ -33,5 +33,9 @@ in {
 
   security.rtkit.enable = true;
 
+  programs.ssh.extraConfig = ''
+    StrictHostKeyChecking no
+  '';
+
   system.stateVersion = "23.11";
 }
