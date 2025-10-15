@@ -22,7 +22,7 @@
 
       REPOSITORIES=!(backups)
       tar cf $FILE $REPOSITORIES
-      scp $FILE compromyse@owo.compromyse.xyz:~/backups/$FILE
+      scp $FILE compromyse@owo.compromyse.xyz:~/backups/$FILENAME
 
       find $HOME/backups -mtime 7 -delete
     '';
