@@ -17,7 +17,7 @@ in {
     scanPath = repositoryPath;
     settings = {
       root-title = "compromyse: CGIT";
-      root-desc = "Compromyse's Git Repositories";
+      root-desc = "compromyse's Git Repositories";
 
       readme = ":README.md";
 
