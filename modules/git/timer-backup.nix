@@ -12,6 +12,8 @@
 
   systemd.services."backup-repositories" = {
     script = ''
+      set -xe
+
       cd $HOME
       mkdir -p $HOME/backups
 
@@ -20,9 +22,9 @@
 
       REPOSITORIES=!(backups)
       tar cf $FILE $REPOSITORIES
-      # scp $FILE compromyse@owo.compromyse.xyz:~/backups/$FILE
+      scp $FILE compromyse@owo.compromyse.xyz:~/backups/$FILE
 
-      find $HOME/backups -mtime 5 -delete
+      find $HOME/backups -mtime 7 -delete
     '';
 
     serviceConfig = {
