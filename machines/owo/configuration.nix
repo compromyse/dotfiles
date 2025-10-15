@@ -20,7 +20,7 @@
 
   networking.firewall = {
     enable = lib.mkForce true;
-    allowedTCPPorts = [ 80 443 22 ];
+    allowedTCPPorts = [ 22 ];
   };
 
   programs.fuse.userAllowOther = true;
