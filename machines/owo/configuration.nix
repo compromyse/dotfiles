@@ -1,0 +1,35 @@
+{ lib, inputs, pkgs, ... }:
+
+{
+  imports = [
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+  ] ++ (map (path: ../../modules/${path}) [
+    "core/global.nix"
+    "ssh.nix"
+    "compromyse.nix"
+  ]);
+
+  networking.hostName = "owo";
+
+  boot.loader.grub = {
+    enable = true;
+    forceInstall = true;
+    device = "/dev/sda";
+  };
+
+  networking.firewall = {
+    enable = lib.mkForce true;
+    allowedTCPPorts = [ 80 443 22 ];
+  };
+
+  programs.fuse.userAllowOther = true;
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users = {
+      compromyse = import ./home.nix;
+    };
+  };
+}

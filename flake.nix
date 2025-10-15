@@ -59,6 +59,16 @@
         ];
       };
 
+      owo = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./machines/owo/configuration.nix
+
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+
     };
   };
 }

@@ -33,6 +33,8 @@ in {
     # "xfce.nix"
     "wm_utils.nix"
     "polkit.nix"
+
+    # "sshfs-owo.nix"
   ]);
 
   boot.loader = {
