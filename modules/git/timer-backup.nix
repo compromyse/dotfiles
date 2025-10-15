@@ -19,8 +19,8 @@
       FILE=$HOME/backups/$FILENAME
 
       REPOSITORIES=$(ls $HOME | grep -v backups)
-      tar cf $FILE $REPOSITORIES
-      scp $FILE compromyse@owo.compromyse.xyz:~/backups/$FILENAME
+      ${pkgs.gnutar}/bin/tar cf $FILE $REPOSITORIES
+      ${pkgs.openssh}/bin/scp $FILE compromyse@owo.compromyse.xyz:~/backups/$FILENAME
 
       find $HOME/backups -mtime 7 -delete
     '';
