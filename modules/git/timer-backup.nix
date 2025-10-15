@@ -12,15 +12,13 @@
 
   systemd.services."backup-repositories" = {
     script = ''
-      set -xe
-
       cd $HOME
       mkdir -p $HOME/backups
 
       FILENAME=repositories-$(date +%s).tar
       FILE=$HOME/backups/$FILENAME
 
-      REPOSITORIES=!(backups)
+      REPOSITORIES=$(ls $HOME | grep -v backups)
       tar cf $FILE $REPOSITORIES
       scp $FILE compromyse@owo.compromyse.xyz:~/backups/$FILENAME
 
