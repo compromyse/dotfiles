@@ -14,8 +14,10 @@
     script = ''
       mkdir -p $HOME/backups
 
-      REPOSITORIES=$(find /home/git/* -name '*.git' -type d)
+      REPOSITORIES=!(backups)
+      tar cf $HOME/backups/repositories-$(date +%s).tar $REPOSITORIES
 
+      find $HOME/backups -mtime 5 -delete
     '';
 
     serviceConfig = {
