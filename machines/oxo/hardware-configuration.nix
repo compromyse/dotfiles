@@ -14,31 +14,31 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/f321b489-3003-4d4a-8e86-0eee0584e0f6";
+    { device = "/dev/disk/by-uuid/31affa04-8d5f-45fb-aa8e-d53bcaa885a7";
       fsType = "btrfs";
       options = [ "subvol=root" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/f321b489-3003-4d4a-8e86-0eee0584e0f6";
+    { device = "/dev/disk/by-uuid/31affa04-8d5f-45fb-aa8e-d53bcaa885a7";
       fsType = "btrfs";
       options = [ "subvol=boot" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/f321b489-3003-4d4a-8e86-0eee0584e0f6";
+    { device = "/dev/disk/by-uuid/31affa04-8d5f-45fb-aa8e-d53bcaa885a7";
       fsType = "btrfs";
       options = [ "subvol=home" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/f321b489-3003-4d4a-8e86-0eee0584e0f6";
+    { device = "/dev/disk/by-uuid/31affa04-8d5f-45fb-aa8e-d53bcaa885a7";
       fsType = "btrfs";
       options = [ "subvol=nix" ];
     };
 
   fileSystems."/config" =
-    { device = "/dev/disk/by-uuid/f321b489-3003-4d4a-8e86-0eee0584e0f6";
+    { device = "/dev/disk/by-uuid/31affa04-8d5f-45fb-aa8e-d53bcaa885a7";
       fsType = "btrfs";
       options = [ "subvol=config" ];
     };
