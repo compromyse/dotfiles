@@ -8,6 +8,7 @@
     "core/global.nix"
     "ssh.nix"
     "compromyse.nix"
+    "timer-clean-backups.nix"
   ]);
 
   networking.hostName = "owo";
