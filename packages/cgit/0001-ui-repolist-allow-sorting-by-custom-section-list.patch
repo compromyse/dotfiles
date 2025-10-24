@@ -1,0 +1,88 @@
+From 70cf62c7ff130f8b7386e330d23ac5e7ea6bfa1c Mon Sep 17 00:00:00 2001
+From: Raghuram Subramani <raghus2247@gmail.com>
+Date: Fri, 24 Oct 2025 16:27:56 -0400
+Subject: [PATCH] ui-repolist: allow sorting by custom section list
+
+Add an option to specify a custom section ordering, with the rest of the
+sections being sorted as usual at the end.
+
+Signed-off-by: Raghuram Subramani <raghus2247@gmail.com>
+---
+ cgit.c        |  7 +++++++
+ cgit.h        |  1 +
+ ui-repolist.c | 22 ++++++++++++++++++++++
+ 3 files changed, 30 insertions(+)
+
+diff --git a/cgit.c b/cgit.c
+index 2efa962..aabbc70 100644
+--- a/cgit.c
++++ b/cgit.c
+@@ -171,6 +171,12 @@ static void config_cb(const char *name, const char *value)
+ 		ctx.cfg.noheader = atoi(value);
+ 	else if (!strcmp(name, "snapshots"))
+ 		ctx.cfg.snapshots = cgit_parse_snapshots_mask(value);
++	else if (!strcmp(name, "sections")) {
++		ctx.cfg.sections = strbuf_split_str(value, ' ', 0);
++
++        for (size_t i = 0; ctx.cfg.sections[i]; i++)
++            strbuf_rtrim(ctx.cfg.sections[i]);
++    }
+ 	else if (!strcmp(name, "enable-filter-overrides"))
+ 		ctx.cfg.enable_filter_overrides = atoi(value);
+ 	else if (!strcmp(name, "enable-follow-links"))
+@@ -405,6 +411,7 @@ static void prepare_context(void)
+ 	ctx.cfg.scan_hidden_path = 0;
+ 	ctx.cfg.script_name = CGIT_SCRIPT_NAME;
+ 	ctx.cfg.section = "";
++	ctx.cfg.sections = NULL;
+ 	ctx.cfg.repository_sort = "name";
+ 	ctx.cfg.section_sort = 1;
+ 	ctx.cfg.summary_branches = 10;
+diff --git a/cgit.h b/cgit.h
+index e0d286d..26a4811 100644
+--- a/cgit.h
++++ b/cgit.h
+@@ -217,6 +217,7 @@ struct cgit_config {
+ 	char *root_readme;
+ 	char *script_name;
+ 	char *section;
++	struct strbuf **sections;
+ 	char *repository_sort;
+ 	char *virtual_root;	/* Always ends with '/'. */
+ 	char *strict_export;
+diff --git a/ui-repolist.c b/ui-repolist.c
+index d12e3dd..aa29969 100644
+--- a/ui-repolist.c
++++ b/ui-repolist.c
+@@ -227,6 +227,28 @@ static int sort_section(const void *a, const void *b)
+ 	int result;
+ 
+ 	result = cmp(r1->section, r2->section);
++
++    int r1pos = 0;
++    int r2pos = 0;
++
++
++    if (ctx.cfg.sections != NULL) {
++        for (size_t i = 0; ctx.cfg.sections[i]; i++) {
++            if (ctx.cfg.sections[i]->len == 0)
++                continue;
++
++            if (!strcmp(r1->section, ctx.cfg.sections[i]->buf))
++                r1pos = i;
++            if (!strcmp(r2->section, ctx.cfg.sections[i]->buf))
++                r2pos = i;
++        }
++    }
++
++    if (r1pos > r2pos)
++        return r1pos;
++    else if (r1pos < r2pos)
++        return -r2pos;
++
+ 	if (!result) {
+ 		if (!strcmp(ctx.cfg.repository_sort, "age"))
+ 			result = sort_idle(r1, r2);
+-- 
+2.51.0
+

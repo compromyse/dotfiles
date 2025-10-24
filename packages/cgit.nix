@@ -41,6 +41,10 @@ stdenv.mkDerivation rec {
   };
   separateDebugInfo = true;
 
+  patches = [
+    ./cgit/0001-ui-repolist-allow-sorting-by-custom-section-list.patch
+  ]
+
   nativeBuildInputs = [
     pkg-config
     asciidoc
@@ -60,7 +64,7 @@ stdenv.mkDerivation rec {
     pygments
     markdown
   ];
-
+  
   postPatch = ''
     sed -e 's|"gzip"|"${gzip}/bin/gzip"|' \
         -e 's|"bzip2"|"${bzip2.bin}/bin/bzip2"|' \
