@@ -37,7 +37,7 @@ in {
       clone-prefix = "https://git.compromyse.xyz";
       clone-url = "https://git.compromyse.xyz/$CGIT_REPO_URL";
 
-      sections = "flagship android cybersecurity me server archive";
+      sections = "flagship android me cybersecurity server archive";
 
       "mimetype.gif" = "image/gif";
       "mimetype.html" = "text/html";
