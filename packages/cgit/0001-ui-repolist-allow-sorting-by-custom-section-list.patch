@@ -3,8 +3,7 @@ From: Raghuram Subramani <raghus2247@gmail.com>
 Date: Fri, 24 Oct 2025 16:27:56 -0400
 Subject: [PATCH] ui-repolist: allow sorting by custom section list
 
-Add an option to specify a custom section ordering, with the rest of the
-sections being sorted as usual at the end.
+Add an option to specify a custom section ordering.
 
 Signed-off-by: Raghuram Subramani <raghus2247@gmail.com>
 ---
