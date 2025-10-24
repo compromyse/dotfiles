@@ -43,7 +43,7 @@ stdenv.mkDerivation rec {
 
   patches = [
     ./cgit/0001-ui-repolist-allow-sorting-by-custom-section-list.patch
-  ]
+  ];
 
   nativeBuildInputs = [
     pkg-config
