@@ -25,8 +25,6 @@
     chromium
     spotify
 
-    obsidian
-
     pcmanfm
 
     obs-studio
