@@ -57,7 +57,7 @@
 
     # "qtile"
     # "plasma"
-    "labwc"
+    # "labwc"
     # "sway"
     # "dwl.nix"
     "themes.nix"
