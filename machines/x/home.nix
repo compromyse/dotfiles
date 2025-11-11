@@ -57,9 +57,9 @@
 
     # "qtile"
     # "plasma"
-    # "labwc"
+    "labwc"
     # "sway"
-    "dwl.nix"
+    # "dwl.nix"
     "themes.nix"
     "waybar"
     "way-displays"
