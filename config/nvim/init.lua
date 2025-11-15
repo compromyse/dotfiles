@@ -172,6 +172,7 @@ vim.keymap.set('n', '\\d', vim.lsp.buf.definition, { noremap = true })
 vim.keymap.set('n', '\\f', vim.lsp.buf.declaration, { noremap = true })
 
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true })
+vim.keymap.set('n', '\\e', vim.diagnostic.open_float, { noremap = true })
 
 vim.keymap.set('n', '<A-n>', '<cmd>bnext<cr>', { noremap = true })
 vim.keymap.set('n', '<A-p>', '<cmd>bprev<cr>', { noremap = true })
