@@ -170,6 +170,7 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
 
 vim.keymap.set('n', '\\d', vim.lsp.buf.definition, { noremap = true })
 vim.keymap.set('n', '\\f', vim.lsp.buf.declaration, { noremap = true })
+vim.keymap.set('n', '\\r', vim.lsp.buf.rename, { noremap = true })
 
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true })
 vim.keymap.set('n', '\\e', vim.diagnostic.open_float, { noremap = true })
