@@ -5,7 +5,7 @@ from libqtile.backend.wayland import InputConfig
 
 mod = "mod4"
 terminal = "alacritty"
-launcher = "/config/dist/run.sh"
+launcher = "/etc/nixos/dist/run.sh"
 
 keys = [
     # Switch between windows
@@ -307,5 +307,5 @@ from libqtile import hook
 
 @hook.subscribe.startup_once
 def autostart():
-    home = os.path.expanduser('/config/dist/autostart.sh')
+    home = os.path.expanduser('/etc/nixos/dist/autostart.sh')
     subprocess.Popen([home])
