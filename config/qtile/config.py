@@ -108,9 +108,9 @@ extension_defaults = widget_defaults.copy()
 screens = [
 
     Screen(
-        wallpaper="/config/dist/wallpaper.png",
+        wallpaper="/config/dist/everforest.png",
         wallpaper_mode='fill',
-        top=bar.Bar(
+        bottom=bar.Bar(
             [
                 widget.GroupBox(
                     fontsize=24,
@@ -291,7 +291,8 @@ reconfigure_screens = True
 auto_minimize = True
 
 wl_input_rules = {
-    "*": InputConfig(tap=True, natural_scroll=True)
+    "type:touchpad": InputConfig(tap=True, natural_scroll=True),
+    "*": InputConfig(natural_scroll=False),
 }
 
 wl_xcursor_theme = None
