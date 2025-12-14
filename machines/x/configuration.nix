@@ -31,6 +31,7 @@ in {
     # "plasma.nix"
     # "mate.nix"
     # "xfce.nix"
+    "qtile"
     "wm_utils.nix"
     "polkit.nix"
 

@@ -5,7 +5,7 @@ from libqtile.backend.wayland import InputConfig
 
 mod = "mod4"
 terminal = "alacritty"
-launcher = "/etc/nixos/dist/run.sh"
+launcher = "/config/dist/run.sh"
 
 keys = [
     # Switch between windows
@@ -108,7 +108,7 @@ extension_defaults = widget_defaults.copy()
 screens = [
 
     Screen(
-        wallpaper="/etc/nixos/dist/wallpaper.png",
+        wallpaper="/config/dist/wallpaper.png",
         wallpaper_mode='fill',
         top=bar.Bar(
             [
@@ -306,5 +306,5 @@ from libqtile import hook
 
 @hook.subscribe.startup_once
 def autostart():
-    home = os.path.expanduser('/etc/nixos/dist/autostart.sh')
+    home = os.path.expanduser('/config/dist/autostart.sh')
     subprocess.Popen([home])

@@ -55,7 +55,7 @@
     "emacs"
     "nvim"
 
-    # "qtile"
+    "qtile"
     # "plasma"
     # "labwc"
     # "sway"
