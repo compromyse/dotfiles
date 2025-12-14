@@ -59,7 +59,7 @@
     # "plasma"
     # "labwc"
     # "sway"
-    # "dwl.nix"
+    "dwl.nix"
     "themes.nix"
     "waybar"
     "way-displays"
