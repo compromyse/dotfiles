@@ -27,13 +27,14 @@ in {
     "virtualization.nix"
     "remapcapslock.nix"
 
-    "login.nix"
+    # "login.nix"
     # "plasma.nix"
     # "mate.nix"
     # "xfce.nix"
     # "qtile"
-    "wm_utils.nix"
-    "polkit.nix"
+    # "wm_utils.nix"
+    # "polkit.nix"
+    "gnome.nix"
 
     # "sshfs-owo.nix"
   ]);
