@@ -1,3 +1,8 @@
+from libqtile.config import Click, Drag, Group, Key
+from libqtile.lazy import lazy
+
+from const import *
+
 keys = [
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
@@ -58,6 +63,9 @@ for vt in range(1, 8):
         )
     )
 
+
+groups = [Group(f"{i+1}") for i in range(9)]
+
 for i in groups:
     keys.extend(
             [
@@ -75,3 +83,10 @@ for i in groups:
                     ),
                 ]
             )
+
+# Drag floating layouts.
+mouse = [
+    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Click([mod], "Button2", lazy.window.bring_to_front())
+]

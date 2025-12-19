@@ -19,7 +19,7 @@
     slurp
     swappy
 
-    sway-launcher-desktop
+    # sway-launcher-desktop
     bemenu
   ];
 

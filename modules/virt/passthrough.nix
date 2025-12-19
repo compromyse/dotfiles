@@ -7,46 +7,8 @@ let
   ];
 in
 {
-  virtualisation = {
-    libvirtd = {
-      enable = true;
-      qemu = {
-        swtpm.enable = true;
-      };
-    };
-    spiceUSBRedirection.enable = true;
-
-    docker.enable = true;
-  };
-  services.spice-vdagentd.enable = true;
-  programs.virt-manager.enable = true;
-
-  systemd.tmpfiles.rules = [ "f /dev/shm/looking-glass 0660 compromyse kvm -" ];
-
-  environment.extraOutputsToInstall = [ "dev" ];
   environment.systemPackages = [
     pkgs.looking-glass-client
-    pkgs.libvirt
-    pkgs.virt-viewer
-    pkgs.guestfs-tools
-    #pkgs.vagrant
-
-    (pkgs.writeShellScriptBin "pin-cpu" ''
-      if [[ $1 == "" ]]; then
-        cpus="8-15"
-      else
-        cpus=$1
-      fi
-      systemctl set-property --runtime -- user.slice AllowedCPUs="$cpus"
-      systemctl set-property --runtime -- system.slice AllowedCPUs="$cpus"
-      systemctl set-property --runtime -- init.scope AllowedCPUs="$cpus"
-    '')
-
-    (pkgs.writeShellScriptBin "unpin-cpu" ''
-      systemctl set-property --runtime -- user.slice AllowedCPUs=""
-      systemctl set-property --runtime -- system.slice AllowedCPUs=""
-      systemctl set-property --runtime -- init.scope AllowedCPUs=""
-    '')
 
     (pkgs.writeShellScriptBin "vfio-bind" ''
       set -xe
@@ -86,6 +48,8 @@ in
       set +xe
     '')
   ];
+
+  systemd.tmpfiles.rules = [ "f /dev/shm/looking-glass 0660 compromyse kvm -" ];
 
   boot = {
     initrd.kernelModules = [

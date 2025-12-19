@@ -1,40 +1,27 @@
-from libqtile import bar, layout, qtile, widget
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile import layout
+from libqtile.config import Match
 from libqtile.lazy import lazy
 from libqtile.backend.wayland import InputConfig
 
+from const import *
 from bar import *
 from keybinds import *
 
-mod = "mod4"
-terminal = "alacritty"
-launcher = "/config/dist/run.sh"
-
-groups = [Group(f"{i+1}", label="") for i in range(9)]
-
 layouts = [
     layout.MonadTall(
-        border_focus="#202222",
+        border_focus="#9b9b9b",
         border_normal="#0F1212",
-        border_width=4,
-        margin=8
+        border_width=2,
+        margin=4
         ),
     layout.Max()
 ]
 
 widget_defaults = dict(
-    font="UbuntuMono Nerd Font",
-    fontsize=14,
-    padding=4
+    font="UbuntuMono Nerd Font Mono",
+    fontsize=13,
 )
 extension_defaults = widget_defaults.copy()
-
-# Drag floating layouts.
-mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front())
-]
 
 dgroups_key_binder = None
 dgroups_app_rules = []
@@ -43,7 +30,7 @@ bring_front_click = True
 floats_kept_above = True
 cursor_warp = False
 floating_layout = layout.Floating(
-    border_focus="#202222",
+    border_focus="#0f1212",
     border_normal="#0F1212",
     border_width=4,
     float_rules=[
@@ -82,3 +69,4 @@ from libqtile import hook
 def autostart():
     home = os.path.expanduser('/config/dist/autostart.sh')
     subprocess.Popen([home])
+

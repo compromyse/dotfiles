@@ -13,7 +13,6 @@ in {
     "core/global.nix"
     "core/impermanence.nix"
 
-    "nvidia.nix"
     "amdgpu.nix"
     "amd.nix"
     "laptop.nix"
@@ -23,15 +22,14 @@ in {
     "core/fonts.nix"
 
     "compromyse.nix"
-
-    "virtualization.nix"
     "remapcapslock.nix"
+
+    "virt/kvm.nix"
 
     "login.nix"
     # "plasma.nix"
     # "mate.nix"
     # "xfce.nix"
-    "qtile"
     "wm_utils.nix"
     "polkit.nix"
     # "gnome.nix"
@@ -52,22 +50,22 @@ in {
       enable = true;
       theme = "vimix";
       footer = true;
-      customResolution = "1920x1080";
+      customResolution = "1920x1200";
     };
   };
 
-  boot.extraModprobeConfig = "options kvm_amd nested=1";
+  boot.extraModprobeConfig = "options kvm_intel nested=1";
 
   services.fstrim.enable = true;
 
-  networking.hostName = "x";
+  networking.hostName = "thinkpad";
 
   programs.fuse.userAllowOther = true;
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     useGlobalPkgs = true;
     useUserPackages = true;
-    sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
+    # sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
     users = {
       "compromyse" = import ./home.nix;
     };
@@ -75,18 +73,11 @@ in {
 
   programs.adb.enable = true;
 
-  services.printing.enable = true;
-  services.printing.drivers = [
-    pkgs.brlaser
-  ];
-
   programs.nix-ld.enable = true;
 
   networking.extraHosts = ''
     178.156.200.181 owo
     5.161.107.13 oxo
-    192.168.122.100 android
-    192.168.122.101 dev
     128.205.217.95 esc
   '';
 }

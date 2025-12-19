@@ -32,16 +32,29 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
-    # nixos-rebuild --flake .#machine
     nixosConfigurations = {
 
-      x = nixpkgs.lib.nixosSystem {
+      thinkpad = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
           inputs.disko.nixosModules.default
 
-          ./machines/x/configuration.nix
+          ./machines/thinkpad/configuration.nix
+
+          inputs.home-manager.nixosModules.default
+          inputs.impermanence.nixosModules.impermanence
+          inputs.grub2-themes.nixosModules.default
+        ];
+      };
+
+      g15 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          inputs.disko.nixosModules.default
+
+          ./machines/g15/configuration.nix
 
           inputs.home-manager.nixosModules.default
           inputs.impermanence.nixosModules.impermanence
