@@ -17,7 +17,6 @@ exec swayidle -w before-sleep 'swaylock -f'
 ### Autostart
 exec --no-startup-id autotiling-rs
 exec --no-startup-id way-displays
-exec --no-startup-id blueman-applet
 
 ### Input configuration
 input "1739:52865:DLL0C55:00_06CB:CE81_Touchpad" {
