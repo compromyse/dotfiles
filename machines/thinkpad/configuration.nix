@@ -16,6 +16,7 @@ in {
     "arc.nix"
 
     "laptop.nix"
+    "fingerprint.nix"
 
     "core/audio.nix"
     "core/bluetooth.nix"
