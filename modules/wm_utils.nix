@@ -25,16 +25,15 @@
 
   xdg.portal = {
       enable = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal ];
-      config.common.default = "wlr;gtk";
-  };
+      wlr.enable = true;
+      wlr.settings.screencast.chooser_type = "dmenu";
+      wlr.settings.screencast.chooser_cmd = "${(pkgs.writeShellScriptBin "bemenu" ''
+        ${pkgs.bemenu}/bin/bemenu -b --fn 'UbuntuMono Nerd Font Mono' --line-height 40 --tb '#9b9b9bff' --tf '#0f1212ff' --fb '#0f1212ff' --ff '#9b9b9bff' --cb '#0f1212ff' --cf '#9b9b9bff' --nf '#9b9b9bff' --nb '#0f1212ff' --hb '#9b9b9bff' --hf '#0f1212ff' --ab '#0f1212ff' --af '#9b9b9bff'
+      '')}/bin/bemenu";
 
-  # xdg.portal.enable = true;
-  # xdg.portal.config.common.default = "wlr";
-  # xdg.portal.wlr = {
-  #   enable = true;
-  #   settings.screencast.chooser_cmd = "${pkgs.slurp}/bin/slurp -f %o -o";
-  # };
+      extraPortals = [ pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk ];
+      config.common.default = "wlr";
+  };
 
   environment.variables = {
     XCURSOR_SIZE = "16";

@@ -55,10 +55,10 @@
     "emacs"
     "nvim"
 
-    "qtile"
+    # "qtile"
     # "plasma"
     # "labwc"
-    # "sway"
+    "sway"
     # "dwl.nix"
     "themes.nix"
     "waybar"

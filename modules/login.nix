@@ -1,22 +1,17 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    tuigreet
-    greetd
-  ];
-
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        # command = "tuigreet --time --remember --cmd sway";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd sway";
         # command = "tuigreet --time --remember --cmd labwc";
         # command = "tuigreet --time --remember --cmd \"dwl -s dwlb\"";
-        command = "tuigreet --time --remember --cmd 'qtile start -b wayland'";
+        # command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd 'qtile start -b wayland'";
         # command = "tuigreet --time --remember --cmd dwl";
         # command = "tuigreet --time --remember --cmd startplasma-wayland";
-        user = "greeter";
+        user = "compromyse";
       };
     };
   };

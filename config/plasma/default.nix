@@ -26,7 +26,7 @@
       colorScheme = "aura-theme-soft";
       cursor = {
         theme = "Bibata-Modern-Classic";
-        size = 18;
+        size = 16;
       };
       iconTheme = "Papirus-Dark";
       wallpaper = "/config/dist/wallpaper.png";

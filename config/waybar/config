@@ -7,12 +7,27 @@
     "margin-bottom": 0,
     "margin-left": 0,
     // "modules-left": ["wlr/taskbar"],
-    "modules-left": ["dwl/tags", "dwl/window"],
+    // "modules-left": ["dwl/tags", "dwl/window"],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": [],
     "modules-right": ["network", "backlight", "pulseaudio", "battery", "clock"],
 
     "clock": {
         "format": " {:%a, %b %d %Y | 󰥔 %I:%M %p}"
+    },
+
+    "sway/workspaces": {
+      "persistent-workspaces": {
+          "1": [], "2": [], "3": [], "4": [], "5": [],
+          "6": [], "7": [], "8": [], "9": [], "10": [],
+      },
+      "disable-click": true,
+    },
+
+    "sway/window": {
+        "format": "{title}",
+        "max-length": 50,
+        "swap-icon-label": false
     },
 
     "dwl/tags": {

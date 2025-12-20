@@ -2,6 +2,10 @@ from libqtile import layout
 from libqtile.config import Match
 from libqtile.lazy import lazy
 from libqtile.backend.wayland import InputConfig
+from libqtile import hook
+
+import os
+import subprocess
 
 from const import *
 from bar import *
@@ -55,18 +59,44 @@ wl_input_rules = {
     "*": InputConfig(natural_scroll=False),
 }
 
-wl_xcursor_theme = None
+wl_xcursor_theme = "Bibata-Modern-Classic"
 wl_xcursor_size = 16
 
 wmname = "LG3D"
 
-import os
-import subprocess
+def systemd_run(command):
+    return [
+        "systemd-run",
+        "--collect",
+        "--user",
+        f"--unit={command[0]}",
+        "--",
+    ] + command
 
-from libqtile import hook
 
-@hook.subscribe.startup_once
+@hook.subscribe.startup
 def autostart():
-    home = os.path.expanduser('/config/dist/autostart.sh')
-    subprocess.Popen([home])
+    subprocess.run(
+        [
+            "systemctl",
+            "--user",
+            "import-environment",
+            "XDG_SESSION_PATH",
+            "WAYLAND_DISPLAY",
+        ]
+    )
+    subprocess.call([
+        'dbus-update-activation-environment', '--systemd', 
+        'WAYLAND_DISPLAY', 'XDG_CURRENT_DESKTOP=wlroots'
+    ])
 
+    subprocess.call(['systemctl', '--user', 'restart', 'xdg-desktop-portal'])
+
+    commands = [
+        ["way-displays"],
+        ["dunst"],
+        "swayidle before-sleep swaylock lock swaylock".split(),
+    ]
+    # fmt: on
+    for command in commands:
+        subprocess.Popen(systemd_run(command))

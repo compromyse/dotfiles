@@ -14,7 +14,7 @@ sep = widget.Sep(
 screens = [
 
     Screen(
-        wallpaper="/config/dist/everforest.png",
+        wallpaper="/config/dist/windows.png",
         wallpaper_mode='fill',
         bottom=bar.Bar(
             [

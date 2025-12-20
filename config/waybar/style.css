@@ -21,35 +21,40 @@ window#waybar {
 }
 
 #window {
-    margin: 6px 6px 6px 0px;
     padding: 2px 8px;
-    color: #9b9b9b
+    color: #9b9b9b;
 }
 
-#tags {
-    margin: 6px;
+#tags, #workspaces {
     background: #212121;
-    color: #9b9b9b
+    color: #9b9b9b;
 }
 
-#tags button, #tags button:hover {
-  padding: 2px 12px;
+#workspaces button, #workspaces button:hover, #tags button, #tags button:hover {
+  padding: 2px 6px;
   background: #212121;
   color: #9b9b9b
 }
 
-#tags button.occupied {
+#workspaces button, #tags button.occupied {
   background: #2f2f2f;
 }
 
+#workspaces button.persistent {
+  background: #212121;
+}
+
+#workspaces button.focused,
+#workspaces button.urgent,
 #tags button.focused,
 #tags button.urgent {
-  padding: 2px 12px;
+  padding: 2px 6px;
   background: #9b9b9b;
   color: #212121;
 }
 
 /* Each module */
+#mode,
 #clock,
 #taskbar button,
 #workspaces,
@@ -65,11 +70,5 @@ window#waybar {
 }
 
 #taskbar {
-    padding: 0 6px;
+    padding: 6px 6px;
 }
-
-/* #window { */
-/*     margin-right: 40px; */
-/*     margin-left: 40px; */
-/*     font-weight: normal; */
-/* } */

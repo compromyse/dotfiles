@@ -29,11 +29,12 @@ in {
     "virt/passthrough.nix"
 
     "login.nix"
+    "wm_utils.nix"
+    "polkit.nix"
+    # "qtile.nix"
     # "plasma.nix"
     # "mate.nix"
     # "xfce.nix"
-    "wm_utils.nix"
-    "polkit.nix"
     # "gnome.nix"
 
     # "sshfs-owo.nix"
