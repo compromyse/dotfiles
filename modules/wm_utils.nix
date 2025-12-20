@@ -21,6 +21,8 @@
 
     # sway-launcher-desktop
     bemenu
+
+    wl-clipboard
   ];
 
   xdg.portal = {

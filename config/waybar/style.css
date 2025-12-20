@@ -31,6 +31,7 @@ window#waybar {
 }
 
 #workspaces button, #workspaces button:hover, #tags button, #tags button:hover {
+  margin: 2px 4px;
   padding: 2px 6px;
   background: #212121;
   color: #9b9b9b

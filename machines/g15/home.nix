@@ -21,6 +21,7 @@
     imv
     mpv
 
+    librewolf
     firefox
     chromium
     spotify
@@ -28,8 +29,6 @@
     pcmanfm
 
     obs-studio
-
-    wl-clipboard
 
     git-lfs
     slides

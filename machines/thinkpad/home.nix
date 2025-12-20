@@ -21,15 +21,12 @@
     imv
     mpv
 
-    firefox
-    chromium
+    librewolf
     spotify
 
     pcmanfm
 
     obs-studio
-
-    wl-clipboard
 
     git-lfs
     slides

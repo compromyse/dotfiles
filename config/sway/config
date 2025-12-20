@@ -10,7 +10,7 @@ set $vm /config/dist/vm.sh
 set $files pcmanfm
 
 ### Output configuration
-output * bg /config/dist/windows.png fill
+output * bg /config/dist/windows.jpg fill
 
 ### Autostart
 exec --no-startup-id systemctl --user import-environment DISPLAY WAYLAND_DISPLAY
@@ -34,6 +34,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+space exec $menu
 bindsym $mod+v exec $vm
 bindsym $mod+e exec $files
+bindsym $mod+x exec swaylock -f
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
