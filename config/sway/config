@@ -128,4 +128,6 @@ client.background $bg $bg $fg $bg $bg
 
 default_border pixel 4
 
+seat "*" xcursor_theme Bibata-Modern-Classic 16
+
 include @sysconfdir@/sway/config.d/*
