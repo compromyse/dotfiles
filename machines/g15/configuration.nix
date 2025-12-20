@@ -102,4 +102,6 @@ in {
       echo "\_SB.AMW3.WMAX 0 0x15 {1, 0xa0, 0x00, 0x00}" > /proc/acpi/call
     '')
   ];
+
+  time.timeZone = lib.mkForce "America/Los_Angeles";
 }

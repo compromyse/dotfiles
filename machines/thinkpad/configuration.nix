@@ -13,8 +13,6 @@ in {
     "core/global.nix"
     "core/impermanence.nix"
 
-    "amdgpu.nix"
-    "amd.nix"
     "laptop.nix"
 
     "core/audio.nix"
@@ -26,12 +24,12 @@ in {
 
     "virt/kvm.nix"
 
+    "wm_utils.nix"
+    "polkit.nix"
     "login.nix"
     # "plasma.nix"
     # "mate.nix"
     # "xfce.nix"
-    "wm_utils.nix"
-    "polkit.nix"
     # "gnome.nix"
 
     # "sshfs-owo.nix"
@@ -80,4 +78,6 @@ in {
     5.161.107.13 oxo
     128.205.217.95 esc
   '';
+
+  time.timeZone = lib.mkForce "America/Los_Angeles";
 }
