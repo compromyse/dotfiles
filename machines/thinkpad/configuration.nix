@@ -13,6 +13,8 @@ in {
     "core/global.nix"
     "core/impermanence.nix"
 
+    "arc.nix"
+
     "laptop.nix"
 
     "core/audio.nix"

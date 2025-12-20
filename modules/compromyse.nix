@@ -10,7 +10,7 @@
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0XQscRcuWn8pCC2HrW9G/t0hjtPOfJo2Sta71Y+gU2kVBOp/CcouTBs329LgY7QIbhrUSclWKFucs67ZwmKbBzhKu6Ic5OF/Red0U1Ejj0YgiyAPZDkqW/hy4voDhn6/dtc/B4n+p62LzwItBMsPqyrA10ZGi9Sn4Bnktbr8bFT7beOo9Xw2ioBG11MwvX9lJXN+eoqzVVoNKghqrllyzQPIfVJDnN55E+9fofL/EJmFWWQGW9NfJTP1Z86TU+cxI07z7kZ1tmUl4kdHFlb5auyHM7ZrHQJLFGQDAJfH6okbwQtOLvpbsX6r0CP2TNAf5cEdKPx7r4NgUIbSdKad65gRaGWw/+jH24Jp5MJlYxTQ9PfdfYIVY3PaHn/uCqOmOfvzFOiVVMecs6aMXS3TJ5OEPj6Jzs1QXH3wkA8FwvhpTeRCUn1OW9A/BYDjA37ICotlec5Yzyx1WSYs84n8sdmweP+kI17Y4l1STg/fYosJ7gFUftJUgow1kiIW1qRs= compromyse@oxo"
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCRrVyzPfHnrgFCenEe8uGp+l7sHs0rLssyEnkG+cOsUAO/UwfW7PK2SynRpmv9UWyL8z0+cubnapJOEr7VuVAEFonkYaey6EMp2SiS6UBN+xT7qFD0jgQNvGAJO5JDW5rIyPV5Jly8cxBdT8/SIBkOdPKnvPkG7ygGWRtKAfJAB313F8fKwnZUe4YkPGKK2l31ggrmooAP5vSrwU1RL6OwzWYrtArXDi8TbQXOYpA40KE2w7f0yubVYXU5tJlFWor7M7Pr2u/DrvYL7yclgPxphzXv5hzFbBnP8aPrsRqSW+xN5m6NlbaNEdSPYEQLZj/5AYRAjtLjXgr4f6kcYdVKNnPOGA+a5JD8TGhyyuJdkCOv3iIxsXjumks5LbB7lXY5Manr36nqGoYkP1uqtpCLDbQC7+KGRHikpD4KDZ81gyQYB1hbEthQ8QEKoPgs+m89yKs3AycjhSU9+NAdxGt7WzvH3Uq4CAZ/iUMCZ/mUFEw2396RHgT4tMU8WaaT0GU= compromyse@owo"
     ];
-    extraGroups = [ "wheel" "video" "storage" "input" "plugdev" "libvirtd" "docker" "kvm" "lp" "dialout" "tty" ];
+    extraGroups = [ "wheel" "video" "render" "storage" "input" "plugdev" "libvirtd" "docker" "kvm" "lp" "dialout" "tty" ];
   };
   security.sudo.wheelNeedsPassword = false;
 }

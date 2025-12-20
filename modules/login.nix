@@ -35,11 +35,10 @@
   security.pam.services.swaylock.text = ''
     auth include login
   '';
+
   security.pam.loginLimits = [
     { domain = "@users"; item = "rtprio"; type = "-"; value = 1; }
   ];
-
-  services.libinput.enable = true;
 
   programs.gnupg.agent = {
     enable = true;
