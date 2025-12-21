@@ -27,10 +27,10 @@ in {
 
     "virt/kvm.nix"
 
-    "wm_utils.nix"
-    "polkit.nix"
     "login.nix"
-    # "plasma.nix"
+    "plasma.nix"
+    # "wm_utils.nix"
+    # "polkit.nix"
     # "mate.nix"
     # "xfce.nix"
     # "gnome.nix"
