@@ -1,0 +1,274 @@
+<?xml version="1.0"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" height="26.000004" width="82" id="svg3124" sodipodi:version="0.32" inkscape:version="0.92.1 r15371" version="1.0" sodipodi:docname="pager.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <sodipodi:namedview id="base" pagecolor="#a060a0" bordercolor="#646064" borderopacity="1.0" inkscape:pageopacity="0.5" inkscape:pageshadow="2" inkscape:cx="65.42269" inkscape:cy="10.779276" inkscape:zoom="8.0000005" inkscape:document-units="px" inkscape:current-layer="layer1" showgrid="true" gridtolerance="10000" inkscape:grid-points="true" inkscape:window-width="1867" inkscape:window-height="1055" inkscape:window-x="0" inkscape:window-y="0" showguides="true" inkscape:guide-bbox="true" inkscape:window-maximized="1" fit-margin-top="0" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0">
+    <inkscape:grid originy="15.000002" originx="2.0000002" snapvisiblegridlinesonly="true" empspacing="5" type="xygrid" id="grid3133" visible="true" enabled="true" spacingx="1" spacingy="1"/>
+  </sodipodi:namedview>
+  <defs id="defs3126">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text {
+        color:#000000;
+      }
+      .ColorScheme-Background {
+        color:#808080;
+      }
+      .ColorScheme-Highlight {
+        color:#000080;
+      }
+      .ColorScheme-ViewText {
+        color:#000000;
+      }
+      .ColorScheme-ViewBackground {
+        color:#ffffff;
+      }
+      .ColorScheme-ViewHover {
+        color:#8ecbe9;
+      }
+      .ColorScheme-ViewFocus{
+        color:#000080;
+      }
+      .ColorScheme-ButtonText {
+        color:#000000;
+      }
+      .ColorScheme-ButtonBackground {
+        color:#808080;
+      }
+      .ColorScheme-ButtonHover {
+        color:#8ecbe9;
+      }
+      .ColorScheme-ButtonFocus{
+        color:#000080;
+      }
+      </style>
+  </defs>
+  <metadata id="metadata3129">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g inkscape:groupmode="layer" inkscape:label="Warstwa 1" id="layer1" transform="translate(38.5,-27.862175)">
+    <rect style="opacity:0;fill:currentColor;fill-opacity:0.333;stroke:none" id="normal-center" width="18" height="18" x="-34.5" y="31.862177" class="ColorScheme-ButtonBackground"/>
+    <g id="normal-topleft" transform="translate(-6.0000002,43.999997)">
+      <rect transform="translate(-36.5,-21.13782)" y="5" x="4" height="3" width="3" id="rect4056-7" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <g id="g4355-5">
+        <rect transform="translate(-36.5,-21.13782)" y="6" x="5" height="2" width="2" id="rect4000-3" style="fill:currentColor;fill-opacity:0.333;stroke:none" class="ColorScheme-ButtonBackground"/>
+        <g id="g4285-5">
+          <path inkscape:connector-curvature="0" id="rect3222-62" transform="translate(-36.5,-21.13782)" d="M 5,6 V 7 8 H 6 V 7 H 7 V 6 Z" style="fill:#000000;fill-opacity:0.749;stroke:none"/>
+          <rect transform="translate(-36.5,-21.13782)" y="7" x="6" height="1" width="1" id="rect3293-9" style="fill:#ffffff;fill-opacity:0.667;stroke:none"/>
+        </g>
+      </g>
+    </g>
+    <g id="normal-bottomright" transform="translate(-30,19.999995)">
+      <rect transform="translate(-36.5,-21.13782)" y="52" x="51" height="3" width="3" id="rect4074-2" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <g id="g4363-7">
+        <rect transform="translate(-36.5,-21.13782)" y="52" x="51" height="2" width="2" id="rect4020-0" style="fill:currentColor;fill-opacity:0.333;stroke:none" class="ColorScheme-ButtonBackground"/>
+        <g id="g4291-9">
+          <path id="rect3222-7-3" d="m 16.5,32.86218 v -1 -1 h -1 v 1 h -1 v 1 z" style="fill:#000000;fill-opacity:0.749;stroke:none" inkscape:connector-curvature="0"/>
+          <rect y="30.862181" x="14.5" height="1" width="1" id="rect3315-9-60" style="fill:#000000;fill-opacity:0.537;stroke:none"/>
+        </g>
+      </g>
+    </g>
+    <g id="normal-topright" transform="translate(-30,43.999995)">
+      <rect transform="translate(-36.5,-21.13782)" y="5" x="51" height="3" width="3" id="rect4060-2" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <g id="g4371-6">
+        <rect transform="translate(-36.5,-21.13782)" y="6" x="51" height="2" width="2" id="rect4004-1" style="fill:currentColor;fill-opacity:0.333;stroke:none" class="ColorScheme-ButtonBackground"/>
+        <g id="g4297-8">
+          <path id="rect3222-3-7" d="m 16.5,-15.13782 v 1 1 h -1 v -1 h -1 v -1 z" style="fill:#000000;fill-opacity:0.749;stroke:none" inkscape:connector-curvature="0"/>
+          <rect y="-14.13782" x="14.5" height="1" width="1" id="rect3315-1-9" style="fill:#000000;fill-opacity:0.537;stroke:none"/>
+        </g>
+      </g>
+    </g>
+    <g id="normal-bottomleft" transform="translate(-6.0000002,19.999997)">
+      <rect transform="translate(-36.5,-21.13782)" y="52" x="4" height="3" width="3" id="rect4068-0" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <g id="g4379-2">
+        <rect transform="translate(-36.5,-21.13782)" y="52" x="5" height="2" width="2" id="rect4014-3" style="fill:currentColor;fill-opacity:0.333;stroke:none" class="ColorScheme-ButtonBackground"/>
+        <g id="g4303-7">
+          <path id="rect3222-6-5" d="m -31.5,32.86218 v -1 -1 h 1 v 1 h 1 v 1 z" style="fill:#000000;fill-opacity:0.749;stroke:none" inkscape:connector-curvature="0"/>
+          <rect transform="translate(-36.5,-21.13782)" y="52" x="6" height="1" width="1" id="rect3315-92" style="fill:#000000;fill-opacity:0.537;stroke:none"/>
+        </g>
+      </g>
+    </g>
+    <g id="normal-top" transform="matrix(0.40909091,0,0,1,-22.431818,43.999997)">
+      <rect transform="translate(-36.5,-21.13782)" y="5" x="7" height="3" width="44" id="rect4058-8" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <g id="g4387-9">
+        <rect transform="translate(-36.5,-21.13782)" y="6" x="7" height="2" width="44" id="rect4002-7" style="fill:currentColor;fill-opacity:0.333;stroke:none" class="ColorScheme-ButtonBackground"/>
+        <g id="g4309-3">
+          <rect transform="translate(-36.5,-21.13782)" y="6" x="7" height="1" width="44" id="rect3259-6" style="fill:#000000;fill-opacity:0.749;stroke:none"/>
+          <rect transform="translate(-36.5,-21.13782)" y="7" x="7" height="1" width="44" id="rect3295-1" style="fill:#ffffff;fill-opacity:0.667;stroke:none"/>
+        </g>
+      </g>
+    </g>
+    <g id="normal-left" transform="matrix(1,0,0,0.40909091,-6,37.23674)">
+      <rect transform="translate(-36.5,-21.13782)" y="8" x="4" height="44" width="3" id="rect4062-9" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <g id="g4395-3">
+        <rect transform="translate(-36.5,-21.13782)" y="8" x="5" height="44" width="2" id="rect4006-1" style="fill:currentColor;fill-opacity:0.333;stroke:none" class="ColorScheme-ButtonBackground"/>
+        <g id="g4315-9">
+          <rect transform="rotate(90)" y="30.5" x="-13.13782" height="1" width="44" id="rect3259-5-4" style="fill:#000000;fill-opacity:0.749;stroke:none"/>
+          <rect transform="rotate(90)" y="29.5" x="-13.13782" height="1" width="44" id="rect3295-2-7" style="fill:#ffffff;fill-opacity:0.667;stroke:none"/>
+        </g>
+      </g>
+    </g>
+    <g id="normal-right" transform="matrix(1,0,0,0.40909092,-30,37.236738)">
+      <rect transform="translate(-36.5,-21.13782)" y="8" x="51" height="44" width="3" id="rect4066-4" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <g id="g4403-5">
+        <rect transform="translate(-36.5,-21.13782)" y="8" x="51" height="44" width="2" id="rect4012-0" style="fill:currentColor;fill-opacity:0.333;stroke:none" class="ColorScheme-ButtonBackground"/>
+        <g id="g4321-3">
+          <rect transform="rotate(90)" y="-16.5" x="-13.13782" height="1" width="44" id="rect3259-3-6" style="fill:#000000;fill-opacity:0.749;stroke:none"/>
+          <rect transform="rotate(90)" y="-15.5" x="-13.13782" height="1" width="44" id="rect3342-2-10" style="fill:#000000;fill-opacity:0.537;stroke:none"/>
+        </g>
+      </g>
+    </g>
+    <g id="normal-bottom" transform="matrix(0.40909091,0,0,1,-22.431818,19.999997)">
+      <rect transform="translate(-36.5,-21.13782)" y="52" x="7" height="3" width="44" id="rect4072-3" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <g id="g4411-2">
+        <rect transform="translate(-36.5,-21.13782)" y="52" x="7" height="2" width="44" id="rect4016-0" style="fill:currentColor;fill-opacity:0.333;stroke:none" class="ColorScheme-ButtonBackground"/>
+        <g id="g4327-6">
+          <rect y="31.862181" x="-29.5" height="1" width="44" id="rect3259-56-15" style="fill:#000000;fill-opacity:0.749;stroke:none"/>
+          <rect transform="translate(-36.5,-21.13782)" y="52" x="7" height="1" width="44" id="rect3342-5" style="fill:#000000;fill-opacity:0.537;stroke:none"/>
+        </g>
+      </g>
+    </g>
+    <g transform="matrix(0.40909091,0,0,0.40909087,-3.2500002,16.782196)" id="active-center" style="opacity:0">
+      <rect y="36.862179" x="60.5" height="44" width="44" id="rect7000" style="fill:currentColor;fill-opacity:0.333;stroke:none" class="ColorScheme-ButtonBackground"/>
+      <rect y="36.862179" x="60.5" height="44" width="44" id="rect5737" style="opacity:0.271;fill:#000000;fill-opacity:1;stroke:none"/>
+    </g>
+    <g id="active-topleft" transform="translate(50,-6.0000005)">
+      <rect y="33.862179" x="-32.5" height="3" width="3" id="rect4056" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <rect style="fill:currentColor;fill-opacity:0.333;stroke:none" id="rect4000" width="2" height="2" x="-31.5" y="34.862179" class="ColorScheme-ButtonBackground"/>
+      <path id="rect3222-0" d="m -31.5,34.862177 v 1 1 h 1 v -1 h 1 v -1 z" style="fill:#000000;fill-opacity:0.749;stroke:none" inkscape:connector-curvature="0"/>
+      <rect y="35.862179" x="-30.5" height="1" width="1" id="rect3293-2" style="opacity:0.271;fill:#000000;fill-opacity:1;stroke:none"/>
+    </g>
+    <g id="active-bottomright" transform="translate(26,-29.999998)">
+      <rect y="80.862175" x="14.5" height="3" width="3" id="rect4074" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <rect style="fill:currentColor;fill-opacity:0.333;stroke:none" id="rect4020" width="2" height="2" x="14.5" y="80.862175" class="ColorScheme-ButtonBackground"/>
+      <path id="rect3222-7-1" d="m 16.5,82.862177 v -1 -1 h -1 v 1 h -1 v 1 z" style="fill:#000000;fill-opacity:0.749;stroke:none" inkscape:connector-curvature="0"/>
+      <rect y="80.862175" x="14.5" height="1" width="1" id="rect3315-9-1" style="opacity:0.271;fill:#000000;fill-opacity:1;stroke:none"/>
+      <path inkscape:connector-curvature="0" style="fill:#ffffff;fill-opacity:0.667;stroke:none" d="m 17.5,83.862177 v -1 -2 h -1 v 2 h -2 v 1 z" id="rect3214-7-0"/>
+    </g>
+    <g id="active-topright" transform="translate(26,-6.0000018)">
+      <rect y="33.862179" x="14.5" height="3" width="3" id="rect4060" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <rect style="fill:currentColor;fill-opacity:0.333;stroke:none" id="rect4004" width="2" height="2" x="14.5" y="34.862179" class="ColorScheme-ButtonBackground"/>
+      <path id="rect3222-3-0" d="m 16.5,34.862177 v 1 1 h -1 v -1 h -1 v -1 z" style="fill:#000000;fill-opacity:0.749;stroke:none" inkscape:connector-curvature="0"/>
+      <rect y="35.862179" x="14.5" height="1" width="1" id="rect3315-1-6" style="opacity:0.271;fill:#000000;fill-opacity:1;stroke:none"/>
+      <rect style="fill:#ffffff;fill-opacity:0.667;stroke:none" id="rect3251-4" width="1" height="3" x="16.5" y="33.862179"/>
+    </g>
+    <g id="active-bottomleft" transform="translate(50,-29.999998)">
+      <rect y="80.862175" x="-32.5" height="3" width="3" id="rect4068" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <rect style="fill:currentColor;fill-opacity:0.333;stroke:none" id="rect4014" width="2" height="2" x="-31.5" y="80.862175" class="ColorScheme-ButtonBackground"/>
+      <path id="rect3222-6-8" d="m -31.5,82.862177 v -1 -1 h 1 v 1 h 1 v 1 z" style="fill:#000000;fill-opacity:0.749;stroke:none" inkscape:connector-curvature="0"/>
+      <rect y="80.862175" x="-30.5" height="1" width="1" id="rect3315-6" style="opacity:0.271;fill:#000000;fill-opacity:1;stroke:none"/>
+      <rect style="fill:#ffffff;fill-opacity:0.667;stroke:none" id="rect3251-3-2" width="1" height="3" x="82.862175" y="29.5" transform="rotate(90)"/>
+    </g>
+    <g id="active-top" transform="matrix(0.40909091,0,0,1,33.568182,-6.0000019)">
+      <rect y="33.862179" x="-29.5" height="3" width="44" id="rect4058" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <rect style="fill:currentColor;fill-opacity:0.333;stroke:none" id="rect4002" width="44" height="2" x="-29.5" y="34.862179" class="ColorScheme-ButtonBackground"/>
+      <rect y="34.862179" x="-29.5" height="1" width="44" id="rect3259-2" style="fill:#000000;fill-opacity:0.749;stroke:none"/>
+      <rect y="35.862179" x="-29.5" height="1" width="44" id="rect3295-4" style="opacity:0.271;fill:#000000;fill-opacity:1;stroke:none"/>
+    </g>
+    <g id="active-left" transform="matrix(1,0,0,0.40909091,50,16.782196)">
+      <rect y="36.862179" x="-32.5" height="44" width="3" id="rect4062" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <rect style="fill:currentColor;fill-opacity:0.333;stroke:none" id="rect4006" width="2" height="44" x="-31.5" y="36.862179" class="ColorScheme-ButtonBackground"/>
+      <rect transform="rotate(90)" y="30.5" x="36.862175" height="1" width="44" id="rect3259-5-9" style="fill:#000000;fill-opacity:0.749;stroke:none"/>
+      <rect transform="rotate(90)" y="29.5" x="36.862175" height="1" width="44" id="rect3295-2-9" style="opacity:0.271;fill:#000000;fill-opacity:1;stroke:none"/>
+    </g>
+    <g id="active-right" transform="matrix(1,0,0,0.40909087,26,16.782196)">
+      <rect y="36.862179" x="14.5" height="44" width="3" id="rect4066" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <rect style="fill:currentColor;fill-opacity:0.333;stroke:none" id="rect4012" width="2" height="44" x="14.5" y="36.862179" class="ColorScheme-ButtonBackground"/>
+      <rect transform="rotate(90)" y="-16.5" x="36.862179" height="1" width="44" id="rect3259-3-3" style="fill:#000000;fill-opacity:0.749;stroke:none"/>
+      <rect transform="rotate(90)" y="-15.5" x="36.862179" height="1" width="44" id="rect3342-2-1" style="opacity:0.271;fill:#000000;fill-opacity:1;stroke:none"/>
+      <rect style="fill:#ffffff;fill-opacity:0.667;stroke:none" id="rect3303-2-1" width="44" height="1" x="36.862179" y="-17.5" transform="rotate(90)"/>
+    </g>
+    <g id="active-bottom" transform="matrix(0.40909091,0,0,1,33.568182,-29.999998)">
+      <rect y="80.862175" x="-29.5" height="3" width="44" id="rect4072" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <rect style="fill:currentColor;fill-opacity:0.333;stroke:none" id="rect4016" width="44" height="2" x="-29.5" y="80.862175" class="ColorScheme-ButtonBackground"/>
+      <rect y="81.862175" x="-29.5" height="1" width="44" id="rect3259-56-4" style="fill:#000000;fill-opacity:0.749;stroke:none"/>
+      <rect y="80.862175" x="-29.5" height="1" width="44" id="rect3342-0" style="opacity:0.271;fill:#000000;fill-opacity:1;stroke:none"/>
+      <rect style="fill:#ffffff;fill-opacity:0.667;stroke:none" id="rect3303-9-3" width="44" height="1" x="-29.5" y="82.862175"/>
+    </g>
+    <rect style="opacity:0;fill:currentColor;fill-opacity:0.333;stroke:none" id="hover-center" width="18" height="18" x="-6.5" y="31.862175" class="ColorScheme-ButtonBackground"/>
+    <g id="hover-topleft" transform="translate(22,43.999997)">
+      <rect transform="translate(-36.5,-21.13782)" y="5" x="4" height="3" width="3" id="rect4056-7-7" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <g id="g4355-5-5">
+        <rect transform="translate(-36.5,-21.13782)" y="6" x="5" height="2" width="2" id="rect4000-3-3" style="fill:currentColor;fill-opacity:0.333;stroke:none" class="ColorScheme-ButtonBackground"/>
+        <g id="g4285-5-5">
+          <path inkscape:connector-curvature="0" id="rect3222-62-6" transform="translate(-36.5,-21.13782)" d="M 5,6 V 7 8 H 6 V 7 H 7 V 6 Z" style="fill:#000000;fill-opacity:0.749;stroke:none"/>
+          <rect transform="translate(-36.5,-21.13782)" y="7" x="6" height="1" width="1" id="rect3293-9-2" style="fill:#ffffff;fill-opacity:0.667;stroke:none"/>
+        </g>
+      </g>
+    </g>
+    <g id="hover-bottomright" transform="translate(-2.0000002,19.999997)">
+      <rect transform="translate(-36.5,-21.13782)" y="52" x="51" height="3" width="3" id="rect4074-2-1" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <g id="g4363-7-2">
+        <rect transform="translate(-36.5,-21.13782)" y="52" x="51" height="2" width="2" id="rect4020-0-7" style="fill:currentColor;fill-opacity:0.333;stroke:none" class="ColorScheme-ButtonBackground"/>
+        <g id="g4291-9-0">
+          <path id="rect3222-7-3-9" d="m 16.5,32.86218 v -1 -1 h -1 v 1 h -1 v 1 z" style="fill:#000000;fill-opacity:0.749;stroke:none" inkscape:connector-curvature="0"/>
+          <rect y="30.862181" x="14.5" height="1" width="1" id="rect3315-9-60-3" style="fill:#000000;fill-opacity:0.537;stroke:none"/>
+        </g>
+      </g>
+    </g>
+    <g id="hover-topright" transform="translate(-2.0000002,43.999997)">
+      <rect transform="translate(-36.5,-21.13782)" y="5" x="51" height="3" width="3" id="rect4060-2-0" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <g id="g4371-6-6">
+        <rect transform="translate(-36.5,-21.13782)" y="6" x="51" height="2" width="2" id="rect4004-1-2" style="fill:currentColor;fill-opacity:0.333;stroke:none" class="ColorScheme-ButtonBackground"/>
+        <g id="g4297-8-6">
+          <path id="rect3222-3-7-1" d="m 16.5,-15.13782 v 1 1 h -1 v -1 h -1 v -1 z" style="fill:#000000;fill-opacity:0.749;stroke:none" inkscape:connector-curvature="0"/>
+          <rect y="-14.13782" x="14.5" height="1" width="1" id="rect3315-1-9-8" style="fill:#000000;fill-opacity:0.537;stroke:none"/>
+        </g>
+      </g>
+    </g>
+    <g id="hover-bottomleft" transform="translate(22,19.999997)">
+      <rect transform="translate(-36.5,-21.13782)" y="52" x="4" height="3" width="3" id="rect4068-0-9" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <g id="g4379-2-2">
+        <rect transform="translate(-36.5,-21.13782)" y="52" x="5" height="2" width="2" id="rect4014-3-0" style="fill:currentColor;fill-opacity:0.333;stroke:none" class="ColorScheme-ButtonBackground"/>
+        <g id="g4303-7-2">
+          <path id="rect3222-6-5-3" d="m -31.5,32.86218 v -1 -1 h 1 v 1 h 1 v 1 z" style="fill:#000000;fill-opacity:0.749;stroke:none" inkscape:connector-curvature="0"/>
+          <rect transform="translate(-36.5,-21.13782)" y="52" x="6" height="1" width="1" id="rect3315-92-7" style="fill:#000000;fill-opacity:0.537;stroke:none"/>
+        </g>
+      </g>
+    </g>
+    <g id="hover-top" transform="matrix(0.40909091,0,0,1,5.5681818,43.999997)">
+      <rect transform="translate(-36.5,-21.13782)" y="5" x="7" height="3" width="44" id="rect4058-8-9" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <g id="g4387-9-2">
+        <rect transform="translate(-36.5,-21.13782)" y="6" x="7" height="2" width="44" id="rect4002-7-2" style="fill:currentColor;fill-opacity:0.333;stroke:none" class="ColorScheme-ButtonBackground"/>
+        <g id="g4309-3-8">
+          <rect transform="translate(-36.5,-21.13782)" y="6" x="7" height="1" width="44" id="rect3259-6-9" style="fill:#000000;fill-opacity:0.749;stroke:none"/>
+          <rect transform="translate(-36.5,-21.13782)" y="7" x="7" height="1" width="44" id="rect3295-1-7" style="fill:#ffffff;fill-opacity:0.667;stroke:none"/>
+        </g>
+      </g>
+    </g>
+    <g id="hover-left" transform="matrix(1,0,0,0.40909091,22,37.23674)">
+      <rect transform="translate(-36.5,-21.13782)" y="8" x="4" height="44" width="3" id="rect4062-9-6" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <g id="g4395-3-1">
+        <rect transform="translate(-36.5,-21.13782)" y="8" x="5" height="44" width="2" id="rect4006-1-2" style="fill:currentColor;fill-opacity:0.333;stroke:none" class="ColorScheme-ButtonBackground"/>
+        <g id="g4315-9-9">
+          <rect transform="rotate(90)" y="30.5" x="-13.13782" height="1" width="44" id="rect3259-5-4-3" style="fill:#000000;fill-opacity:0.749;stroke:none"/>
+          <rect transform="rotate(90)" y="29.5" x="-13.13782" height="1" width="44" id="rect3295-2-7-1" style="fill:#ffffff;fill-opacity:0.667;stroke:none"/>
+        </g>
+      </g>
+    </g>
+    <g id="hover-right" transform="matrix(1,0,0,0.40909092,-2,37.23674)">
+      <rect transform="translate(-36.5,-21.13782)" y="8" x="51" height="44" width="3" id="rect4066-4-4" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <g id="g4403-5-7">
+        <rect transform="translate(-36.5,-21.13782)" y="8" x="51" height="44" width="2" id="rect4012-0-8" style="fill:currentColor;fill-opacity:0.333;stroke:none" class="ColorScheme-ButtonBackground"/>
+        <g id="g4321-3-4">
+          <rect transform="rotate(90)" y="-16.5" x="-13.13782" height="1" width="44" id="rect3259-3-6-5" style="fill:#000000;fill-opacity:0.749;stroke:none"/>
+          <rect transform="rotate(90)" y="-15.5" x="-13.13782" height="1" width="44" id="rect3342-2-10-0" style="fill:#000000;fill-opacity:0.537;stroke:none"/>
+        </g>
+      </g>
+    </g>
+    <g id="hover-bottom" transform="matrix(0.40909091,0,0,1,5.5681818,19.999997)">
+      <rect transform="translate(-36.5,-21.13782)" y="52" x="7" height="3" width="44" id="rect4072-3-6" style="opacity:0;fill:#ff00ff;fill-opacity:1;stroke:none"/>
+      <g id="g4411-2-1">
+        <rect transform="translate(-36.5,-21.13782)" y="52" x="7" height="2" width="44" id="rect4016-0-0" style="fill:currentColor;fill-opacity:0.333;stroke:none" class="ColorScheme-ButtonBackground"/>
+        <g id="g4327-6-6">
+          <rect y="31.862181" x="-29.5" height="1" width="44" id="rect3259-56-15-3" style="fill:#000000;fill-opacity:0.749;stroke:none"/>
+          <rect transform="translate(-36.5,-21.13782)" y="52" x="7" height="1" width="44" id="rect3342-5-2" style="fill:#000000;fill-opacity:0.537;stroke:none"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

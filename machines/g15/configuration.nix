@@ -29,10 +29,10 @@ in {
     "virt/passthrough.nix"
 
     "login.nix"
-    "wm_utils.nix"
-    "polkit.nix"
+    # "wm_utils.nix"
+    # "polkit.nix"
     # "qtile.nix"
-    # "plasma.nix"
+    "plasma.nix"
     # "mate.nix"
     # "xfce.nix"
     # "gnome.nix"
@@ -68,7 +68,7 @@ in {
     extraSpecialArgs = { inherit inputs; };
     useGlobalPkgs = true;
     useUserPackages = true;
-    # sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
+    sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
     users = {
       "compromyse" = import ./home.nix;
     };
