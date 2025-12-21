@@ -40,13 +40,13 @@
       };
       # iconTheme = "Papirus-Dark";
       iconTheme = "Memphis98";
-      wallpaper = "/config/dist/windows.jpg";
+      wallpaper = "/config/dist/retro.jpg";
       theme = "memphis-translucent";
       widgetStyle = "Windows";
       splashScreen.theme = "None";
     };
 
-    kscreenlocker.appearance.wallpaper = "/config/dist/windows.jpg";
+    kscreenlocker.appearance.wallpaper = "/config/dist/retro.jpg";
 
     fonts = {
       general = {
