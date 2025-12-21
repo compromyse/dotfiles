@@ -37,5 +37,10 @@ in {
     StrictHostKeyChecking no
   '';
 
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "raghus2247@gmail.com";
+  };
+
   system.stateVersion = "23.11";
 }

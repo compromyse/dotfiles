@@ -53,9 +53,4 @@ in {
     forceSSL = true;
     enableACME = true;
   };
-
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "raghus2247@gmail.com";
-  };
 }
