@@ -14,7 +14,7 @@
     "git/timer-backup.nix"
     "web/user.nix"
   ] ++ [
-    # ./www.nix
+    ./www.nix
   ]);
 
   networking.hostName = "oxo";
