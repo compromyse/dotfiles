@@ -16,9 +16,4 @@
       root = "/var/www/compromyse.xyz";
     };
   };
-
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "raghus2247@gmail.com";
-  };
 }
