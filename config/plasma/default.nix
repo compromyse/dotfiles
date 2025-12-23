@@ -99,12 +99,20 @@
       };
     };
 
+    /* cat /proc/bus/input/devices */
     input.mice = [
       {
-        /* cat /proc/bus/input/devices */
         vendorId = "06cb";
         productId = "ce81";
         name = "DLL0C55:00 06CB:CE81 Touchpad";
+        middleButtonEmulation = true;
+        naturalScroll = true;
+      }
+
+      {
+        vendorId = "06cb";
+        productId = "ce67";
+        name = "SYNA8022:00 06CB:CE67 Touchpad";
         middleButtonEmulation = true;
         naturalScroll = true;
       }

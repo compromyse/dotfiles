@@ -10,9 +10,8 @@ MACHINE="$1"
 sudo cp -rv * /mnt/config
 
 CONFIG_ARGS="--root /mnt"
-if [ $MACHINE = "x" ]; then
-    CONFIG_ARGS="$CONFIG_ARGS --no-filesystems"
-fi
+# TODO: only no-filesystems for g15 and thinkpad
+CONFIG_ARGS="$CONFIG_ARGS --no-filesystems"
 
 sudo nixos-generate-config $CONFIG_ARGS
 

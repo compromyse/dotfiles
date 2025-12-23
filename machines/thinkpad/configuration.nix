@@ -56,6 +56,7 @@ in {
   };
 
   boot.extraModprobeConfig = "options kvm_intel nested=1";
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   services.fstrim.enable = true;
 
@@ -66,7 +67,7 @@ in {
     extraSpecialArgs = { inherit inputs; };
     useGlobalPkgs = true;
     useUserPackages = true;
-    # sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
+    sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
     users = {
       "compromyse" = import ./home.nix;
     };
