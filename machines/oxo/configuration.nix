@@ -13,6 +13,7 @@
     "git/timer-update-timestamps.nix"
     "git/timer-backup.nix"
     "web/user.nix"
+    "headscale.nix"
   ] ++ [
     ./www.nix
   ]);

@@ -11,6 +11,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.termguicolors = true
 vim.opt.splitbelow = true
+vim.opt.modeline = true
 vim.opt.scrolloff = 5
 vim.opt.mouse= 'a'
 vim.api.nvim_set_option('clipboard','unnamedplus')
