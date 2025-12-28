@@ -8,12 +8,18 @@
 
   services.nginx = {
     enable = true;
+    recommendedGzipSettings = true;
+    recommendedOptimisation = true;
+    recommendedProxySettings = true;
+    recommendedTlsSettings = true;
+
     # user = "www";
     # group = "www";
     virtualHosts."compromyse.xyz" = {
       enableACME = true;
       forceSSL = true;
       root = "/var/www/compromyse.xyz";
+      locations."/".tryFiles = "$uri $uri/ $uri.html =404";
     };
   };
 }
