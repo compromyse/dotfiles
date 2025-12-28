@@ -9,6 +9,7 @@
   home.packages = [
     pkgs.bibata-cursors
     pkgs.papirus-icon-theme
+    pkgs.wl-clipboard
     # pkgs.kdePackages.yakuake
   ];
 
