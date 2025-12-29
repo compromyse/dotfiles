@@ -29,6 +29,9 @@
 
     # GRUB2 themes
     grub2-themes.url = "github:vinceliuice/grub2-themes";
+
+    # Proxmox
+    proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -54,6 +57,7 @@
         modules = [
           inputs.disko.nixosModules.default
 
+          proxmox-nixos.nixosModules.proxmox-ve
           ./machines/g15/configuration.nix
 
           inputs.home-manager.nixosModules.default

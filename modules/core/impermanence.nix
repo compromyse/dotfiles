@@ -32,6 +32,7 @@
       "/var/lib/systemd/coredump"
       "/etc/NetworkManager/system-connections"
       "/var/lib/docker"
+      "/var/lib/pve-cluster"
     ];
     files = [
       "/etc/machine-id"

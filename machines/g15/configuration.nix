@@ -27,6 +27,7 @@ in {
 
     "virt/kvm.nix"
     "virt/passthrough.nix"
+    "virt/proxmox.nix"
 
     "login.nix"
     # "wm_utils.nix"
