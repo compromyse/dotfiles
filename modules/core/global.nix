@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 let
   nix_path = "/tmp/nix_path";
@@ -41,6 +41,9 @@ in {
     acceptTerms = true;
     defaults.email = "raghus2247@gmail.com";
   };
+
+  # TODO: Remove this after upstream fixes it https://github.com/SaumonNet/proxmox-nixos/pull/213/changes
+  services.openssh.settings.AcceptEnv = lib.mkForce ["LANG" "LC_*"];
 
   system.stateVersion = "23.11";
 }

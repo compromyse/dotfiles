@@ -39,6 +39,8 @@ in {
     # "gnome.nix"
 
     # "sshfs-owo.nix"
+    "tailscale.nix"
+    "ssh.nix"
   ]);
 
   boot.loader = {
