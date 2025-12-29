@@ -3,7 +3,7 @@
 {
   services.proxmox-ve = {
     enable = true;
-    ipAddress = "127.0.0.1";
+    ipAddress = "0.0.0.0";
   };
 
   nixpkgs.overlays = [
