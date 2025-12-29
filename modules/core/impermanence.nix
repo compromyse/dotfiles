@@ -28,6 +28,7 @@
       "/var/lib/nixos"
       "/var/lib/libvirt"
       "/var/lib/fprint"
+      "/var/lib/tailscale"
       "/var/lib/systemd/coredump"
       "/etc/NetworkManager/system-connections"
       "/var/lib/docker"
