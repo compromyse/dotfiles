@@ -75,8 +75,9 @@ in {
     };
   };
 
-  programs.adb.enable = true;
+  services.greetd.settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --remember --cmd startplasma-wayland";
 
+  programs.adb.enable = true;
   programs.nix-ld.enable = true;
 
   networking.extraHosts = ''

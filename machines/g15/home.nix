@@ -60,7 +60,7 @@
     # "sway"
     "dwl.nix"
     "themes.nix"
-    # "waybar"
+    "waybar"
     "way-displays"
     "swaylock"
     "dunst"

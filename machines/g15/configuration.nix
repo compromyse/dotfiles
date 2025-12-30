@@ -78,6 +78,8 @@ in {
     };
   };
 
+  services.greetd.settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --remember --cmd dwl";
+
   programs.adb.enable = true;
   programs.nix-ld.enable = true;
 

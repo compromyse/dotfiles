@@ -10,7 +10,7 @@
         # command = "tuigreet --time --remember --cmd \"dwl -s dwlb\"";
         # command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd 'qtile start -b wayland'";
         # command = "tuigreet --time --remember --cmd dwl";
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd startplasma-wayland";
+        # command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd startplasma-wayland";
         user = "compromyse";
       };
     };
