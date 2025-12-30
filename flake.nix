@@ -57,7 +57,7 @@
         modules = [
           inputs.disko.nixosModules.default
 
-          inputs.proxmox-nixos.nixosModules.proxmox-ve
+          # inputs.proxmox-nixos.nixosModules.proxmox-ve
           ./machines/g15/configuration.nix
 
           inputs.home-manager.nixosModules.default
