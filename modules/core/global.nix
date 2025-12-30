@@ -22,6 +22,8 @@ in {
   environment.systemPackages = with pkgs; [
     man-pages
     man-pages-posix
+
+    waypipe
   ];
 
   time.timeZone = "America/New_York";
