@@ -13,14 +13,15 @@ in {
     "core/global.nix"
     "core/impermanence.nix"
 
+    "core/audio.nix"
+    "core/bluetooth.nix"
+    "core/fonts.nix"
+
     "nvidia.nix"
     "amdgpu.nix"
     "amd.nix"
     "laptop.nix"
-
-    "core/audio.nix"
-    "core/bluetooth.nix"
-    "core/fonts.nix"
+    "disable_sleep.nix"
 
     "compromyse.nix"
     "remapcapslock.nix"
@@ -30,10 +31,10 @@ in {
     "virt/proxmox.nix"
 
     "login.nix"
-    # "wm_utils.nix"
-    # "polkit.nix"
+    "wm_utils.nix"
+    "polkit.nix"
     # "qtile.nix"
-    "plasma.nix"
+    # "plasma.nix"
     # "mate.nix"
     # "xfce.nix"
     # "gnome.nix"
