@@ -33,6 +33,7 @@
       "/etc/NetworkManager/system-connections"
       "/var/lib/docker"
       "/var/lib/pve-cluster"
+      "/var/lib/vz"
     ];
     files = [
       "/etc/machine-id"

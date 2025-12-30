@@ -83,9 +83,10 @@ in {
   networking.extraHosts = ''
     178.156.200.181 owo
     5.161.107.13 oxo
+    128.205.217.95 esc
     192.168.122.100 android
     192.168.122.101 dev
-    128.205.217.95 esc
+    192.168.122.102 deb
   '';
 
   environment.systemPackages = [
