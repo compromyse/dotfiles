@@ -24,6 +24,7 @@ in {
     man-pages-posix
 
     waypipe
+    traceroute
   ];
 
   time.timeZone = "America/New_York";
