@@ -35,7 +35,6 @@
       "/var/lib/docker"
       "/var/lib/pve-cluster"
       "/var/lib/vz"
-      "/etc/ssh"
     ];
 
     files = [

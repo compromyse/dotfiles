@@ -89,7 +89,8 @@ in {
     128.205.217.95 esc
     192.168.122.100 android
     192.168.122.101 dev
-    192.168.122.102 deb
+    192.168.122.102 debian
+    192.168.122.103 debian-passthrough
   '';
 
   environment.systemPackages = [
