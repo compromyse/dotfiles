@@ -13,16 +13,15 @@
   systemd.services."backup-repositories" = {
     script = ''
       cd $HOME
-      mkdir -p $HOME/backups
 
       FILENAME=repositories-$(date +%s).tar
-      FILE=$HOME/backups/$FILENAME
+      FILE=/tmp/$FILENAME
 
-      REPOSITORIES=$(ls $HOME | grep -v backups)
+      REPOSITORIES=$(ls $HOME)
       ${pkgs.gnutar}/bin/tar cf $FILE $REPOSITORIES
       ${pkgs.openssh}/bin/scp $FILE compromyse@owo.compromyse.xyz:~/backups/$FILENAME
 
-      find $HOME/backups -mtime 7 -delete
+      rm -f $FILE
     '';
 
     serviceConfig = {
