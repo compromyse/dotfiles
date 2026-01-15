@@ -80,7 +80,9 @@ in {
 
   services.greetd.settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --remember --cmd dwl";
 
-  programs.adb.enable = true;
+  environment.systemPackages = with pkgs; [
+      pkgs.android-tools
+  ];
   programs.nix-ld.enable = true;
 
   networking.extraHosts = ''
@@ -91,6 +93,7 @@ in {
     192.168.122.101 dev
     192.168.122.102 debian
     192.168.122.103 debian-passthrough
+    192.168.122.109 pmos
   '';
 
   environment.systemPackages = [
