@@ -81,7 +81,6 @@ in {
   services.greetd.settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --remember --cmd dwl";
 
   environment.systemPackages = with pkgs; [
-      pkgs.android-tools
   ];
   programs.nix-ld.enable = true;
 
@@ -112,6 +111,8 @@ in {
       echo "\_SB.AMW3.WMAX 0 0x15 {1, 0xa0, 0x00, 0x00}" > /proc/acpi/call
       echo "\_SB.AMW3.WMAX 0 0x15 {1, 0xa0, 0x00, 0x00}" > /proc/acpi/call
     '')
+  ] ++ [
+    android-tools
   ];
 
   time.timeZone = lib.mkForce "America/Los_Angeles";
