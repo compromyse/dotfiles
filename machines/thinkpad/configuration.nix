@@ -78,7 +78,7 @@ in {
   services.greetd.settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --remember --cmd startplasma-wayland";
 
   environment.systemPackages = with pkgs; [
-      pkgs.android-tools
+      android-tools
   ];
   programs.nix-ld.enable = true;
 
