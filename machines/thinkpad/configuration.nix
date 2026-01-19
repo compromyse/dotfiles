@@ -89,5 +89,5 @@ in {
     192.168.122.100 deb
   '';
 
-  time.timeZone = lib.mkForce "America/Los_Angeles";
+  time.timeZone = lib.mkForce "America/New_York";
 }
