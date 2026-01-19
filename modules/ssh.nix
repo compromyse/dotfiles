@@ -8,4 +8,8 @@
         PasswordAuthentication = false;
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    sshfs
+  ];
 }
