@@ -31,10 +31,10 @@ in {
     # "virt/proxmox.nix"
 
     "login.nix"
-    "wm_utils.nix"
-    "polkit.nix"
+    # "wm_utils.nix"
+    # "polkit.nix"
     # "qtile.nix"
-    # "plasma.nix"
+    "plasma.nix"
     # "mate.nix"
     # "xfce.nix"
     # "gnome.nix"
@@ -78,7 +78,7 @@ in {
     };
   };
 
-  services.greetd.settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --remember --cmd dwl";
+  services.greetd.settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --remember --cmd startplasma-wayland";
 
   programs.nix-ld.enable = true;
 
@@ -110,7 +110,7 @@ in {
       echo "\_SB.AMW3.WMAX 0 0x15 {1, 0xa0, 0x00, 0x00}" > /proc/acpi/call
     '')
   ] ++ [
-    android-tools
+    pkgs.android-tools
   ];
 
   time.timeZone = lib.mkForce "America/Los_Angeles";
