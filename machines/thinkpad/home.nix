@@ -31,7 +31,7 @@
     git-lfs
     slides
 
-    calibre
+    # calibre
     kdePackages.okular
 
     protonvpn-gui
