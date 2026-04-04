@@ -34,7 +34,7 @@
     # calibre
     kdePackages.okular
 
-    protonvpn-gui
+    proton-vpn
   ];
 
   programs = {

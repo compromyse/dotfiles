@@ -58,7 +58,7 @@ in {
   };
 
   boot.extraModprobeConfig = "options kvm_intel nested=1";
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages;
 
   services.fstrim.enable = true;
 
