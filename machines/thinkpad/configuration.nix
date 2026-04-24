@@ -60,6 +60,8 @@ in {
   boot.extraModprobeConfig = "options kvm_intel nested=1";
   boot.kernelPackages = pkgs.linuxPackages;
 
+  services.hardware.bolt.enable = true;
+
   services.fstrim.enable = true;
 
   networking.hostName = "thinkpad";
@@ -88,6 +90,7 @@ in {
     128.205.217.95 esc
     192.168.122.100 deb
     192.168.122.101 cse
+    192.168.122.109 debian
   '';
 
   time.timeZone = lib.mkForce "America/New_York";
