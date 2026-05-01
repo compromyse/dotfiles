@@ -19,7 +19,7 @@
     zip
 
     imv
-    mpv
+    # mpv
 
     librewolf
     spotify
