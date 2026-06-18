@@ -66,6 +66,7 @@
     # "swaylock"
     # "dunst"
     # "gnome.nix"
+    "mango.nix"
 
     "alacritty"
     # "spotify-player"

@@ -30,6 +30,7 @@ in {
 
     "login.nix"
     "plasma.nix"
+    "mango.nix"
     # "wm_utils.nix"
     # "polkit.nix"
     # "mate.nix"
@@ -72,7 +73,10 @@ in {
     extraSpecialArgs = { inherit inputs; };
     useGlobalPkgs = true;
     useUserPackages = true;
-    sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
+    sharedModules = [
+      inputs.mango.hmModules.mango
+      inputs.plasma-manager.homeModules.plasma-manager
+    ];
     users = {
       "compromyse" = import ./home.nix;
     };

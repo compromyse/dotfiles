@@ -32,6 +32,12 @@
 
     # Proxmox
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
+
+    # MangoWM
+    mango = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -45,9 +51,10 @@
 
           ./machines/thinkpad/configuration.nix
 
-          inputs.home-manager.nixosModules.default
-          inputs.impermanence.nixosModules.impermanence
           inputs.grub2-themes.nixosModules.default
+          inputs.impermanence.nixosModules.impermanence
+          inputs.home-manager.nixosModules.default
+          inputs.mango.nixosModules.mango
         ];
       };
 
