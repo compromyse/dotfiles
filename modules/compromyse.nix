@@ -13,4 +13,5 @@
     extraGroups = [ "wheel" "video" "render" "storage" "input" "plugdev" "libvirtd" "docker" "kvm" "lp" "dialout" "tty" ];
   };
   security.sudo.wheelNeedsPassword = false;
+  nix.settings.trusted-users = [ "compromyse" ];
 }

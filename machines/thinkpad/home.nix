@@ -19,7 +19,7 @@
     zip
 
     imv
-    # mpv
+    mpv
 
     librewolf
     spotify
@@ -28,6 +28,7 @@
 
     obs-studio
 
+    claude-code
     git-lfs
     slides
 

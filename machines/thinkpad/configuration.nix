@@ -26,6 +26,7 @@ in {
     "remapcapslock.nix"
 
     "virt/kvm.nix"
+    "virt/emulate-aarch64.nix"
 
     "login.nix"
     "plasma.nix"
