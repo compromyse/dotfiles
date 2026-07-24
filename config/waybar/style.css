@@ -41,11 +41,13 @@ window#waybar {
   background: #2f2f2f;
 }
 
-#workspaces button.persistent {
+#workspaces button.persistent,
+#workspaces button.empty {
   background: #212121;
 }
 
 #workspaces button.focused,
+#workspaces button.active,
 #workspaces button.urgent,
 #tags button.focused,
 #tags button.urgent {

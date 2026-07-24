@@ -29,10 +29,10 @@ in {
     "virt/emulate-aarch64.nix"
 
     "login.nix"
-    "plasma.nix"
+    # "plasma.nix"
     "mango.nix"
-    # "wm_utils.nix"
-    # "polkit.nix"
+    "wm_utils.nix"
+    "polkit.nix"
     # "mate.nix"
     # "xfce.nix"
     # "gnome.nix"
@@ -82,7 +82,7 @@ in {
     };
   };
 
-  services.greetd.settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --remember --cmd startplasma-wayland";
+  services.greetd.settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --remember --cmd mango";
 
   environment.systemPackages = with pkgs; [
       android-tools

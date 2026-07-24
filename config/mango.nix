@@ -6,6 +6,13 @@
     extraConfig = ''
 # More option see https://github.com/DreamMaoMao/mango/wiki/
 
+# Autostart
+exec-once=wbg /config/dist/wallpaper.png
+exec-once=waybar
+exec-once=way-displays
+exec-once=swayidle before-sleep swaylock lock swaylock
+exec-once=dunst
+
 # Window effect
 blur=0
 blur_layer=0
@@ -24,7 +31,7 @@ shadows_size = 10
 shadows_blur = 15
 shadows_position_x = 0
 shadows_position_y = 0
-shadowscolor= 0x000000ff
+shadowscolor = 0x000000ff
 
 border_radius=6
 no_radius_when_single=0
@@ -33,7 +40,7 @@ unfocused_opacity=1.0
 
 # Animation Configuration(support type:zoom,slide)
 # tag_animation_direction: 1-horizontal,0-vertical
-animations=1
+animations = 0
 layer_animations=1
 animation_type_open=slide
 animation_type_close=slide
@@ -63,35 +70,46 @@ scroller_default_proportion=0.8
 scroller_focus_center=0
 scroller_prefer_center=0
 edge_scroller_pointer_focus=1
+edge_scroller_focus_allow_speed=0.0
 scroller_default_proportion_single=1.0
 scroller_proportion_preset=0.5,0.8,1.0
 
 # Master-Stack Layout Setting
-new_is_master=1
+new_is_master = 0
 default_mfact=0.55
 default_nmaster=1
 smartgaps=0
 
+# Dwindle Layout Setting
+dwindle_smart_split=0
+dwindle_drop_simple_split=1
+dwindle_manual_split=0
+dwindle_hsplit=1
+dwindle_vsplit=1
+dwindle_preserve_split=0
+
 # Overview Setting
 hotarea_size=10
-enable_hotarea=1
-ov_tab_mode=0
+enable_hotarea=0
+ov_tab_mode=1
+ov_no_resize=1
 overviewgappi=5
 overviewgappo=30
 
 # Misc
 no_border_when_single=0
 axis_bind_apply_timeout=100
-focus_on_activate=1
+focus_on_activate = 0
 idleinhibit_ignore_visible=0
 sloppyfocus=1
-warpcursor=1
-focus_cross_monitor=0
+warpcursor = 0
+focus_cross_monitor = 1
 focus_cross_tag=0
 enable_floating_snap=0
 snap_distance=30
-cursor_size=24
+cursor_size=16
 drag_tile_to_tile=1
+drag_tile_small=1
 
 # keyboard
 repeat_rate=25
@@ -105,15 +123,15 @@ disable_trackpad=0
 tap_to_click=1
 tap_and_drag=1
 drag_lock=1
-trackpad_natural_scrolling=0
+trackpad_natural_scrolling = 1
 disable_while_typing=1
 left_handed=0
-middle_button_emulation=0
+middle_button_emulation = 0
 swipe_min_threshold=1
 
 # mouse
 # need relogin to make it apply
-mouse_natural_scrolling=0
+mouse_natural_scrolling = 0
 
 # Appearance
 gappih=5
@@ -123,14 +141,16 @@ gappov=10
 scratchpad_width_ratio=0.8
 scratchpad_height_ratio=0.9
 borderpx=4
-rootcolor=0x201b14ff
-bordercolor=0x444444ff
-focuscolor=0xc9b890ff
-maximizescreencolor=0x89aa61ff
-urgentcolor=0xad401fff
-scratchpadcolor=0x516c93ff
-globalcolor=0xb153a7ff
-overlaycolor=0x14a57cff
+rootcolor = 0x191919ff
+bordercolor = 0x2f2f2fff
+dropcolor = 0x9b9b9b80
+splitcolor = 0x9b9b9bff
+focuscolor = 0x9b9b9bff
+maximizescreencolor = 0x9b9b9bff
+urgentcolor = 0x9b9b9bff
+scratchpadcolor = 0x9b9b9bff
+globalcolor = 0x2f2f2fff
+overlaycolor = 0x212121ff
 
 # layout support:
 # tile,scroller,grid,deck,monocle,center_tile,vertical_tile,vertical_scroller
@@ -152,19 +172,28 @@ tagrule=id:9,layout_name:tile
 bind=SUPER,r,reload_config
 
 # menu and terminal
-bind=Alt,space,spawn,rofi -show drun
-bind=Alt,Return,spawn,alacritty
+bind = super,space,spawn,/config/dist/run.sh
+bind = super+shift,Return,spawn,alacritty
+
+# media keys
+bind=none,XF86AudioRaiseVolume,spawn,pamixer -i 5
+bind=none,XF86AudioLowerVolume,spawn,pamixer -d 5
+bind=none,XF86AudioMute,spawn,pamixer -t
+bind=none,XF86MonBrightnessUp,spawn,brightnessctl set 5%+
+bind=none,XF86MonBrightnessDown,spawn,brightnessctl set 5%-
 
 # exit
-bind=SUPER,m,quit
-bind=ALT,q,killclient,
+bind = super+shift,b,quit
+bind = super+shift,q,killclient
+
+# lock
+bind = super,l,spawn,swaylock
 
 # switch window focus
-bind=SUPER,Tab,focusstack,next
-bind=ALT,Left,focusdir,left
-bind=ALT,Right,focusdir,right
-bind=ALT,Up,focusdir,up
-bind=ALT,Down,focusdir,down
+bind=super,Left,focusdir,left
+bind=super,Right,focusdir,right
+bind=super,Up,focusdir,up
+bind=super,Down,focusdir,down
 
 # swap window
 bind=SUPER+SHIFT,Up,exchange_client,up
@@ -173,54 +202,50 @@ bind=SUPER+SHIFT,Left,exchange_client,left
 bind=SUPER+SHIFT,Right,exchange_client,right
 
 # switch window status
-bind=SUPER,g,toggleglobal,
-bind=ALT,Tab,toggleoverview,
-bind=ALT,backslash,togglefloating,
-bind=ALT,a,togglemaximizescreen,
+bind = super+shift,0,toggleglobal
+bind = super,Tab,toggleoverview
+bind = alt,space,togglefloating
+bind = super,f,togglemaximizescreen
 bind=ALT,f,togglefullscreen,
-bind=ALT+SHIFT,f,togglefakefullscreen,
-bind=SUPER,i,minimized,
-bind=SUPER,o,toggleoverlay,
-bind=SUPER+SHIFT,I,restore_minimized
-bind=ALT,z,toggle_scratchpad
 
 # scroller layout
 bind=ALT,e,set_proportion,1.0
 bind=ALT,x,switch_proportion_preset,
+bind=alt+super+ctrl,Left,scroller_stack,left
+bind=alt+super+ctrl,Right,scroller_stack,right
+bind=alt+super+ctrl,Up,scroller_stack,up
+bind=alt+super+ctrl,Down,scroller_stack,down
+
+#dwindle layout(manual split mode)
+bind=alt+shift,Return,dwindle_toggle_split_direction
 
 # switch layout
 bind=SUPER,n,switch_layout
 
 # tag switch
-bind=SUPER,Left,viewtoleft,0
-bind=CTRL,Left,viewtoleft_have_client,0
-bind=SUPER,Right,viewtoright,0
-bind=CTRL,Right,viewtoright_have_client,0
-bind=CTRL+SUPER,Left,tagtoleft,0
-bind=CTRL+SUPER,Right,tagtoright,0
 
-bind=Ctrl,1,view,1,0
-bind=Ctrl,2,view,2,0
-bind=Ctrl,3,view,3,0
-bind=Ctrl,4,view,4,0
-bind=Ctrl,5,view,5,0
-bind=Ctrl,6,view,6,0
-bind=Ctrl,7,view,7,0
-bind=Ctrl,8,view,8,0
-bind=Ctrl,9,view,9,0
+bind = super,1,view,1,0
+bind = super,2,view,2,0
+bind = super,3,view,3,0
+bind = super,4,view,4,0
+bind = super,5,view,5,0
+bind = super,6,view,6,0
+bind = super,7,view,7,0
+bind = super,8,view,8,0
+bind = super,9,view,9,0
 
 # tag: move client to the tag and focus it
 # tagsilent: move client to the tag and not focus it
 # bind=Alt,1,tagsilent,1
-bind=Alt,1,tag,1,0
-bind=Alt,2,tag,2,0
-bind=Alt,3,tag,3,0
-bind=Alt,4,tag,4,0
-bind=Alt,5,tag,5,0
-bind=Alt,6,tag,6,0
-bind=Alt,7,tag,7,0
-bind=Alt,8,tag,8,0
-bind=Alt,9,tag,9,0
+bind = super+shift,1,tag,1,0
+bind = super+shift,2,tag,2,0
+bind = super+shift,3,tag,3,0
+bind = super+shift,4,tag,4,0
+bind = super+shift,5,tag,5,0
+bind = super+shift,6,tag,6,0
+bind = super+shift,7,tag,7,0
+bind = super+shift,8,tag,8,0
+bind = super+shift,9,tag,9,0
 
 # monitor switch
 bind=alt+shift,Left,focusmon,left
@@ -233,33 +258,22 @@ bind=ALT+SHIFT,X,incgaps,1
 bind=ALT+SHIFT,Z,incgaps,-1
 bind=ALT+SHIFT,R,togglegaps
 
-# movewin
-bind=CTRL+SHIFT,Up,movewin,+0,-50
-bind=CTRL+SHIFT,Down,movewin,+0,+50
-bind=CTRL+SHIFT,Left,movewin,-50,+0
-bind=CTRL+SHIFT,Right,movewin,+50,+0
-
-# resizewin
-bind=CTRL+ALT,Up,resizewin,+0,-50
-bind=CTRL+ALT,Down,resizewin,+0,+50
-bind=CTRL+ALT,Left,resizewin,-50,+0
-bind=CTRL+ALT,Right,resizewin,+50,+0
-
-# Mouse Button Bindings
-# btn_left and btn_right can't bind none mod key
-mousebind=SUPER,btn_left,moveresize,curmove
-mousebind=NONE,btn_middle,togglemaximizescreen,0
-mousebind=SUPER,btn_right,moveresize,curresize
-
-
-# Axis Bindings
-axisbind=SUPER,UP,viewtoleft_have_client
-axisbind=SUPER,DOWN,viewtoright_have_client
-
-
 # layer rule
 layerrule=animation_type_open:zoom,layer_name:rofi
 layerrule=animation_type_close:zoom,layer_name:rofi
+
+group_bar_decorate_bg_color = 0x212121ff
+group_bar_decorate_border_color = 0x2f2f2fff
+group_bar_decorate_fg_color = 0x9b9b9bff
+group_bar_decorate_focus_bg_color = 0x9b9b9bff
+group_bar_decorate_focus_fg_color = 0x212121ff
+jump_label_decorate_bg_color = 0x212121ff
+jump_label_decorate_border_color = 0x2f2f2fff
+jump_label_decorate_fg_color = 0x9b9b9bff
+jump_label_decorate_focus_bg_color = 0x9b9b9bff
+jump_label_decorate_focus_fg_color = 0x212121ff
+dwindle_smart_resize = 1
+single_scratchpad = 1
     '';
   };
 }

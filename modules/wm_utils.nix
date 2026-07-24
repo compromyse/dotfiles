@@ -39,7 +39,7 @@
 
   environment.variables = {
     XCURSOR_SIZE = "16";
-    WLR_DRM_DEVICES = "/dev/dri/card1";
+    WLR_DRM_DEVICES = "/dev/dri/card0";
   };
 
   services.dbus.enable = true;
