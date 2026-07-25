@@ -7,7 +7,7 @@
 # More option see https://github.com/DreamMaoMao/mango/wiki/
 
 # Autostart
-exec-once=wbg /config/dist/windows.jpg
+exec-once=wbg -s /config/dist/windows.jpg
 exec-once=waybar
 exec-once=way-displays
 exec-once=swayidle before-sleep swaylock lock swaylock
@@ -187,7 +187,15 @@ bind = super+shift,b,quit
 bind = super+shift,q,killclient
 
 # lock
-bind = super,l,spawn,swaylock
+bind = super+shift,l,spawn,swaylock
+
+# cycle window focus in stack
+bind=super,j,focusstack,prev
+bind=super,k,focusstack,next
+
+# resize master area
+bind=super,h,setmfact,-0.05
+bind=super,l,setmfact,+0.05
 
 # screenshot
 bind=super+shift,s,spawn_shell,f=$HOME/Screenshots/$(date +%Y%m%d%H%M%S).png && g=$(slurp -d) && [ -n "$g" ] && grim -g "$g" "$f" && wl-copy < "$f"

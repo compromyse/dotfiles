@@ -17,7 +17,7 @@
     enable = true;
 
     theme = { name = "Breeze"; };
-    gtk4.theme = { name = "Breeze"; };
+    gtk4.theme = config.gtk.theme;
     # iconTheme = { name = "Papirus-Dark"; };
     iconTheme = { name = "Memphis98"; };
 

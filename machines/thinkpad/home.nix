@@ -34,8 +34,6 @@
 
     # calibre
     kdePackages.okular
-
-    proton-vpn
   ];
 
   programs = {
