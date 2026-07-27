@@ -200,6 +200,10 @@ bind=super,l,setmfact,+0.05
 # screenshot
 bind=super+shift,s,spawn_shell,f=$HOME/Screenshots/$(date +%Y%m%d%H%M%S).png && g=$(slurp -d) && [ -n "$g" ] && grim -g "$g" "$f" && wl-copy < "$f"
 
+# floating window move/resize with mouse
+mousebind=alt,btn_left,moveresize,curmove
+mousebind=alt,btn_right,moveresize,curresize
+
 # switch window focus
 bind=super,Left,focusdir,left
 bind=super,Right,focusdir,right
