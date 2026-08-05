@@ -218,7 +218,7 @@ bind=SUPER+SHIFT,Right,exchange_client,right
 
 # switch window status
 bind = super+shift,0,toggleglobal
-bind = super,Tab,toggleoverview
+bind = super,Tab,view,-1
 bind = alt,space,togglefloating
 bind = super,f,togglemaximizescreen
 bind=ALT,f,togglefullscreen,

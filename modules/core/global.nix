@@ -45,9 +45,6 @@ in {
     defaults.email = "raghus2247@gmail.com";
   };
 
-  # TODO: Remove this after upstream fixes it https://github.com/SaumonNet/proxmox-nixos/pull/213/changes
-  # services.openssh.settings.AcceptEnv = lib.mkForce ["LANG" "LC_*"];
-
   services.swapspace.enable = true;
 
   system.stateVersion = "23.11";

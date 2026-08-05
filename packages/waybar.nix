@@ -78,7 +78,7 @@ stdenv.mkDerivation (finalAttrs: {
     owner = "Alexays";
     repo = "Waybar";
     rev = "master";
-    hash = "sha256-pSbVf9mMWazkaTgNM0X4pfkIS/6AzoAfs7YTS27udOE=";
+    hash = "sha256-qquPn4ibBnc7gA4peGgseP+lKGRq58UPxsMTSrdUT8Q=";
   };
 
   nativeBuildInputs = [
