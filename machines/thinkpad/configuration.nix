@@ -96,7 +96,7 @@ in {
     192.168.122.100 deb
     192.168.122.101 cse
     192.168.122.109 debian
-    127.0.0.1 wheels.local delivery.wheels.local
+    127.0.0.1 testing.wheelsforworkers.org delivery.testing.wheelsforworkers.org
   '';
 
   time.timeZone = lib.mkForce "America/New_York";
