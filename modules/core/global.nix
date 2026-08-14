@@ -23,7 +23,8 @@ in {
     man-pages
     man-pages-posix
 
-    waypipe
+    # TODO: uncomment
+    # waypipe
     traceroute
   ];
 

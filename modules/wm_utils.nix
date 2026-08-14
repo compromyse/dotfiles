@@ -23,6 +23,9 @@
     bemenu
 
     wl-clipboard
+
+    alsa-utils
+    pavucontrol
   ];
 
   xdg.portal = {
