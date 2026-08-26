@@ -52,6 +52,7 @@
     "git"
     "emacs"
     "nvim"
+    "virt-viewer.nix"
 
     # "plasma"
     # "qtile"

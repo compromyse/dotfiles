@@ -20,6 +20,9 @@ MODE:
     - NAME_DESC: HDMI-A-1
       MAX: TRUE
 
+    - NAME_DESC: DP-1
+      MAX: TRUE
+
 LAPTOP_LID_MONITOR: TRUE
 
 # One of: ERROR, WARNING, INFO (default), DEBUG
