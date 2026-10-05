@@ -34,6 +34,7 @@
 
     # calibre
     kdePackages.okular
+    libreoffice
   ];
 
   programs = {

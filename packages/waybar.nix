@@ -22,7 +22,7 @@
   libmpdclient,
   libnl,
   libpulseaudio,
-  libsigcxx,
+  libsigcxx_3_0,
   libxkbcommon,
   meson,
   modemmanager,
@@ -78,7 +78,7 @@ stdenv.mkDerivation (finalAttrs: {
     owner = "Alexays";
     repo = "Waybar";
     rev = "master";
-    hash = "sha256-uFfKkAbLn4AgX0uZWlYNUxRUOdRp0x4WKXiOvQqhyy4=";
+    hash = "sha256-G6AcGuevhkYflQHhJq9GnLhEMgcI51Y6MYKBQvdRPDc=";
   };
 
   nativeBuildInputs = [
@@ -101,7 +101,7 @@ stdenv.mkDerivation (finalAttrs: {
     gtk-layer-shell
     gtkmm3
     jsoncpp
-    libsigcxx
+    libsigcxx_3_0
     libxkbcommon
     spdlog
     wayland

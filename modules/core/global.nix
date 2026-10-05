@@ -32,6 +32,9 @@ in {
   # time.timeZone = "Asia/Kolkata";
 
   networking.networkmanager.enable = true;
+  networking.networkmanager.plugins = with pkgs; [
+    networkmanager-openconnect
+  ];
   networking.firewall.enable = false;
   networking.nameservers = [ "1.1.1.1" ];
 
